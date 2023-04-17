@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Configurations of the template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\contentsname}{Table of Contents} % table of content heading
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "Table of Content", "List of Figures", "List of Tables" Section
+\newgeometry{top=3cm,bottom=2cm,right=3cm,left=3cm} % update page margins
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setLists}{
+    \pagenumbering{roman} % set capital roman page numbers: I, II, ...
+    \clearpage \setcounter{page}{2} % count cover page
+    \tableofcontents
+    
+    \newpage
+    \addcontentsline{toc}{section}{\listfigurename}
+    \listoffigures
+    
+    \newpage
+    \addcontentsline{toc}{section}{\listtablename}
+    \listoftables
+    \newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "Bibliography" Section
+% IMPORTANT: Do not change anything here!
+% Add/change your bibliography entries to the "bibliography.bib" file
+% Remark: Entries only show up in this section, after you \cite them at least once.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setBibliography}{
+
+\sectionunnumbered{Bibliography}
+\pagenumbering{Roman} % set roman page numbers: i, ii, ...
+
+{\linespread{1.5}\selectfont\printbibliography[heading=none]}
+
+ \newpage
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Initializing Text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\initializeText}{
+
+    \pagenumbering{arabic} % set capital roman page numbers: 1,2,...
+
+}
