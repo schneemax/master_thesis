@@ -14,7 +14,7 @@
 *.aux
 *.bbl
 *.blg
-*.pdf
+
 *.dvi
 *.acn
 *.acr
@@ -25,7 +25,7 @@
 *.xdy 
 ._*
 *.synctex.gz
-!**/img/*.pdf
+
 /build
 
 *.log
