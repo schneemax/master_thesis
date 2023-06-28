@@ -16,10 +16,12 @@
     
     \newpage
     %\sectionunnumbered{List of Abbreviations}
+    \phantomsection
     \addcontentsline{toc}{section}{\listfigurename}
     \listoffigures
     
-    \newpage
+    \newpage %needed as a link to the current page
+    \phantomsection
     \addcontentsline{toc}{section}{\listtablename}
     %\sectionunnumbered{List of Abbreviations}
     \listoftables
