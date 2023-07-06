@@ -1,0 +1,15 @@
+@article{bd89cff1-683e-3ade-8836-294a9886f7b7,
+ ISSN = {10477039, 15265455},
+ URL = {http://www.jstor.org/stable/23362104},
+ abstract = {This qualitative study analyzes the decision-making process involved in adapting preconceived courses of action during the implementation of a strategic initiative. We observe that the type of decision-making process hinges on the nature of managers' emerging awareness of future events. When managers become aware of new uncertainty, the process involves selectiveness, deliberateness, and diligence. By contrast, when managers become aware of new certainty, the process conforms to the problem-solving adhocracy and decision-making messiness emphasized in prior literature. We summarize our findings in a framework, proposing that decision-level differences in awareness and uncertainty can explain the observed variation in strategic decision-making processes during implementation. We also discuss implications for theory on procedural rationality and analytical comprehensiveness.},
+ author = {Ronald Klingebiel and Arnoud De Meyer},
+ journal = {Organization Science},
+ number = {1},
+ pages = {133--153},
+ publisher = {INFORMS},
+ title = {Becoming Aware of the Unknown: Decision Making During the Implementation of a Strategic Initiative},
+ urldate = {2023-07-06},
+ volume = {24},
+ year = {2013}
+}
+
