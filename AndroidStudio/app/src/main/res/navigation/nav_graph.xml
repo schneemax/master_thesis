@@ -23,6 +23,15 @@
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/thirdFragmentTest" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragmentTest"
+        android:name="com.example.masterthesis.ThirdFragmentTest"
+        android:label="fragment_third_test"
+        tools:layout="@layout/fragment_third_test" >
+        <action
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
