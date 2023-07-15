@@ -4,7 +4,37 @@
 
 %Einführung Data Analytics ist wichtig
 The introduction and widespread usage of computers has proven to be disruptive for all industries. Entire industrial sectors have been reshaped, whole professions made obsolete and new career opportunities have been created. This shift towards the adaption of \ac{it} has been necessary for businesses to stay competitive in the fast changing economic environment of the twenty-first century. Nowadays, the digitalization of organizations is viewed as a prerequisite for a successful business, rather than being an endeavored state and computers are indispensable for all industries. This digital revolution enabled the emergence of the widespread creation and collection of data. The amount of data generated globally is rising yearly (\cite{Seagate.2018}) and the pressure to use these data volumes effectively in order to gain a business advantage rises. 
-This new trend, often coined \enquote{big data} after the fact that never before seen amounts of data are generated and are available for processing, enables completely new business areas. This is reinforced, among other things, by the fact that many companies already view their data as a primary business asset (\cite{Redman.2008}). Simultaneously, the emergence of big data promises to completely reshape the decision-making process of traditional businesses through the adoption of data analytics. Although sales in the area of big data have risen significantly over the past years (\cite{BISResearch.2018}, \cite{Bitkom.2018}) and businesses already view big data as an important information technology trend (\cite{Bitkom.2017}) a lot of organizations struggle to effectivly utilize their data. Some 84\% of industry-leading companies in the United States and around the world were already investing in big data analytics in 2019, according to their own statements, which only underlines the importance of data analytics for decision-making in the economy. (\cite{statista.2019}).\newline
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            %width=35pt
+            height=6cm,
+            width=12cm, 
+            ymax=700,
+            x tick label style={/pgf/number format/1000 sep=},
+            ylabel=Year,
+            xlabel=Market size in billion U.S. dollar,
+            enlargelimits=0.1,
+            %legend style={at={(0.5,-0.1)},
+            %anchor=north,legend columns=-1}, 
+            %ybar interval=0.4,
+            nodes near coords,]
+            \addplot coordinates { (2021,240.56) (2022,271.83) (2023,308.26) (2024,349.56) (2025,396.4) (2026,449.52) (2027,509.76) (2028,578.06) (2029,655.53)};
+            %\addplot coordinates {(2012,388950) (2011,393007) (2010,398449) (2009,395972)};
+            %\legend{Year}
+        \end{axis}
+    \end{tikzpicture}
+    \caption[Big data analytics market size]{Size of the big data analytics market worldwide from 2021 to 2029 (\cite{statista.2022})}
+    \label{fig:bigDataMarket}
+\end{figure}
+
+This new trend, often coined \enquote{big data} after the fact that never before seen amounts of data are generated and are available for processing, enables completely new business areas. This is reinforced, among other things, by the fact that many companies already view their data as a primary business asset (\cite{Redman.2008}). Simultaneously, the emergence of big data promises to completely reshape the decision-making process of traditional businesses through the adoption of data analytics. Although sales in the area of big data have risen significantly over the past years (\cite{BISResearch.2018}, \cite{Bitkom.2018}) and businesses already view big data as an important information technology trend (\cite{Bitkom.2017}) a lot of organizations struggle to effectivly utilize their data. Some 84\% of industry-leading companies in the United States and around the world were already investing in big data analytics in 2019, according to their own statements, which only underlines the importance of data analytics for decision-making in the economy. (\cite{statista.2019}). This is also reinforced by the market for big data analytics worlwide expected to more then double in size in the next 6 years (figure \ref{fig:bigDataMarket})\newline
+
+
+
 
 \subsection{Applied \& Theoretical Research Problem} %and significance
 
@@ -21,9 +51,33 @@ Furthermore, it is indicated in section \ref{sec:identification_of_the_problem} 
 
 \subsection{Objective and Expected Contribution}
 
-The objective of this thesis is to improve the experimental research process in the field of behavioral research in data analytics. This is done through the following three objectives: (1) the review of prior research on data analytics and their methodological procedure (2) the development of an artefact which improves the research process in the field of behavioral research in data analytics (3) the validation of the artefact through the exemplary realization of a study in said field.
 
-In order to accomplishe this, the \ac{dsc} Methodology is used which contains six steps, \textit{Identification of the Problem}, \textit{Definition of Objectives for a solution}, \textit{Design and Dev of artefacts}, \textit{Demonstration of the Artifact}, \textit{Evaluation of the solution}, \textit{Communication} (\cite{Peffers.2006}). The identification of the problem is conducted through a literature search with the goal of identifying the degree of research done in the area of data analyitics. To be more specific the current state of research in the field of boundaries and conflicts is investigates. In order to accomplish this, the identified literature is categorized using the so called information-value-chain. This is done in order to show the current state of research on the processing of data and to identify possible literature gaps. After identifying the problem, the next step of the \ac{dsc} Methodology \textit{Definition of Objectives for a solution} utilizes a second literature search to collect an detailed overview about what kind of studies have been conducted in the field of data analytics already, with a special focus on, whether these studies have used custom applications to conduct experiments. These findings are then used to develop requirements using the requirement engineering framework, which is in of itself made up of four different steps \textit{Elicit requirements}, \textit{Requirements specification}, \textit{Verification and validation} and \textit{Requirements management}. These requirements are then used in the \textit{Design and Dev of artefacts steps} of the \ac{dsc} framework to develope a technical artefact as a solution for the afformentioned problem. Subsequently, the resulting artefact is demonstrated and Evaluation using the afformentioned requirements, in the \textit{Demonstration of the Artifact} and \textit{Evaluation of the solution} steps. The last step of the \ac{dsc} framework, which focusses on communicating the results to its stakeholders, is ensured by this thesis itself. The last step is thus already fulfilled by this theis itself and will not be considered further.
+The objective of this thesis is to improve the experimental research process in the field of behavioral research in data analytics. This is done through the following three objectives: (1) the review of prior research on data analytics and their methodological procedure (2) the development of an artefact which improves the research process in the field of behavioral research in data analytics (3) the validation of the artefact through the exemplary realization of a study in said field utilizing said artefact. In order to accomplishe the creation of this artefact the \ac{dsc} methodology is used. This methodology contains six steps, \textit{Identification of the Problem}, \textit{Definition of Objectives for a solution}, \textit{Design and Dev of artefacts}, \textit{Demonstration of the Artifact}, \textit{Evaluation of the solution} and \textit{Communication} (\cite{Peffers.2006}, \cite{Dresch.2015}). 
+The \textit{identification of the problem} is conducted in section \ref{sec:identification_of_the_problem} through a literature search. To be more specific the current state of research in the field of boundaries and conflicts that limit the utilization of data analytics is investigates. As stated before this results in the identification of a gap in literature in the field of behavioral research in data analytics. After identifying the problem, the next step of the \ac{dsc} Methodology is the \textit{definition of objectives for a solution}. This is accomplished by specifying requirements for the final artifact using the current state of literature in data analytics and the \textit{requirement engineering} approach. For this purpose, a second literature search is utilized to identify literature in the field of data analytics that uses experiments or whose research object would in principle have permitted the use of experiments. These insights are then used to conceptualize, analyze and validate requirements for the final artefact (\cite{Sommerville.2011}, \cite(SWEBOK.2004)). %The \textit{Design and Dev of artefacts} step of the \ac{dsc} framework 
+As the name of the next step suggests the artefact is designed and implemented in the \textit{design and dev of artefacts} phase using the requirements specified in the last step. Subsequently, the resulting artefact is then demonstrated in the \textit{Demonstration of the Artifact} step. The \textit{Evaluation of the solution} phase then implements a real experimental study in data analytics as an example to evaluate the artefact and its benefits for the experimental research process. This examplary implementation is then also used to validate the afformentioned requirements. The last step of the \ac{dsc} framework, which focusses on communicating the results to its stakeholders, is ensured by this thesis itself. 
+
+The practical contribution of this thesis to research is twofold. On the one hand an artefact is created which accelerates research in the field of data analytics, through the improvement of the research process. On the other hand meta-knowledge about the research process itself is created, which not only improves the conduct of research through said artefact, but can also be used in off-topic areas beyond the use cases of this thesis.
+
+In summation, the goal of this thesis is to develop an artifact that improves the experimental research process in behavioral research in data analytics. For this purpose, the \ac{dsc} method is used to create an artifact. The requirements for this artifact are established using past experimental and non-experimental studies in data analytics and the requirement engineering approach. The artifact is then validated by implementing a real study as an example, thereby demonstrating the improvements to the experimental behavioral research process in data analytics.
+
+
+
+
+%and evaluation using the these requirements, in the \textit{Demonstration of the Artifact} and \textit{Evaluation of the solution} steps. The \textit{Demonstration of the Artifact} step serves as a general demonstration of the artefact where the \textit{Evaluation of the solution} phase 
+
+%the exemplary implementation of a real experiment setup 
+
+ %to develope a technical artefact as a solution for the afformentioned problem.  and \textit{Evaluation of the solution} steps. The last step of the \ac{dsc} framework, which focusses on communicating the results to its stakeholders, is ensured by this thesis itself. The last step is thus already fulfilled by this theis itself and will not be considered further.
+
+
+
+
+
+
+
+
+
+%utilizes a second literature search to collect an detailed overview about what kind of studies have been conducted in the field of data analytics already, with a special focus on, whether these studies have used custom applications to conduct experiments. These findings are then used to develop requirements using the requirement engineering framework, which is in of itself made up of four different steps \textit{Elicit requirements}, \textit{Requirements specification}, \textit{Verification and validation} and \textit{Requirements management}. These requirements are then used in the 
 
 
 %Although decision-making in data analytics has recently attracted scholars' attention (\cite{Pearson.1998}) there seems to be still a lack of research on the behavioral aspects of data analytics.
