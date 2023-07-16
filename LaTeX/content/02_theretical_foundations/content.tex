@@ -1,6 +1,6 @@
 \newpage\section{Theoretical foundations}
 
-This section represents the theoretical fundamentals of this elaboration by defining the term \enquote{data analytic}, the concept of the \enquote{information value chain}, the \ac{dsc} methodology, the requirement engineering approach and the experimental research process in general.
+This section represents the theoretical fundamentals of this elaboration by defining the term \enquote{data analytic}, the concept of the \enquote{information value chain}, the \ac{dsr} methodology, the \textit{requirement engineering} approach and the experimental research process in general.
 
 %\subsection{Definition of terms}
 
@@ -28,6 +28,34 @@ The information value chain (figure \ref{information_value_chain}) is a set of p
 
 \subsection{Design Science Research Methodology}
 
+In fundamental terms, Design Science is a research approach that aims to develop and validate science-based design knowledge and guide research to problem solving (\cite{Hevner.2004}, \cite{Dresch.2015}). The goal of \ac{dsr} therefore is to gain prescriptive knowledge about the composition of various artifacts, including software, methods, models, and concepts. This particular design knowledge facilitates a systematic and scientific approach to the design of future projects. The design process and its practical implementation generate design-oriented knowledge, enriching the existing knowledge in \ac{dsr} (\cite{Hevner.2004}). Thus the result of design-science, especially in \ac{is}, is the creation of an effective \ac{it} artefact which deals with a certain problem (\cite{Hevner.2004}). Nevertheless, the exact activities of the Design Science Model may differ from author to author to some extent (\cite{Fulcher.1996}). This thesis aligns itself with the phases and steps outlined by Peffers et al. in her 2006 article \enquote{The design science research process: A model for producing and presenting information systems research}. In their article Peffers et al. analyze literature that implements design science in order to create a generally accepted process for research in \ac{is} (\cite{Pfeffers.2006}). As a result of their work, they describe the design science research approach using the following six steps: 
+
+\begin{enumerate}
+    \item \textit{Identification of the Problem}
+    \item \textit{Definition of Objectives for a solution}
+    \item \textit{Design and Dev of artefacts}
+    \item \textit{Demonstration of the Artifact}
+    \item \textit{Evaluation of the solution} 
+    \item \textit{Communication}
+\end{enumerate}
+
+%The first step, \textit{Identification of the Problem}, \enquote{Define the specific research problem and justify the value of a solution.} (\cite{Pfeffers.2006}). The 
+
+%Peffers et al. define the phases of the \ac{dsr} methodological in their 2006 article in order  
+
+%\cite{Fulcher.1996}
+
+
+%Herbert.1996
+
+
+%Originally conceived in the book \enquote{The Sciences of the Artificial} by Herbert Simon, the research approach of design science research centers primarily on the development of artifacts to solve  theoretical research problems (\cite{Dresch.2004}). 
+
+
+%"The result of design-science research in IS is, by definition, a purposeful IT artifact created to address an important organizational problem. It must be described effectively, enabling its simple mentation and application in an appropriate domain." \cite{Henver.2004}
+
+
+
 \subsection{Functional and non functional Requirements}
 
 As a means to create any artefact, the determination of requirements are important(\cite{Seacord.2003}). Requirements can be classified according to ISO/IEC 25000, respectively the quality model from ISO/IEC 25010, as quality criteria for software and systems.(\cite{ISOIEC25010.2011}). The \ac{ieee} defines requirements as:
@@ -36,11 +64,11 @@ As a means to create any artefact, the determination of requirements are importa
     \textbf{\textit{\enquote{(1) A condition or capability needed by a user to solve a problem or achieve an objective. (2) A condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed documents. (3) A documented representation of a condition or capability as in (1) or (2). See also: design requirement; functional requirement; implementation requirement; interface requirement; performance requirement; physical equirement.}}} \cite{IEEE.1990}
 \end{quote}  
    
-According to these two definitions, requirements can be generally defined as properties that need to be met in order to achieve an objective. For this reason, the requirements for the artefact are derived from properties and characteristics of past studies in the field of data analytics. In addition, general requirements for an artefact which is supposed to improve the experimental research process are also taken into account. These requirements are further divided into functional and non-functional requirements. A functional requirement describes a function that a system or system component must be able to perform (\cite{IEEE.1990}). An example of a functional requirement would be the calculation of a pricetag in euros and in dollars. Non-functional characteristics describe on the other hand describe the behavior of a system (\cite{Seacord.2003}) and go thereby beyond the functional characteristics. Thus functional requirements describe what a system must be able to do and non-functional requirements describe how this should be done. Non-functional requirements also often describe the quality of the functions and can influence several other requirements (\cite{Balzert.2011}). An example of non-functional properties would be that the conversion from euros to dollars must be performed in \enquote{a few seconds}.
+According to these definitions, requirements can be generally defined as properties that need to be met in order to achieve an objective. For this reason, the requirements for the artefact are derived from properties and characteristics of past studies in the field of data analytics. In addition, general requirements for an artefact which is supposed to improve the experimental research process are also taken into account. These requirements are further divided into functional and non-functional requirements. A functional requirement describes a function that a system or system component must be able to perform (\cite{IEEE.1990}). An example of a functional requirement would be the calculation of a pricetag in euros and in dollars. Non-functional characteristics describe on the other hand the behavior of a system (\cite{Seacord.2003}) and go thereby beyond the functional characteristics. Thus functional requirements describe what a system must be able to do and non-functional requirements describe how this should be done. Non-functional requirements also often describe the quality of the individual functions and can influence several other requirements (\cite{Balzert.2011}). An example of non-functional properties would be that the conversion from euros to dollars must be performed in \enquote{a few seconds}.
 
 \subsection{Requirement Engineering}
 
-In order to define an objective for a possible solution to the research question requirements for the created artefact must be engineered. In order to accomplishe that the \textit{requirement engineering} approach for analysis and evaluation of requirements is utilized (\cite{SWEBOK.2004}, \cite{Sommerville.2011}). This approach has been shown to clearly contribute to software project successes in the past (\cite{Hofmann.2001}) and is therefore a suitable approach to define the objectives for a solution. The exact individual phases and steps of the \textit{requirement engineering} approach can vary from source to source and use case to use case. In general, however, all steps fall into one of the three main categories. The \textit{Requirements Elicitation}, \textit{Requirements Specification} and \textit{Requirements Validation}. In the first step, possible requirements and use cases are collected with the help of analyses, surveys, literature, interviews or other sources (\cite{Sommerville.2011}). This thesis uses for the purpose of discovering requirements a literature review. In the next step, the requirements are then specified and categorized. An important distinction here is between functional and non-functional requirements. In the \textit{Requirements Validation} step, the elicited requirements are then tested for their validity. This phase emphasis the reviewing of the requirements in order to find out whether these requirements are actually representive of the desired artefact (\cite{Sommerville.2011}). This is accomplished througt Validity, Consistency, Completeness, Realism, and Verifiability checks in conjunction with protoyping and testing the requirements (\cite{Sommerville.2011}).
+In order to define an objective for a possible solution to the research question requirements for the created artefact must be engineered. In order to accomplishe that the \textit{requirement engineering} approach for analysis and evaluation of requirements is utilized (\cite{SWEBOK.2004}, \cite{Sommerville.2011}). This approach has been shown to clearly contribute to software project successes in the past (\cite{Hofmann.2001}) and is therefore a suitable approach to define the objectives for a solution. The exact individual phases and steps of the \textit{requirement engineering} approach can vary from source to source and use case to use case. In general, however, all steps fall into one of three main categories, the \textit{Requirements Elicitation}, \textit{Requirements Specification} and \textit{Requirements Validation} (\cite{SWEBOK.2004}, \cite{Sommerville.2011}, \cite(Fernandes.2009)). In the first step, possible requirements and use cases are collected via a variety of sources like analyses, surveys, literature or interviews (\cite{Sommerville.2011}). This thesis utilizes a literature review in order to discover requirements. In the next step, the requirements are then specified and categorized. An important distinction being the difference between functional and non-functional requirements. In the \textit{Requirements Validation} step, the elicited requirements are then tested for their validity. This phase emphasis the reviewing of the requirements in order to find out whether these requirements are actually representive of the desired artefact (\cite{Sommerville.2011}). This is accomplished througt Validity, Consistency, Completeness, Realism, and Verifiability checks in conjunction with protoyping and testing the requirements (\cite{Sommerville.2011}).
 
 
 
