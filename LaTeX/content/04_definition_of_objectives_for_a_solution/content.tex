@@ -10,21 +10,18 @@ This phase gathers information in order to discorver possible requirements for t
 
 In this section, just three different resources for conducting online experiments are presented and then analyzed. A small example experiment was implemented with each of the applications in order to find out the advantages and disadvantages of the respective resource. The goal of this section is to draw conclusions and define requirements from the applications that allow to design an artifact for the field of data analytics. The applications analyzed are resources recommended for experiments by the Columbia Experimental Laboratory for Social Sciences. The selection of resources analyzed in the course of this thesis is limited to applications that allow the implementation of interactive experiments. Resources or applications that are only suitable for conducting surveys or passive experiments were neglected.
 
-\textbf{z-Tree}
-Zurich Toolbox for Readymade Economic Experiments
+\textbf{z-Tree} Zurich Toolbox for Readymade Economic Experiments:
+z-Tree is a software componant which development started in 1998 by the University of Zurich. The software component was developed as a toolbox for conducting economic experiments. The technical set-up of z-Tree usually consists of a client/server architecture, where the experiment conducter runs a server and the test subjects participate via a client. In general, the program is written in C++ and requires a Windows operating system, making it compatable with around 28.59\% of devices (\cite{statcounter.2023}). Simultaneously, however, this architecture ties the experiment setup exclusevly to desktop computers. An installation on devices that run other operating system necessarily requires a virtual machine or similar measures. Furthermore, the possibilities to use graphical interfaces in experiments are extremely limited. The same is true for computer interfaces that have been developed after the 1990s. Thus, the experiments implemented with z-Tree are mostly limited to mouse and keyboard inputs, while also limiting the amount of meta data which can be collected. Although technically all interfaces, data sources or other programs could be integrated, a software component of this age represents a significantly greater challenge for most extensions than applications designed under new standards and technologies. This is especially critical for the data analytics field, which is driven by extremely recent developments. Adapting z-Tree to newer experiments can thus involve a very high programming effort. (\cite{Zurich.2023}, \cite{Fischbacher.2006}, \cite{Chen.2016}). Z-Tree is also a proprietary software which can be licensed for free, but it is not an open source software (\cite{Fischbacher.2006}). In conclusion, Z-Tree thus represents an outdated and extremely limiting software component, which is not suitable for experimental research in the area of behavioral research or data analytics.
 
-alt läuft nur auf windows computern (Nachteile bei oTree schauen)
-nicht open source
-kaum grafik interface support
+\textbf{oTree} An open-source platform for laboratory, online, and field experiments:
 
-\textbf{oTree}
-An open-source platform for laboratory, online, and field experiments
+oTree is a publicly accessible and web-driven software solution developed for the purpose of facilitating the implementation of dynamic experiments across diverse domains, including laboratory settings, online platforms, field studies, or any synergistic combinations thereof. One of the motivators for its development was to replace the outdated z-Tree of the University of Zurich. The newer oTree removed many of the restrictions of z-Tree, such as limited user interfaces, a Windows constraint, limited extensibility, and more. Another goal of oTree was to simplify the execution of field experiments in contrast to z-Tree. OTree is open source and based on the Python programming language. By default oTree supports simple interactive experiments, more complex experiments have to be implemented by Python, requiring programming expertise. Experiments implemented in oTree work exclusively via a client/server architecture, where the experiment performer has to set up a server and the experiment participants then participate in the experiment via any device using a browser. This has great advantages especially for field experiments where participants can be recruited via a customized web-link.Nevertheless, oTree requires a lot of technical programming expertise to setup and additional hardware in form of a server. Depending on the complexity of the experiment, the work that oTree saves the developer is therefore rather limited. At the same time, simple experiments still require a certain amount of technical know-how, making oTree unsuitable for quick experiments. These circumstances could lead to little use of oTree, especially in the area of data analytics (\cite{Chen.2016}). In conclusion, oTree is in principle a solid solution for performing experiments. In conclusion, oTree is in principle a solid solution for conducting experiments, but due to its high level of technical expertise and other limitations, it seems to be rather unsuitable as a basis for conducting experiments in the field of data analytics.
+
 
 wird eher für Field Experiments eingesetzt (interne und externe validität?) open source
 benötigt server, client gerät und coding
 
-\textbf{LIONESS Lab}
-a free web-based platform for conducting interactive experiments online
+\textbf{LIONESS Lab} a free web-based platform for conducting interactive experiments online:
 
 kaum coding benötigt? --> schlecht, custimzing ist nicht besser
 Roboter feature (simuliert participant input) <-- cooles feature
@@ -33,9 +30,9 @@ nicht open source
 platform  hängt komplett an den herausgebern
 
 
+In summary, the analysis of the three applications showed important insights into alternative attempts of an application or platform to perform experiments in related scientific domains. The resulting findings are included in the requirements abc. Nevertheless, a closer look at the applications could also show reasons as to why such applications are not suitable for experimental research in the field of behavioral research in data analytics. Which is supported by the lack of usage of these applications in the literature search of section \ref{sec:identification_of_the_problem} and \ref{subsec:literature_review_requirements}.
 
-
-\subsubsection{Studies in Data Analytics - A Literature Review }
+\subsubsection{Studies in Data Analytics - A Literature Review }\label{subsec:literature_review_requirements}
 
 
 
