@@ -20,7 +20,7 @@ oTree is a publicly accessible and web-driven software solution developed for th
 \textbf{LIONESS Lab} a free web-based platform for conducting interactive experiments online:
 LIONESS Lab constitutes a cost-free, web-based platform designed for the facilitation of interactive online experiments. It is developed by the Centre for Decision Research and Experimental Economics (University of Nottingham, UK) and the Chair of Economic Theory (University of Passau, Germany). Thus, Lioness Lab is not only a proprietary software solution but also requires special access for its use and emphasizes the conducting of field experiments. This is free of charge, but it depends entirely on the Universities in question to obtain it. At the same time, the publishers of LIONESS LAB repeatedly emphasize that their solution hardly requires any programming knowledge to perform experiments (\cite{Giamattei.2020}). A circumstance that can complicate the use of complex custome coding for complex experiments. In addition, this paradigm removes much of the complexity of the software from the coding level to the customizing level. A problematic circumstance since this limits the extensibility and basically does not reduce the perceived complexity (\cite{Chou.2008}). Other unique features of Max include the ability to reduce waiting time, spontaneously form groups, handle participant dropouts, and a so called \enquote{robotic} feature that mimics user input for testing purposes. Also, because of the way experiments can be conducted using the software, the focus of effort tends to be more on field experiments as well (\cite{Giamattei.2020}). In summary, LIONESS Lab is a platform that stands out due to a variety of functions, but unfortunately is not open source. At the same time, the extensibility of the platform is very questionable, which makes it a good choice for suitable experiments, but unfortunately unusable for more complex experiments. Requirements resulting from this application are mainly a focus on openness of the platform, the creation of different groups regarding the test subjects and the possibility to use unrestricted coding if needed.
 
-In summary, the analysis of the three applications showed important insights into alternative attempts of an application or platform to perform experiments in related scientific fields. The resulting findings are included in the requirements for the final artefact. These include openness of the platform, the creation of different participant groups, advanced user interface capabilities, the possibilitie to run custom code and and the delivery of the artifact with a minimum of standard functionality for creating experiments. These requirements, including requirements from other sources and description, are included in Table X. Nevertheless, a closer look at the applications could also show reasons as to why such applications are not suitable for experimental research in the field of behavioral research in data analytics. Which is supported by the lack of usage of these applications in the literature search of section \ref{sec:identification_of_the_problem} and \ref{subsec:literature_review_requirements}.
+In summary, the analysis of the three applications showed important insights into alternative attempts of an application or platform to perform experiments in related scientific fields. The resulting findings are included in the requirements for the final artefact. These include openness of the platform, the creation of different participant groups, advanced user interface capabilities, the possibilitie to run custom code and and the delivery of the artifact with a minimum of standard functionality for creating experiments. These requirements, including requirements from other sources and description, are included in Table X in subsection \ref{subsec:reqSpec}. Nevertheless, a closer look at the applications could also show reasons as to why such applications are not suitable for experimental research in the field of behavioral research in data analytics. Which is supported by the lack of usage of these applications in the literature search of section \ref{sec:identification_of_the_problem} and \ref{subsec:literature_review_requirements}.
 
 \subsubsection{Studies in Data Analytics - A Literature Review }\label{subsec:literature_review_requirements}
 
@@ -78,7 +78,7 @@ The search terms used for this literature review are \enquote{Data Analytics}, \
     \caption[Number of articles identified]{Number of articles identified in their respective database}\label{tab:articlesFoundRequirement}
     \end{sidewaystable}
 
-This process initially yielded 46 research publications, which were supplemented by articles from the previous literature review corresponding to the criteria. This resulted in a total number of 56 articles. The results were then classified according to the research method they utilize and whether a qualitative or quantitative approach was used. The results of this classification are presented in table \ref{tab:secondLiteratureSearch}. An important note at this point is that the number of articles using experiments does not contradict the gap identified in section \ref{sec:identification_of_the_problem}, since in this literature review specifically filtered for research articles that use experiments. Thereafter, the exact experimental setup of the articles was analyzed in order to 
+This process initially yielded 46 research publications, which were supplemented by articles from the previous literature review corresponding to the criteria. This resulted in a total number of 56 articles. The results were then classified according to the research method they utilize and whether a qualitative or quantitative approach was used. The results of this classification are presented in table \ref{tab:secondLiteratureSearch}. An important note at this point is that the number of articles using experiments does not contradict the gap identified in section \ref{sec:identification_of_the_problem}, since in this literature review specifically filtered for research articles that use experiments. Thereafter, the exact experimental setup of the articles was analyzed in order to discover requirements for their individual experiments and therefore for the artefact which is subject of thesis.
 
 \begin{table}[htbp]
     \centering
@@ -98,111 +98,116 @@ This process initially yielded 46 research publications, which were supplemented
     \caption[Research Methods of second Literature review]{Research Methods of second Literature review}\label{tab:secondLiteratureSearch}
     \end{table}
 
-    \begin{table}[hbtp]
-        \centering
-        \begin{tabular}{llccc}
-        \hline
-        Requirement          & \multicolumn{1}{l}{Total} & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} \\ \hline
-        Reusable                          & 11                        & 11                         & 0                         \\
-        Interoperability                  & 1                         & 1                          & 0                         \\
-        Meta Data Collecting              & 8                         & 8                          & 0                         \\
-        Post-Interview                    & 2                         & 2                          & 0                         \\
-        Time-Flexibility                  & 9                         & 9                          & 0                         \\
-        Multi-Source                      & 1                         & 1                          & 0                         \\
-        Vizualize Final Data              & 2                         & 2                          & 0                         \\
-        Proactive System                  & 2                         & 2                          & 0                         \\
-        Pre-Loading Data                  & 1                         & 1                          & 0                         \\
-        Monitoring of Study               & 1                         & 1                          & 0                         \\
-        Debrefing Info                    & 1                         & 1                          & 0                         \\ \hline
-        \end{tabular}
-        \caption[Requirements Uncatagorized 1/2]{Requirements Uncatagorized 1/2}\label{tab:requirementsRaw1}
-        \end{table}
-
+The requirements derived from this are included in Table A. As already mentioned, not only requirements of performed experiments were included, but also requirements of setups that would have been suitable for an experiment. The column "Proper" indicates whether a requirement was actually mentioned directly in the article and the column "Extra" whether this requirement would have had to be used theorethically for an experimental setup in this study.
 
     \begin{table}[htbp]
         \centering
-        \begin{tabular}{llccc}
+        \begin{tabular}{lcclccc}
         \hline
-        Requirement             & \multicolumn{1}{l}{Total} & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} \\ \hline
-        Participant Data                    & 47                        & 24                         & 23                        \\
-        Displaying Information              & 45                        & 22                         & 23                        \\
-        Different Groups                    & 16                        & 14                         & 2                         \\
-        Additional Logic                    & 12                        & 12                         & 0                         \\
-        Evaluation of Data                  & 49                        & 27                         & 22                        \\
-        Participant Input                   & 46                        & 21                         & 25                        \\
-        Real-Time Exchange                  & 3                         & 3                          & 0                         \\
-        Distant Communication               & 18                        & 18                         & 0                         \\
-        Selecting Data                      & 2                         & 2                          & 0                         \\
-        Simplicity                          & 1                         & 1                          & 0                         \\ \hline
+        Requirement          & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} & Requirement & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} \\ \hline
+        Reusable                                                  & 11                         & 0                         & Participant Data                                           & 24                         & 23                        \\
+        Interoperability                                           & 1                          & 0                         & Displaying Information                                     & 22                         & 23                        \\
+        Meta Data Collecting                                       & 8                          & 0                         & Different Groups                                           & 14                         & 2                         \\
+        Post-Interview                                             & 2                          & 0                         & Additional Logic                                           & 12                         & 0                         \\
+        Time-Flexibility                                           & 9                          & 0                         & Evaluation of Data                                         & 27                         & 22                        \\
+        Multi-Source                                               & 1                          & 0                         & Participant Input                                          & 21                         & 25                        \\
+        Vizualize Final Data                                       & 2                          & 0                         & Real-Time Exchange                                         & 3                          & 0                         \\
+        Proactive System                                           & 2                          & 0                         & Distant Communication                                      & 18                         & 0                         \\
+        Pre-Loading Data                                           & 1                          & 0                         & Selecting Data                                              & 2                          & 0                         \\
+        Monitoring of Study                                        & 1                          & 0                         & Simplicity                                                  & 1                          & 0                         \\
+        Debrefing Info                                             & 1                          & 0                         & & & & \\\hline
         \end{tabular}
-        \caption[Requirements Uncatagorized 2/2]{Requirements Uncatagorized 2/2}\label{tab:requirementsRaw2}
+        \caption[Requirements Uncatagorized]{Requirements Uncatagorized}\label{tab:requirementsRaw1}
         \end{table}
 
 
-        \begin{table}[htbp]
-            \centering
-            \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
-            \hline
-            Requirement                     & Description \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            F1. Information                 &             \\ \hline
-            F1.1 Displaying Information     & Information must be able to be displayed.            \\
-            F1.2 Debrefing Info             & Debrifing Information must be able to be displayed.           \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            F2. Data Collecting             &             \\ \hline
-            F2.1 Participant Data           & Basic data about the participants must be able to be collected.           \\
-            F2.2 Meta-Data                  & Meta data must be collected.            \\
-            F2.3 Post-Interview             & It must be possible to collect data after the experiment.            \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            F3. Pre-Loading                 &             \\ \hline
-            F3.1 Pre-Loading Data           & Data must be able to be pre-loaded.            \\
-            F3.2 Selecting Data             & Data must be able to be pre-selected            \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            F2. Experiment Setup            &             \\ \hline
-            F2.1 Additional Logic           & Custom logic/program code can be executed within the artifact.            \\
-            F2.2 Participant Input          & The artefact enables user input.            \\
-            F2.3 Proactive System           & The artifact can pro-actively propmt a user action           \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            F4. Groups                      &             \\ \hline
-            F4.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
-            F4.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ \hline
-            \end{tabular}
-            \caption[Functional Requirements Structured]{Functional Requirements Structured}\label{tab:FuncRequirementsCat}
-            \end{table}
+  %  \begin{table}[htbp]
+  %      \centering
+  %      \begin{tabular}{lcccc}
+  %      \hline
+  %      Requirement             & \multicolumn{1}{l}{Total} & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} \\ \hline
+  %      Participant Data                    & 47                        & 24                         & 23                        \\
+  %      Displaying Information              & 45                        & 22                         & 23                        \\
+  %      Different Groups                    & 16                        & 14                         & 2                         \\
+  %      Additional Logic                    & 12                        & 12                         & 0                         \\
+  %      Evaluation of Data                  & 49                        & 27                         & 22                        \\
+  %      Participant Input                   & 46                        & 21                         & 25                        \\
+  %      Real-Time Exchange                  & 3                         & 3                          & 0                         \\
+  %      Distant Communication               & 18                        & 18                         & 0                         \\
+  %      Selecting Data                      & 2                         & 2                          & 0                         \\
+  %      Simplicity                          & 1                         & 1                          & 0                         \\ \hline
+  %      \end{tabular}
+  %      \caption[Requirements Uncatagorized 2/2]{Requirements Uncatagorized 2/2}\label{tab:requirementsRaw2}
+  %      \end{table}
 
 
-        \begin{table}[htbp]
-            \centering
-            \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
-            \hline
-    Requirement                             & Description \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N1. Time-space non-reliance     &             \\ \hline
-            N1.1 Distand Communication      & The artifact can be used regardless of the location of the participant.            \\
-            N1.2 Time-Flexibility           & The artifact can be used independently of a given period of time.            \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N3. Data Postprocessing &             \\ \hline
-            N3.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation            \\
-            N3.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization             \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N4. Simplicity                  &            \\ \hline
-            N4.1 Simplicity                 & The artefact is simple to use.           \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N5. Reusable and Interoperable  &             \\ \hline
-            N5.1 Reusable                   & The artefact is reusable            \\
-            N5.2 Interoperability           & The artefact is interoperable            \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N6. Monitoring                  &             \\ \hline
-            N6.1 Monitoring of Study        & The study conducted with the artefact can be monitored            \\ \hline
-            \rowcolor[HTML]{C0C0C0} 
-            N7. Pre-Loading                 &             \\ \hline
-            N7.1 Multi-Source             & Data from multiple-sources must be pre-loaded            \\ \hline
-            \end{tabular}
-            \caption[Non-Functional Requirements Structured]{Non-Functional Requirements Structured}\label{tab:NonFuncRequirementsCat}
-            \end{table}
+       
+
+\subsection{Requirements Specification}\label{subsec:reqSpec}
 
 
-\subsection{Requirements Specification}
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
+    \hline
+    Requirement                     & Description \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    F1. Information                 &             \\ \hline
+    F1.1 Displaying Information     & Information must be able to be displayed.            \\
+    F1.2 Debrefing Info             & Debrifing Information must be able to be displayed.           \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    F2. Data Collecting             &             \\ \hline
+    F2.1 Participant Data           & Basic data about the participants must be able to be collected.           \\
+    F2.2 Meta-Data                  & Meta data must be collected.            \\
+    F2.3 Post-Interview             & It must be possible to collect data after the experiment.            \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    F3. Pre-Loading                 &             \\ \hline
+    F3.1 Pre-Loading Data           & Data must be able to be pre-loaded.            \\
+    F3.2 Selecting Data             & Data must be able to be pre-selected            \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    F2. Experiment Setup            &             \\ \hline
+    F2.1 Additional Logic           & Custom logic/program code can be executed within the artifact.            \\
+    F2.2 Participant Input          & The artefact enables user input.            \\
+    F2.3 Proactive System           & The artifact can pro-actively propmt a user action           \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    F4. Groups                      &             \\ \hline
+    F4.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
+    F4.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ \hline
+    \end{tabular}
+    \caption[Functional Requirements Structured]{Functional Requirements Structured}\label{tab:FuncRequirementsCat}
+    \end{table}
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
+    \hline
+Requirement                             & Description \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N1. Time-space non-reliance     &             \\ \hline
+    N1.1 Distand Communication      & The artifact can be used regardless of the location of the participant.            \\
+    N1.2 Time-Flexibility           & The artifact can be used independently of a given period of time.            \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N3. Data Postprocessing &             \\ \hline
+    N3.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation            \\
+    N3.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization             \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N4. Simplicity                  &            \\ \hline
+    N4.1 Simplicity                 & The artefact is simple to use.           \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N5. Reusable and Interoperable  &             \\ \hline
+    N5.1 Reusable                   & The artefact is reusable            \\
+    N5.2 Interoperability           & The artefact is interoperable            \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N6. Monitoring                  &             \\ \hline
+    N6.1 Monitoring of Study        & The study conducted with the artefact can be monitored            \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    N7. Pre-Loading                 &             \\ \hline
+    N7.1 Multi-Source             & Data from multiple-sources must be pre-loaded            \\ \hline
+    \end{tabular}
+    \caption[Non-Functional Requirements Structured]{Non-Functional Requirements Structured}\label{tab:NonFuncRequirementsCat}
+    \end{table}
+
 
 \subsection{Requirements Validation}
 
