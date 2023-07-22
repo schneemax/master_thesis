@@ -6,7 +6,7 @@ As described earlier, goals for solving the problem are described by requirement
 
 This phase gathers information in order to discorver possible requirements for the final artefact. These requirements are discovered by analyzing applications and frameworks that were created to support experimental research in related fields and through a literature review of studies that have utilized experiments in the field of behavioral research in data analyitics.
 
-\subsubsection{Existing Resources for Online Experiments}
+\subsubsection{Existing Resources for Online Experiments}\label{subsec:application_requirements}
 
 In this section, just three different resources for conducting online experiments are presented and then analyzed. A small example experiment was implemented with each of the applications in order to find out the advantages and disadvantages of the respective resource. The goal of this section is to draw conclusions and define requirements from the applications that allow to design an artifact for the field of data analytics. The applications analyzed are resources recommended for experiments by the Columbia Experimental Laboratory for Social Sciences. The selection of resources analyzed in the course of this thesis is limited to applications that allow the implementation of interactive experiments. Resources or applications that are only suitable for conducting surveys or passive experiments were neglected.
 
@@ -24,7 +24,8 @@ In summary, the analysis of the three applications showed important insights int
 
 \subsubsection{Studies in Data Analytics - A Literature Review }\label{subsec:literature_review_requirements}
 
-In order to establish further requirements a second literature search is conducted, which focusses on articles and studies in the field of behavioral research in data analytics. The goal of this second literature review is to understand commonalities and challenges of studies and especially experiments conducted in the area of data analytics, in order to establish requirements for the creation of the artifact. The collected literature was subjected to categorization and analysis. Due to the assumption that data analytics lies both in the fields of information systems and business administration the same databases where used as for the literature review in section \ref{sec:identification_of_the_problem}. Table \ref{literature_search_db} gives an overview of the databases used. By using the same databases as in section \ref{sec:identification_of_the_problem}, it is also ensured that the requirements are elicited based on the same general selection of literature as the original problem was identified with. The approach to the literature search, established in section \ref{sec:identification_of_the_problem}, was also used for this literature review, ensuring a thorough examination of relevant research while avoiding unnecessary altering the process of finding literature. Therefore, to maintain the integrity of the identified literature and to avoid repetition, a process was followed as described in the previous literature review (section \ref{sec:identification_of_the_problem}). Specifically, publications from journals were selectively considered, including those listed in the \textit{Senior Scholars' Basket of Journals} for Information Systems and the \textit{UT Dallas Top 100 Business School Research Rankings} for Business Administration. The full list of these journals can be found in appendix \ref{appendix:subsec:seniorScholar} and \ref{appendix:subsec:UTDallas}. As for the previous literature review, in order to ensure the quality of the publications, only peer-reviewed articles were considered, while book reviews, editorials, and opinion pieces were excluded. In addition, "non-scientific" texts or publications that did not meet scientific criteria were excluded from the search. The research was further refined by carefully reviewing article abstracts, which ensured that the selected literature remained relevant to the topic of experimental research in data analytics. The abstracts were reviewed not only for the use of experiments in the study, but also for research designs that could have allowed hypothesis testing by experiment. This was done to counteract the effect of selection bias. Selection bias generally describes the effects of making assumption based on a sample size, which does not represent the full population (\cite{Heckman.2010}). A simple example of Selection Bias would be to calculate the average Disposable Income of families based on the annual tax bill. This experimental design would reduce the total population to taxpaying families and thus lead to potentially grossly inaccurate results, since families living below the taxable threshold would not be included in the study. For the same principle, studies in which no experiment was performed are included in the literature review. The goal of this thesis is to improve the process of experimental research in the field of data analytics in general. Considering only studies that already perform experiments would not be representative of the full field and would therefore be prone to selection bias. It could be, for example, that certain circumstances, possibly the lack of an appropriate application, make it difficult to perform experiments. This fact would be completely lost if only studies that already perform experiments were considered. An adequate example of an article that falls into this category is Sebastian Krakowski, Johannes Luger and Sebastian Raisch's 2022 article \enquote{Artificial intelligence and the changing sources of competitive advantage}, in which they research how atrificial intelligence change the compatitive advantage by being substitues to humans in managerial tasks and decision making. For this purpose, they are examining data from chess tournaments that have already been held. However, the same research question could have been answered by conducting experiments with chess players instead of using historical data from tournaments. Remarkably, the authors come to the same conclusion that further research in this area should be conducted through experiments (\cite{Krakowski.2022}). Furthermore, it should be noted that the focus of this literature review was not to outline the current state of research, but to identify as many appropriate articles as possible. For this reason, fewer search terms were used and articles from different subareas were generally admitted, as long as they are located in the larger context of data analytics or decision making. For this reason, a backwards and forwards search was also omitted.
+In order to establish further requirements a second literature search is conducted, which focusses on articles and studies in the field of behavioral research in data analytics. The goal of this second literature review is to understand commonalities and challenges of studies and especially experiments conducted in the area of data analytics, in order to establish requirements for the creation of the artifact. %The collected literature was subjected to categorization and analysis. 
+Due to the assumption that data analytics lies both in the fields of information systems and business administration the same databases where used as for the literature review in section \ref{sec:identification_of_the_problem}. Table \ref{literature_search_db} gives an overview of the databases used. By using the same databases as in section \ref{sec:identification_of_the_problem}, it is also ensured that the requirements are elicited based on the same general selection of literature as the original problem was identified with. The approach to the literature search, established in section \ref{sec:identification_of_the_problem}, was also used for this literature review, ensuring a thorough examination of relevant research while avoiding unnecessary altering the process of finding literature. Therefore, to maintain the integrity of the identified literature and to avoid repetition, a process was followed as described in the previous literature review (section \ref{sec:identification_of_the_problem}). Specifically, publications from journals were selectively considered, including those listed in the \textit{Senior Scholars' Basket of Journals} for Information Systems and the \textit{UT Dallas Top 100 Business School Research Rankings} for Business Administration. The full list of these journals can be found in appendix \ref{appendix:subsec:seniorScholar} and \ref{appendix:subsec:UTDallas}. As for the previous literature review, in order to ensure the quality of the publications, only peer-reviewed articles were considered, while book reviews, editorials, and opinion pieces were excluded. In addition, "non-scientific" texts or publications that did not meet scientific criteria were excluded from the search. The research was further refined by carefully reviewing article abstracts, which ensured that the selected literature remained relevant to the topic of experimental research in data analytics. The abstracts were reviewed not only for the use of experiments in the study, but also for research designs that could have allowed hypothesis testing by experiment. This was done to counteract the effect of selection bias. Selection bias generally describes the effects of making assumption based on a sample size, which does not represent the full population (\cite{Heckman.2010}). A simple example of Selection Bias would be to calculate the average Disposable Income of families based on the annual tax bill. This experimental design would reduce the total population to taxpaying families and thus lead to potentially grossly inaccurate results, since families living below the taxable threshold would not be included in the study. For the same principle, studies in which no experiment was performed are included in the literature review. The goal of this thesis is to improve the process of experimental research in the field of data analytics in general. Considering only studies that already perform experiments would not be representative of the full field and would therefore be prone to selection bias. It could be, for example, that certain circumstances, possibly the lack of an appropriate application, make it difficult to perform experiments. This fact would be completely lost if only studies that already perform experiments were considered. An adequate example of an article that falls into this category is Sebastian Krakowski, Johannes Luger and Sebastian Raisch's 2022 article \enquote{Artificial intelligence and the changing sources of competitive advantage}, in which they research how atrificial intelligence change the compatitive advantage by being substitues to humans in managerial tasks and decision making. For this purpose, they are examining data from chess tournaments that have already been held. However, the same research question could have been answered by conducting experiments with chess players instead of using historical data from tournaments. Remarkably, the authors seem to come to a similair conclusion, stayting further research in this area should be conducted through experiments (\cite{Krakowski.2022}). Furthermore, it should be noted that the focus of this literature review was not to outline the current state of research, but to identify as many appropriate articles as possible. For this reason, fewer search terms were used and articles from different subareas were generally admitted, as long as they are located in the larger context of data analytics or decision making. For this reason, a backwards and forwards search was also omitted.
 The search terms used for this literature review are \enquote{Data Analytics}, \enquote{Decision Making} and \enquote{Big Data}. With these terms, the search process should be kept as broad as possible. As already mentioned, these terms were used to search the databases from appendix \ref{appendix:subsec:seniorScholar} and \ref{appendix:subsec:UTDallas} for matching articles. The search was furhter limited to articles written in the english language. The abstracts of all articles were then analyzed. The number of found articles for each database are displayed in Table \ref{tab:articlesFoundRequirement}. This table indicates how many articles per corresponding term are contained in the respective database, which were published in one of the relevant journals. In this way, the abstract of a total of 19,955 articles were considered. The other databases listed in the appendix (among others, AIS Electronic Library, ACM Digital Library, IEEE Xplore / Electronic Library, ProQuest) did not contain articles in the corresponding journals that could be found by using the search terms and are therefore not included in the table.
 
 %The literature found in the search was then again used for a backward and forward search. The backward search was conducted using Google Scholar. In addition to this, articles from other journals were, in a second step, reviewed and included as well if they met the scientific requirements, were officially published and relevant to the topic. This process initially yielded 56 research publications. The results were then classified according to the research method they utilize and whether a qualitative or quantitative approach was used. The results of this classification are presented in table \ref{tab:secondLiteratureSearch}.
@@ -82,6 +83,7 @@ This process initially yielded 46 research publications, which were supplemented
 
 \begin{table}[htbp]
     \centering
+    \small
     \begin{tabular}{ll}
     \hline
     \multicolumn{1}{l}{Research Method} & \multicolumn{1}{l}{Total} \\ \hline
@@ -98,10 +100,11 @@ This process initially yielded 46 research publications, which were supplemented
     \caption[Research Methods of second Literature review]{Research Methods of second Literature review}\label{tab:secondLiteratureSearch}
     \end{table}
 
-The requirements derived from this are included in Table A. As already mentioned, not only requirements of performed experiments were included, but also requirements of setups that would have been suitable for an experiment. The column "Proper" indicates whether a requirement was actually mentioned directly in the article and the column "Extra" whether this requirement would have had to be used theorethically if the study had conducted an experiment.
+The requirements derived from this are included in Table A. As already mentioned, not only requirements of performed experiments were included, but also requirements of setups that would have been suitable for an experiment. The column "Proper" indicates whether a requirement was actually mentioned directly in the article and the column "Extra" whether this requirement would have had to be used theorethically if the study had conducted an experiment. As already explained, this should ensure that not only requirements that fit to already performed experiments are discovered, in order to counteracted selection bias.
 
     \begin{table}[htbp]
         \centering
+        \small
         \begin{tabular}{lcclccc}
         \hline
         Requirement          & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} & Requirement & \multicolumn{1}{l}{Proper} & \multicolumn{1}{l}{Extra} \\ \hline
@@ -141,38 +144,54 @@ The requirements derived from this are included in Table A. As already mentioned
   %      \end{table}
 
 
-       
+  \subsubsection{Further relevant reference resources}\label{subsec:furtherRequirements}
+
+  In addition to already developed applications and the relevant articles themselves, this section includes other sources that can be derived into requirements. These sources and requirements mainly refer to external influencing factors or specifications. Only requirements that have not yet been established by the previous methods are included.  
+  In their book on Empirical Educational Research, H. Reinders,H. Ditton and C. Gräsel describe, among other things, the structure and empirical theory in relation to experiments. An important part of conducting experiments, according to the authors, is to educate the subjects about the experiment and its benefits. Rather than explaining the design of the experiment, this involves explaining the actual benefits and goal of the experiment to the participants after it has been conducted (\cite{Gniewosz.2011}). As already mentioned in the theoretical part about the theory behind the execution of experiments, confounding variables have to be eliminated for the effective execution of experiments. Although some of these measures must be implemented on a case-by-case basis by the individual experimental setup itself, the artifact is intended to assist in this process when possible. Especially the measures \enquote{Parallelization of confounding variables of the test subjects}, \enquote{Randomization of confounding variables of the subjects} and \enquote{Control group} represent measures which can be supported by an artifact. For this reason, the requirements \enquote{Random or targeted assignment of test subjects} are included in the list of requirements. The creation of control groups via different participant groups is already included as a requirement from several sources.
+
 
 \subsection{Requirements Specification}\label{subsec:reqSpec}
 
+After the requirements have been discovered and roughly outlined in the previous section, they are concretely specified, organized and classified in this section. For this purpose, the requirements were specified concretely with explanation and categorized based on their task. At the same time, the requirements were classified into functional and non-functional requirements. Table \ref{tab:FuncRequirementsCat} contains the functional and Table \ref{tab:NonFuncRequirementsCat} the non-functional requirements. The requirements are composed of the requirements discovered in sections \ref{subsec:application_requirements}, \ref{subsec:literature_review_requirements} and \ref{subsec:furtherRequirements} and are included together in the tables. Requirements derived from multiple sources and methods are also just listed once in the table. 
 
 \begin{table}[htbp]
     \centering
+    \small
     \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
     \hline
     Requirement                     & Description \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    F1. Information                 &             \\ \hline
+    Information                 &             \\ \hline
     F1.1 Displaying Information     & Information must be able to be displayed.            \\
-    F1.2 Debrefing Info             & Debrifing Information must be able to be displayed.           \\ \hline
+     & \\
+    F1.2 Debrefing Info             & Debrifing Information must be able to be displayed.           \\
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    F2. Data Collecting             &             \\ \hline
+    Data Collecting             &             \\ \hline
     F2.1 Participant Data           & Basic data about the participants must be able to be collected.           \\
     F2.2 Meta-Data                  & Meta data must be collected.            \\
-    F2.3 Post-Interview             & It must be possible to collect data after the experiment.            \\ \hline
+    & \\
+    F2.3 Post-Interview             & It must be possible to collect data after the experiment.            \\
+    & \\  \hline
     \rowcolor[HTML]{C0C0C0} 
-    F3. Pre-Loading                 &             \\ \hline
+    Pre-Loading                 &             \\ \hline
     F3.1 Pre-Loading Data           & Data must be able to be pre-loaded.            \\
-    F3.2 Selecting Data             & Data must be able to be pre-selected            \\ \hline
+    & \\
+    F3.2 Selecting Data             & Data must be able to be pre-selected            \\
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    F2. Experiment Setup            &             \\ \hline
+    Experiment Setup            &             \\ \hline
     F2.1 Additional Logic           & Custom logic/program code can be executed within the artifact.            \\
     F2.2 Participant Input          & The artefact enables user input.            \\
-    F2.3 Proactive System           & The artifact can pro-actively propmt a user action           \\ \hline
+    & \\
+    F2.3 Proactive System           & The artifact can pro-actively propmt a user action           \\
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    F4. Groups                      &             \\ \hline
+    Groups                      &             \\ \hline
     F4.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
-    F4.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ \hline
+    F4.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ 
+    F4.3 Targeted Assignment        & Groups of test subjects must be able to be created based on certain attributes like confounding variables \\
+    F4.4 Random Assignment          & Groups of test subjects must be able to be created based on random assignment \\ \hline
     \end{tabular}
     \caption[Functional Requirements Structured]{Functional Requirements Structured}\label{tab:FuncRequirementsCat}
     \end{table}
@@ -180,30 +199,41 @@ The requirements derived from this are included in Table A. As already mentioned
 
 \begin{table}[htbp]
     \centering
+    \small
     \begin{tabular}{L{0.35\textwidth}L{0.59\textwidth}}
     \hline
 Requirement                             & Description \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N1. Time-space non-reliance     &             \\ \hline
+    Time-space non-reliance     &             \\ \hline
     N1.1 Distand Communication      & The artifact can be used regardless of the location of the participant.            \\
     N1.2 Time-Flexibility           & The artifact can be used independently of a given period of time.            \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N3. Data Postprocessing &             \\ \hline
-    N3.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation            \\
-    N3.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization             \\ \hline
+    Data Postprocessing &             \\ \hline
+    N3.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation.            \\
+    N3.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization.             \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N4. Simplicity                  &            \\ \hline
-    N4.1 Simplicity                 & The artefact is simple to use.           \\ \hline
+    Simplicity                  &            \\ \hline
+    N4.1 Simplicity                 & The artefact is simple to use.           \\
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N5. Reusable and Interoperable  &             \\ \hline
-    N5.1 Reusable                   & The artefact is reusable            \\
-    N5.2 Interoperability           & The artefact is interoperable            \\ \hline
+    Reusable and Interoperable  &             \\ \hline
+    N5.1 Reusable                   & Experiments with the artefact are easy to re-do.           \\
+    & \\
+    N5.2 Interoperability           & The artefact is interoperable.            \\
+    & \\
+    N5.3 Openness of Platform       & The artefact is open to changes and enhancements. \\
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N6. Monitoring                  &             \\ \hline
-    N6.1 Monitoring of Study        & The study conducted with the artefact can be monitored            \\ \hline
+    Monitoring                  &             \\ \hline
+    N6.1 Monitoring of Study        & The study conducted with the artefact can be monitored.            \\ 
+    & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
-    N7. Pre-Loading                 &             \\ \hline
-    N7.1 Multi-Source             & Data from multiple-sources must be pre-loaded            \\ \hline
+    Pre-Loading                 &             \\ \hline
+    N7.1 Multi-Source             & Data from multiple-sources must be pre-loaded.            \\ 
+    & \\ \hline
+    \rowcolor[HTML]{C0C0C0} 
+    Advanced User Interface   &             \\ \hline
+    N8.1 Advanced User Interface  & The Artefact enables the usage of modern user interface components.            \\ \hline
     \end{tabular}
     \caption[Non-Functional Requirements Structured]{Non-Functional Requirements Structured}\label{tab:NonFuncRequirementsCat}
     \end{table}
@@ -211,9 +241,10 @@ Requirement                             & Description \\ \hline
 
 \subsection{Requirements Validation}
 
+Validity, Consistency, Completeness, Realism, and Verifiability
 
-Personen müssen aufgeklärt werden über das Experiment \cite{Dresch.2011}
 
+Some of the requirements derived in subsection A are also conform with requirements from subsection B, indicating that the requirement search covers the problem to be solved very well.
 
 
 
