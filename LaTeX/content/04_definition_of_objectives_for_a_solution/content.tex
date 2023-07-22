@@ -177,7 +177,7 @@ After the requirements have been discovered and roughly outlined in the previous
     Pre-Loading                 &             \\ \hline
     F3.1 Pre-Loading Data           & Data must be able to be pre-loaded.            \\
     & \\
-    F3.2 Selecting Data             & Data must be able to be pre-selected            \\
+    F3.2 Selecting Data             & Data must be able to be pre-selected and deleted.           \\
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Experiment Setup            &             \\ \hline
@@ -237,15 +237,46 @@ Requirement                             & Description \\ \hline
     \end{tabular}
     \caption[Non-Functional Requirements Structured]{Non-Functional Requirements Structured}\label{tab:NonFuncRequirementsCat}
     \end{table}
-
+\newpage
 
 \subsection{Requirements Validation}
 
-Validity, Consistency, Completeness, Realism, and Verifiability
+In this section, the previously established requirements are validated. The criteria Validity, Consistency, Completeness, Realism, and Verifiability from the requirement engineering approach are used for this purpose. The validity criterion indicates whether the requirements imposed actually correspond to the intended functions. Since the requirements were drawn up by taking into account applications that have already been developed and studies that have already been carried out, it can be assumed that the requirements correspond more precisely to the functions that are actually required than if they had been drawn up by any stakeholders. In addition, the requirements were established using a clearly defined scientific process and by adding literature from the field which should also increase validity. Some of the requirements derived in subsection \ref{subsec:application_requirements} are also conform with requirements from subsection \ref{subsec:literature_review_requirements} and \ref{subsec:furtherRequirements}, indicating that the requirement search covers the problem to be solved very well. For these reasons, it is assumed with a high probability that the validity of the requirements is guaranteed. Moreover, the established requirements in Table A and B do not contradict each other, which means that the consistency criterion is also met. The "\enquote{ompleteness} criterion, which describes whether the overall scope of the functions is covered by the requirements, is difficult to confirm. The reason for this is the open nature of the artifact, which should enable the improved execution of arbitrary experiments. Thus, the functional scope of the artifact is theoretically endless. Nevertheless, this criterion can be confirmed considering requirement F2.1. Requirement F2.1 ensures that additional logic and program code can be implemented within the artefact, which means that theoretically an infinite number of further functions can be implemented by the person performing the experiment (as far as these requirements can be implemented by a Turing-Complete programming language). As a result, the \enquote{Completness} criterion is also considered to be fulfilled. The criterion \enquote{realism} can also be confirmed. No requirement indicates that it could not be implemented technically. However, this point will be discussed in more detail in the implementation of the artifact. At this point in time, this point is considered to be fulfilled. The last criterion to confirm the validity of the requirements is the "Verifiability", which describes whether the individual requirements are formulated in a way that they can be tested. An important point, since the artefact must be tested for all requirements following the \ac{dsr} approach. In order to be able to formally confirm the criterion, a test-case is therefore designed which checks the artifact against the requirements. This approach is also supported by the scientific literature for the validation of requirements and is later used in the \ac{dsr} approach to confirm the requirements (\cite{Sommerville.2011}).
 
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{L{0.04\textwidth}L{0.7\textwidth}L{0.15\textwidth}}
+    \hline
+    ID  & Test Description                                                                                                                                     & Requirement                  \\ \hline
+    T1  & A welcome and goodbye message is displayed                                                                                               & F1.1, F1.2                 \\
+    & \\
+    T2  & Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end              & F2.1, F2.3, F2.2, F2.3 \\
+    & \\
+    T3  & The information about how long the experiment took is collected                                                                          & F2.2                         \\
+    & \\
+    T4  & The sex and the weight of the participant is pre-loaded into the experiment from different files. The sex of the participant is deleted. & F3.2                         \\
+    & \\
+    T5  & A chess game is added as custom logic                                                                                                    & F2.1, F2.2, F2.3         \\
+    & \\
+    T6  & Two groups are created, one of the groups is particularly chosen the other one random selected                                           & F4.1, F4.3, F4.4         \\
+    & \\
+    T7  & A chess turn is played by both parties not using the same device                                                                         & F4.2, N1.1, N1.2         \\
+    & \\
+    T8  & The results of the experiment are retrieved and displayed in third party software                                                        & N3.1, N.3.2                \\
+    & \\
+    T9  & The experiment is redone a second time and another experimental setup is implemented                                                     & N5.1                         \\
+    & \\
+    T10 & The experiment is conducted on different devices                                                                                         & N5.2                         \\
+    & \\
+    T11 & During the experiment the current state of the chess board is exported to the conducter of the experiment                                & N6.1                         \\ 
+    & \\ \hline
+    \end{tabular}
+    \end{table}
 
-Some of the requirements derived in subsection A are also conform with requirements from subsection B, indicating that the requirement search covers the problem to be solved very well.
+    noch schreiben das die Anforerungen Simplicity, openess of platform advanced user interface als nichtfunktionale Anforerungen durch die Eigenschaften des Systems bestätigt werden können und schwierig durch tests zu bestätigen sind.
 
+By successfully setting up these tests, the "Verifiability" criterion can thus also be confirmed. Thus, the established artifacts meet the criteria Validity, Consistency, Completeness, Realism, and Verifiability and thus valid requirements for the artifact.
 
 
 %The findings from the analysis of other applications and measures that could have optimized the research process in the field of data analytics are fundamentally important for the creation of the artifact of this thesis. Therefore, after showing that there is a gap in the literature in the area of data analytics and especially the carrying out of experiments, in this part several already existing applications are presented which could have been used for carrying out experiments. The identified problem and the found literature gap are only further emphasized, since the question arises, if there have already been applications that are supposed to support the execution of experiments, why have they not been used in the field of data analytics. None of the literature analyzed above used any of the following applications. The following applications were taken from a list of for Resources for Online Experiments at Columbia University (\cite{Columbia.2023}).
