@@ -1,38 +1,14 @@
 \newpage\section{Design and Development of the Artefacts}
 
-The artifact, which is intended to improve experimental research in behavioral data analytics, is to be implemented as a software component or application. In this step, a suitable architecture is developed based on the established requirements. For this purpose, the basic technical framework and system architecture are presented first. Subsequently, the artifact is concretely conceptualized by elaborating different process steps of the application. Then, customizing and output capabilities of the final application are conceptualized and finally the user interface and specific components of the application.
+The artifact, which is intended to improve experimental research in behavioral data analytics, is to be implemented as a software component or application. In this step, a suitable architecture is developed based on the established requirements. For this purpose, the application is first fundamentally conceptualized. This involves analyzing possible technologies and the corresponding processes. The architecture is then implemented in practice on the basis of this basic concept.
 
-\subsection{Technological Framework and System Architecture}
+\subsection{Process Conceptualization}
 
-This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
+%This section focuses on the basic design of the application. For this purpose, the processes based on the requirements are presented first, which must be implemented by the application. Subsequently, technologies are presented which are used for their implementation.
 
-\subsubsection{Java}
+%\subsubsection{Process Mechanisms}
 
-Java is a programming language originally developed by Microsystems. Since 2009 Java is part of the product portfolio of Oracle Corporation. Java is an object-oriented programming language, which makes it an universally applicable and robust programming language (\cite{Ullenboom.2017}).
-
-Unlike many other programming languages, one of the special features of Java is its platform independence. Most programming languages use a compiler or interpreter to translate program code into byte code, which varies depending on the hardware and can only be executed on the appropriate processors. Java avoids this limitation by first having a compiler translate the Java program code into byte code, which is then executed in a virtual environment, the \ac{jvm}, with the help of an interpreter. In this way, Java code can theoretically be executed on any system (\cite{Ullenboom.2017}).
-
-Java is not only a programming language, but also a runtime system, which Oracle wants to make clear with the term Java Platform. Thus, in addition to the Java programming language, there are certainly other languages that run a Java runtime environment, such as various scripting languages like Groovy (http://groovy-lang.org), JRuby (http://jruby.org), Jython (http://www.jython.org), Kotlin (http://kotlinlang.org) or Scala (http://www.scala-lang.org). Scripting languages on the Java platform are becoming more popular; they establish a different syntax but use the \ac{jvm} and libraries (\cite{Ullenboom.2017}).
-
-Along with the programming language and \ac{jvm} comes a set of standard libraries for data structures, string processing, date/time processing, graphical interfaces, input/output, network operations, and more. This forms the basis for higher-level services such as database connections or web services. An integral part of the standard library since Java 1.0 are still threads. They are easy-to-create execution threads that can work independently of each other. In the meantime all popular operating systems support these \enquote{lightweight processes} by house, so that the \ac{jvm} does not have to reproduce these parallel program parts, but can refer to the operating system. On the new multi-core processors, the operating system ensures optimum utilization of the computing power, since threads can really work concurrently (\cite{Ullenboom.2017}).
-
-
-
-
-
-Java ist eine Insel (\cite{Ullenboom.2017}).
-Android App Programmieren Einstieg Android Studio \cite{Richter.2019}
-
-\subsubsection{AndroidOS and Android Studio}
-
-Android meist verbreitetses OS \cite{statcounter.2023}
-
-
-\subsection{Technological Conceptualization}
-
-\subsubsection{Process Mechanisms}
-
-In order to effectively implement the requirements for the application, the processes described by the requirements and validated by the test cases are represented in the following by swim lane diagrams. The goal of this is to illustrate the individual processes in a technology-independent manner. The reason for this is that the individual processes are initially presented in generalized form, irrespective of technological restrictions or limitations. The following Swim Lane diagrams represent the individual steps of the experiment. A large part of the final functionalities can be divided into two different categories. An example of this are the requirements (F2, F3 and N5.1), whereby the application should offer both the possibility to read in and save user data and to make the experiment setup reusable. These requirements can be summarized in functions and data concerning the experiment and functions and data concerning the participants. The two lanes \enquote{Participant file} and \enquote{Experiment file} are representative for those two categories and data sources. The \enquote{User} lane shows the activities performed by the test subjects, the \enquote{Experimental file} lane shows all activities that can be associated with the experimental set-up, and the \enquote{Patricipant} file lane shows all activities that are related to the data or distribution of the test subjects. 
+In order to effectively implement the requirements for the application, the processes described by the requirements and validated by the test cases are represented in the following by swim lane diagrams. The goal of this is to illustrate the individual processes in a technology-independent manner. The reason for this is that the individual processes are initially presented in generalized form, irrespective of technological restrictions or limitations. The following Swim Lane diagrams represent the individual steps of the experiment. Swim lane diagrams depict processes by showing business activities in relation to each other and how they are associated with each other (\cite{Caudle.2009}).A large part of the final functionalities can be divided into two different categories. An example of this are the requirements (F2, F3 and N5.1), whereby the application should offer both the possibility to read in and save user data and to make the experiment setup reusable. These requirements can be summarized in functions and data concerning the experiment and functions and data concerning the participants. The two lanes \enquote{Participant file} and \enquote{Experiment file} are representative for those two categories and data sources. The \enquote{User} lane shows the activities performed by the test subjects, the \enquote{Experimental file} lane shows all activities that can be associated with the experimental set-up, and the \enquote{Patricipant} file lane shows all activities that are related to the data or distribution of the test subjects. 
 
 \begin{figure}[htbp]
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ExperimentSwimLane.drawio.pdf}
@@ -84,7 +60,51 @@ Figure \ref{fig:infoScreenSwimLane} displays information to the Test Subjects an
 
 Customizing ist blöd (\cite{Chou.2008})
 
+
+\subsection{Technology Selection}
+
+In order to select appropriate technologies for the implementation of the application, the established requirements must be considered. It can be assumed that all functional requirements can be implemented by any modern programming language that is turing complete. The non-functional requirements N3.1 (Evaluation of Data), N3.2 (Vizualize Final Data), N7.1 (Multi-Source) are represented by the availability of various interfaces. Furthermore, the two non-functional requirements N1.2 (Time-Flexibility) and N6.1 (Monitoring of Study) are left out as these refer to the way the application is implemented and not its technological nature. This leaves requirements N1.1 (Distand Communication),  N4.1 (Simplicity), N5.1 (Reusable), N5.2 (Interoperability), N5.3 (Openness of Platform), N8.1 (Advanced User Interface) and the afformentioned availability of interfaces for selecting a suitable technology. In the following chapters, various technologies and tools are presented that are intended to meet these requirements.
+
+%interfaces
+%Distand Communication
+%Simplicity
+%Reusable
+%Interoperability
+%Openness of Platform
+%Advanced User Interface
+
+
+\subsubsection{Android and Android Studio}
+
+
+
+
+\subsubsection{Java}
+
+Java is a programming language originally developed by Microsystems. Since 2009 Java is part of the product portfolio of Oracle Corporation. Java is an object-oriented programming language, which makes it an universally applicable and robust programming language (\cite{Ullenboom.2017}). Unlike many other programming languages, one of the special features of Java is its platform independence. Most programming languages use a compiler or interpreter to translate program code into byte code, which varies depending on the hardware and can only be executed on the appropriate processors. Java avoids this limitation by first having a compiler translate the Java program code into byte code, which is then executed via an interpreter in a virtual environment which is called \ac{jvm}. In this way, Java code can theoretically be executed on any system (\cite{Ullenboom.2017}). This makes Java not only a programming language but also a runtime system, which is made clear by the naming of the Java Platform by Oracle. The Java Platform supports beside Java itself also the execution of some other programming languages as for example Kotlin (\cite{kotlinlang.2023}), which become more and more popular. Due to this fact, Java is especially suitable for the implementation of the application Based on the requirements N5.1 (Reusable) and N5.2 (Interoperability). Java also supports a variety of programming concepts through standard libraries. These include data structures, string processing, date/time processing, graphical interfaces, input/output, network operations, threads and more (\cite{Ullenboom.2017}), which ensures the N1.1 (Distand Communication) requirement and the availability of interfaces. The Java runtime environment also enables fast code execution and comes with various utilities such as a garbage collector and output name handlers. The syntax of Java is generally considered to be very easy to understand and beginner-friendly (\cite{Ullenboom.2017}), fulfilling the requirement N4.1 (Simplicity). In addition to technical aspects, Java is also Open-Source, extremely widespread, popular and in a variety of literature available (\cite{Ullenboom.2017}), which generally indicates the openness of platform of the Java Platform (Requirement N5.3 Openness of Platform). Disadvantages of Java, which are also mentioned for the sake of completeness, mainly relate to very specific platform-dependent use cases. Since Java was developed as a general-purpose programming language and platform-independent, it is very difficult to access hardware or drivers directly. However, these use cases are irrelevant in the course of this work (\cite{Ullenboom.2017}). 
+
+
+
+
+
+
+Java ist eine Insel (\cite{Ullenboom.2017}).
+Android App Programmieren Einstieg Android Studio \cite{Richter.2019}
+
+
+
+Android meist verbreitetses OS \cite{statcounter.2023}
+
+
+\subsection{System Architecture}
+
+Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language. For this reason, the artifact is implemented in the form of a mobile Android application.
+
+
 \subsubsection{Customizing and System Output}
+
+This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
+
 
 \subsubsection{Activitys}
 
