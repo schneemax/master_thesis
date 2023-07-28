@@ -58,9 +58,6 @@ Figure \ref{fig:questionairSwimLane} is used to complete the data of the partici
 
 Figure \ref{fig:infoScreenSwimLane} displays information to the Test Subjects and can be used both as a means of notification during an experiment and as a representation of information.
 
-Customizing ist blöd (\cite{Chou.2008})
-
-
 \subsection{Technology Selection}
 
 In order to select appropriate technologies for the implementation of the application, the established requirements must be considered. It can be assumed that all functional requirements can be implemented by any modern programming language that is turing complete. The non-functional requirements N3.1 (Evaluation of Data), N3.2 (Vizualize Final Data), N7.1 (Multi-Source) are represented by the availability of various interfaces. Furthermore, the two non-functional requirements N1.2 (Time-Flexibility) and N6.1 (Monitoring of Study) are left out as these refer to the way the application is implemented and not its technological nature. This leaves requirements N1.1 (Distand Communication),  N4.1 (Simplicity), N5.1 (Reusable), N5.2 (Interoperability), N5.3 (Openness of Platform), N8.1 (Advanced User Interface) and the afformentioned availability of interfaces for selecting a suitable technology. In the following chapters, various technologies and tools are presented that are intended to meet these requirements.
@@ -76,7 +73,7 @@ In order to select appropriate technologies for the implementation of the applic
 
 \subsubsection{Android and Android Studio}
 
-
+Android is an open source operating system for mobile devices which was first announced by Google in 2013. To date, Android has achieved a market share of over 90\% in the mobile sector and is the most used operating system over all, being used in almost every second device (\cite{statcounter.2023}, \cite{Richter.2019}). The standard development environment to develop Android is the \ac{ide} Android Studio, which supports a wide range of developer tools and functionalities. As an open source project and, due to its high distribution on various devices Android suits the openness of platform and interoperability requirement (\cite{Richter.2019}). Applications for the Android operating system are called apps. These apps are programs designed for touch inputs, which are specifically designed for mobile devices. However, as a widely used open source operating system, Android also supports other input options, advanced network capabilities and a variety of interfaces and extensions. Thus it can be assumed that the interface and distand communication requirements can be fulfilled through the usage of Android (\cite{Richter.2019}). The two programming languages that can be used to develop Android apps are Java and Kotlin. These apps then can be tested either directly on an Android device or on a variety of virtual devices integrated in Android Studio, which further facilitates the development of said applications (\cite{Richter.2019}). As a mobile operating system, one of Android's main focuses is the user interface as an input function, in addition to network functionalities and a variety of interfaces. Android therefore has a wide range of design guidelines, interface functionalities and is updated at very regular intervals (\cite{statista.2023}). Due to these regular updates, the widespread use of Android and the focus on \ac{ui} intensive use cases, it can be assumed that an app developed in Android supports the latest user interface technologies and therefore fulfills the advanced user interface.
 
 
 \subsubsection{Java}
@@ -84,26 +81,17 @@ In order to select appropriate technologies for the implementation of the applic
 Java is a programming language originally developed by Microsystems. Since 2009 Java is part of the product portfolio of Oracle Corporation. Java is an object-oriented programming language, which makes it an universally applicable and robust programming language (\cite{Ullenboom.2017}). Unlike many other programming languages, one of the special features of Java is its platform independence. Most programming languages use a compiler or interpreter to translate program code into byte code, which varies depending on the hardware and can only be executed on the appropriate processors. Java avoids this limitation by first having a compiler translate the Java program code into byte code, which is then executed via an interpreter in a virtual environment which is called \ac{jvm}. In this way, Java code can theoretically be executed on any system (\cite{Ullenboom.2017}). This makes Java not only a programming language but also a runtime system, which is made clear by the naming of the Java Platform by Oracle. The Java Platform supports beside Java itself also the execution of some other programming languages as for example Kotlin (\cite{kotlinlang.2023}), which become more and more popular. Due to this fact, Java is especially suitable for the implementation of the application Based on the requirements N5.1 (Reusable) and N5.2 (Interoperability). Java also supports a variety of programming concepts through standard libraries. These include data structures, string processing, date/time processing, graphical interfaces, input/output, network operations, threads and more (\cite{Ullenboom.2017}), which ensures the N1.1 (Distand Communication) requirement and the availability of interfaces. The Java runtime environment also enables fast code execution and comes with various utilities such as a garbage collector and output name handlers. The syntax of Java is generally considered to be very easy to understand and beginner-friendly (\cite{Ullenboom.2017}), fulfilling the requirement N4.1 (Simplicity). In addition to technical aspects, Java is also Open-Source, extremely widespread, popular and in a variety of literature available (\cite{Ullenboom.2017}), which generally indicates the openness of platform of the Java Platform (Requirement N5.3 Openness of Platform). Disadvantages of Java, which are also mentioned for the sake of completeness, mainly relate to very specific platform-dependent use cases. Since Java was developed as a general-purpose programming language and platform-independent, it is very difficult to access hardware or drivers directly. However, these use cases are irrelevant in the course of this work (\cite{Ullenboom.2017}). 
 
 
-
-
-
-
-Java ist eine Insel (\cite{Ullenboom.2017}).
-Android App Programmieren Einstieg Android Studio \cite{Richter.2019}
-
-
-
-Android meist verbreitetses OS \cite{statcounter.2023}
-
-
 \subsection{System Architecture}
 
-Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language. For this reason, the artifact is implemented in the form of a mobile Android application.
+Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language.In general, most of the requirements could already be met by both Android and Java alone, so the combination of the two provides a solid foundation for meeting the remaining requirements. For this reason, the artifact is implemented in the form of a mobile Android application.
+
+For the sake of completeness, it should be noted at this point that the conceptualized architecture and process flows could also be implemented with the help of other technologies. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any technology. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research.
 
 
-\subsubsection{Customizing and System Output}
+Android Developer Doku (\cite{Google.2023})
 
-This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
+Customizing ist blöd (\cite{Chou.2008})
+
 
 
 \subsubsection{Activitys}
@@ -113,5 +101,13 @@ This section is intended to provide an overview of the technological framework u
     \caption{Adroid Studio Activitys}    
     \label{fig:activitiesMockUp}
 \end{figure}
+
+
+\subsubsection{Customizing and System Output}
+
+This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
+
+
+
 
 %\subsection{Prototype Development}
