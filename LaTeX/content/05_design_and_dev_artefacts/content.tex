@@ -11,6 +11,7 @@ The artifact, which is intended to improve experimental research in behavioral d
 In order to effectively implement the requirements for the application, the processes described by the requirements and validated by the test cases are represented in the following by swim lane diagrams. The goal of this is to illustrate the individual processes in a technology-independent manner. The reason for this is that the individual processes are initially presented in generalized form, irrespective of technological restrictions or limitations. The following Swim Lane diagrams represent the individual steps of the experiment. Swim lane diagrams depict processes by showing business activities in relation to each other and how they are associated with each other (\cite{Caudle.2009}).A large part of the final functionalities can be divided into two different categories. An example of this are the requirements (F2, F3 and N5.1), whereby the application should offer both the possibility to read in and save user data and to make the experiment setup reusable. These requirements can be summarized in functions and data concerning the experiment and functions and data concerning the participants. The two lanes \enquote{Participant file} and \enquote{Experiment file} are representative for those two categories and data sources. The \enquote{User} lane shows the activities performed by the test subjects, the \enquote{Experimental file} lane shows all activities that can be associated with the experimental set-up, and the \enquote{Patricipant} file lane shows all activities that are related to the data or distribution of the test subjects. 
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ExperimentSwimLane.drawio.pdf}
     \caption{Experiment - Swim lane}    
     \label{fig:experimentSwimLane}
@@ -19,6 +20,7 @@ In order to effectively implement the requirements for the application, the proc
 Figure \ref{fig:experimentSwimLane} shows the basic structure of an experiment with the conceptualized application. The whole experiment is divided into different experiment steps, which are executed one after the other until the experiment is completed. The application is started first and then the first step of the experiment is executed. This could be for example an information message for the participants. After that the next step is executed if another step is available. If no further step is available, the experiment ends. This simple abstraction of an experiment concentrates on the essentials and thus allows the most flexible and adaptable construction kit for an experiment. The individual steps of the experiment, which are executed one after the other, can be customized by the person performing the experiment as well as mapped by standard steps. The standard steps represent steps which have to be used in a multitude of experiments and thus partially represent requirements. In the following, some of these experiment steps which illustrate standard steps that are included in the application are illustrated with the help of swim lane diagrams. Figure \ref{fig:DataInputSwimLane}, \ref{fig:groupAllocationSwimLane}, \ref{fig:questionairSwimLane} and \ref{fig:infoScreenSwimLane} represent these standard steps. The dashed box \enquote{Experimental Step} of figur \ref{fig:experimentSwimLane} can be replaced by any number of these. For this reason, the graphics mentioned also begin and end in the \enquote{Experimental file} lane.
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DataInputSwimLane.drawio.pdf}
     \caption{Data input step - Swim lane}    
     \label{fig:DataInputSwimLane}
@@ -27,6 +29,7 @@ Figure \ref{fig:experimentSwimLane} shows the basic structure of an experiment w
 Figure \ref{fig:DataInputSwimLane} represents the process step of reading data from one or more sources. The assumption is that this data must first be processed or standardized before it can be meaningfully assigned to the participants.
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ChooseTestSubjectSwimLane.drawio.pdf}
     \caption{Choose test subject step - Swim lane}    
     \label{fig:ChooseTestSubjectSwimLane}
@@ -35,6 +38,7 @@ Figure \ref{fig:DataInputSwimLane} represents the process step of reading data f
 Figure \ref{fig:ChooseTestSubjectSwimLane} enables the mapping between the test subject and their ID which will be used for the rest of the experiment.
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/GroupAllocationSwimLane.drawio.pdf}
     \caption{Group allocation step - Swim lane}    
     \label{fig:groupAllocationSwimLane}
@@ -43,6 +47,7 @@ Figure \ref{fig:ChooseTestSubjectSwimLane} enables the mapping between the test 
 Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning individual participants into groups. This can either be the case that participants are divided according to a predefined group, arbitrarily or according to certain criteria.
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/QuestionairSwimLane.drawio.pdf}
     \caption{Questionair step - Swim lane}    
     \label{fig:questionairSwimLane}
@@ -51,6 +56,7 @@ Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning ind
 Figure \ref{fig:questionairSwimLane} is used to complete the data of the participants. For this purpose, test subject questions are asked based on missing data which are to be answered by the participant. An example would be a test subject for which the age is missing. An input field is automatically displayed for the participant to fill in the missing data. If all data for a test subject is available, nothing is displayed.
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/InfoScreenSwimLane.drawio.pdf}
     \caption{Info screen step - Swim lane}    
     \label{fig:infoScreenSwimLane}
@@ -85,27 +91,41 @@ Java is a programming language originally developed by Microsystems. Since 2009 
 
 Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language.In general, most of the requirements could already be met by both Android and Java alone, so the combination of the two provides a solid foundation for meeting the remaining requirements. For this reason, the artifact is implemented in the form of a mobile Android application.
 
-For the sake of completeness, it should be noted at this point that the conceptualized architecture and process flows could also be implemented with the help of other technologies. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any technology. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research.
+For the sake of completeness, it should be noted at this point that the conceptualized architecture and process flows could also be implemented with the help of other technologies. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any other technology too. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.33\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ArchitectureBestPracticeAndroid.drawio.pdf}
+    \caption[Android App Architecture]{Android App Architecture (\cite{Google.2023})}    
+    \label{fig:androidAppArchitecture}
+\end{figure}
+
+The recommended architecture for an Android app is shown in Figure \ref{fig:androidAppArchitecture} and consists of three layers, the \ac{ui} layer, the domain layer, and the data layer. The UI layer displays application data and the app itself to the user. The UI layer is further divided into \enquote{\ac{ui} elements} and \enquote{State Holders}. \enquote{\ac{ui} elements} correspond to the displayed screen elements and the \enquote{State Holders} to temporary data of the current state of the \ac{ui}. The domain layer is optional. It is used for abstraction and structuring of the data layer and is recommended above all if the application is to represent very complex business cases or the application must be designed to be very reusable (\cite{Google.2023}). Due to the requirements N5.1 (Reusable), a domain layer is therefore used in the conceptualized application. Classes in this layer are usually called use cases or interactions and always represent a single functionality. For example, the output of the time could be a functionality that must be used by several components. This functionality would then be represented by a \textit{GetTime} class, for example. The data layer contains the data and business logic of the application. This layer defines to what extent data is processed, modified or stored. It is also divided into two parts, the repositories and the data sources. The repositories are responsible for exposing the data to the rest of the application, to centralize changes to the data and to resolve conflicts between data sources. A repository can contain zero or multiple data sources. The repositories also contain the business logic and abstract the data sources from the rest of the application. Each data source is represented by one data source class which is the link between the system for data operations and the application. Sources for these data soruces could be a file, a network or a local data base (\cite{Google.2023}). 
+
+
 
 
 Android Developer Doku (\cite{Google.2023})
 
 Customizing ist blöd (\cite{Chou.2008})
 
+\subsubsection{Data Layer}
 
+\subsubsection{Domain Layer}
 
-\subsubsection{Activitys}
+\subsubsection{User Interface Layer}
 
 \begin{figure}[htbp]
+    \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/Activities.pdf}
     \caption{Adroid Studio Activitys}    
     \label{fig:activitiesMockUp}
 \end{figure}
 
 
-\subsubsection{Customizing and System Output}
+%\subsubsection{Customizing and System Output}
 
-This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
+%This section is intended to provide an overview of the technological framework used and the basic architecture of the application. This section focuses primarily on a basic overview, while the next sections go into more detail about the individual components.
 
 
 
