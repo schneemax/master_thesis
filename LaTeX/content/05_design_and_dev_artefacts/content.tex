@@ -102,11 +102,11 @@ For the sake of completeness, it should be noted at this point that the conceptu
 
 The recommended architecture for an Android app is shown in Figure \ref{fig:androidAppArchitecture} and consists of three layers, the \ac{ui} layer, the domain layer, and the data layer. The UI layer displays application data and the app itself to the user. The UI layer is further divided into \enquote{\ac{ui} elements} and \enquote{State Holders}. \enquote{\ac{ui} elements} correspond to the displayed screen elements and the \enquote{State Holders} to temporary data of the current state of the \ac{ui}. The domain layer is optional. It is used for abstraction and structuring of the data layer and is recommended above all if the application is to represent very complex business cases or the application must be designed to be very reusable (\cite{Google.2023}). Due to the requirements N5.1 (Reusable), a domain layer is therefore used in the conceptualized application. Classes in this layer are usually called use cases or interactions and always represent a single functionality. For example, the output of the time could be a functionality that must be used by several components. This functionality would then be represented by a \textit{GetTime} class, for example. The data layer contains the data and business logic of the application. This layer defines to what extent data is processed, modified or stored. It is also divided into two parts, the repositories and the data sources. The repositories are responsible for exposing the data to the rest of the application, to centralize changes to the data and to resolve conflicts between data sources. A repository can contain zero or multiple data sources. The repositories also contain the business logic and abstract the data sources from the rest of the application. Each data source is represented by one data source class which is the link between the system for data operations and the application. Sources for these data soruces could be a file, a network or a local data base (\cite{Google.2023}). In the following, the concrete implementation of the architecture of the artifact is presented. The technical components are divided into the UI layer, the domain layer and the data layer. 
 
-%Android Developer Doku (\cite{Google.2023})
-
-%Customizing ist blöd (\cite{Chou.2008})
-
 \subsubsection{Data Layer}
+
+The data layer represents the centerpiece of the logic and data of the application. Although the data layer is a very important component, the exact scope of the data sources of the individual experiments is not known. The developed application is rather a framework for the use in different experiments. For this reason, the design of the application architecture is not limited to individual data sources, such as a network drive. In principle, however, the conceptualized architecture and available interfaces can map the requirements. To demonstrate this and later test the use cases, a local CSV file is used as a data source to test the requirements. Access to network storage or databases would also be necessary and depends on the conception of the experiment.......
+
+%Daten Layer entspricht den Swim Lanes Epxeriment and Patricipant weil hier die Business Logik liegt
 
 \subsubsection{Domain Layer}
 
@@ -142,6 +142,12 @@ The concept of graphical user interfaces is basically implemented in Android via
 \end{figure}
 
 After the basic UI has been designed, the navigation between the individual steps must be conceptualized and implemented. Generally, the sequence of screen calls is stored in the manifest of the application (\cite{Google.2023}).
+
+%Next step: Navigation behandeln
+
+%Android Developer Doku (\cite{Google.2023})
+
+%Grundsätzlich wird auf die Umsetzung der Navigation und Experimentreihenfolge durch Cucstomizing verzichtet, da Customizing die Komplexität einer Anwendung nicht verringert und die User Experience nicht verbessert im Gegensatz zur Umsetzung des Customizings durch Coding. Gleichzeitig Customizing aber extreme Einschränkungen mit sich bringt. ist blöd (\cite{Chou.2008})
 
 
 %\begin{figure}[htbp]
