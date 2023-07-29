@@ -2,7 +2,7 @@
 
 The artifact, which is intended to improve experimental research in behavioral data analytics, is to be implemented as a software component or application. In this step, a suitable architecture is developed based on the established requirements. For this purpose, the application is first fundamentally conceptualized. This involves analyzing possible technologies and the corresponding processes. The architecture is then implemented in practice on the basis of this basic concept.
 
-\subsection{Process Conceptualization}
+\subsection{Process Conceptualization}\label{subsec:ProcessConcept}
 
 %This section focuses on the basic design of the application. For this purpose, the processes based on the requirements are presented first, which must be implemented by the application. Subsequently, technologies are presented which are used for their implementation.
 
@@ -100,14 +100,11 @@ For the sake of completeness, it should be noted at this point that the conceptu
     \label{fig:androidAppArchitecture}
 \end{figure}
 
-The recommended architecture for an Android app is shown in Figure \ref{fig:androidAppArchitecture} and consists of three layers, the \ac{ui} layer, the domain layer, and the data layer. The UI layer displays application data and the app itself to the user. The UI layer is further divided into \enquote{\ac{ui} elements} and \enquote{State Holders}. \enquote{\ac{ui} elements} correspond to the displayed screen elements and the \enquote{State Holders} to temporary data of the current state of the \ac{ui}. The domain layer is optional. It is used for abstraction and structuring of the data layer and is recommended above all if the application is to represent very complex business cases or the application must be designed to be very reusable (\cite{Google.2023}). Due to the requirements N5.1 (Reusable), a domain layer is therefore used in the conceptualized application. Classes in this layer are usually called use cases or interactions and always represent a single functionality. For example, the output of the time could be a functionality that must be used by several components. This functionality would then be represented by a \textit{GetTime} class, for example. The data layer contains the data and business logic of the application. This layer defines to what extent data is processed, modified or stored. It is also divided into two parts, the repositories and the data sources. The repositories are responsible for exposing the data to the rest of the application, to centralize changes to the data and to resolve conflicts between data sources. A repository can contain zero or multiple data sources. The repositories also contain the business logic and abstract the data sources from the rest of the application. Each data source is represented by one data source class which is the link between the system for data operations and the application. Sources for these data soruces could be a file, a network or a local data base (\cite{Google.2023}). 
+The recommended architecture for an Android app is shown in Figure \ref{fig:androidAppArchitecture} and consists of three layers, the \ac{ui} layer, the domain layer, and the data layer. The UI layer displays application data and the app itself to the user. The UI layer is further divided into \enquote{\ac{ui} elements} and \enquote{State Holders}. \enquote{\ac{ui} elements} correspond to the displayed screen elements and the \enquote{State Holders} to temporary data of the current state of the \ac{ui}. The domain layer is optional. It is used for abstraction and structuring of the data layer and is recommended above all if the application is to represent very complex business cases or the application must be designed to be very reusable (\cite{Google.2023}). Due to the requirements N5.1 (Reusable), a domain layer is therefore used in the conceptualized application. Classes in this layer are usually called use cases or interactions and always represent a single functionality. For example, the output of the time could be a functionality that must be used by several components. This functionality would then be represented by a \textit{GetTime} class, for example. The data layer contains the data and business logic of the application. This layer defines to what extent data is processed, modified or stored. It is also divided into two parts, the repositories and the data sources. The repositories are responsible for exposing the data to the rest of the application, to centralize changes to the data and to resolve conflicts between data sources. A repository can contain zero or multiple data sources. The repositories also contain the business logic and abstract the data sources from the rest of the application. Each data source is represented by one data source class which is the link between the system for data operations and the application. Sources for these data soruces could be a file, a network or a local data base (\cite{Google.2023}). In the following, the concrete implementation of the architecture of the artifact is presented. The technical components are divided into the UI layer, the domain layer and the data layer. 
 
+%Android Developer Doku (\cite{Google.2023})
 
-
-
-Android Developer Doku (\cite{Google.2023})
-
-Customizing ist blöd (\cite{Chou.2008})
+%Customizing ist blöd (\cite{Chou.2008})
 
 \subsubsection{Data Layer}
 
@@ -115,12 +112,45 @@ Customizing ist blöd (\cite{Chou.2008})
 
 \subsubsection{User Interface Layer}
 
+The concept of graphical user interfaces is basically implemented in Android via so-called activities. While the entry in regular Java applications takes place via a \textit{main()} method, an Android application initiates code via activities. The Android developer documentation describes an activity as \enquote{[...] entry point for an app's interaction with the user} (\cite{Google.2023}). The required \ac{ui} elements of the app are generated in the activity. An activity corresponds to a screen. Apps can contain several different UI screens and thus several different activities. Activities can also call other activities and navigate to them as desired. An app is therefore a sequence of different activities that represent different screens. Usually, an activity serves as the entry point to the app. This activty, also called the main activty, is the first screen that is shown when the application is started. Although Activities together form a complete app, Activities are only very superficially connected to each other. Basically, each activity is a replaceable, self-contained component that can be called in any order. This reusability and separation makes Activities the perfect foundation to implement the individual \enquote{experiment steps} described in Section \ref{subsec:ProcessConcept}. Based on this fact and the fact that an Activity corresponds to a \ac{ui}, a separate Activity is designed for each process step from Section \ref{subsec:ProcessConcept}. The three experiment steps, which include user inputs are the \textit{choose test subject}, \textit{questionair} and \textit{info screen} step, depicted in figure \ref{fig:ChooseTestSubjectSwimLane}, \ref{fig:questionairSwimLane} and \ref{fig:infoScreenSwimLane}. Figure \ref{fig:uiPrototypeArtefact} depicts these three use cases as a \ac{ui} prototype. Figure \ref{subfig:chooseTestSubject} represents the process step of choosing a test subject depicted in figure \ref{fig:ChooseTestSubjectSwimLane}. Figure \ref{subfig:Questionair} represents the process step of letting the test subject answer questions depicted in figure \ref{fig:questionairSwimLane}. Figure \ref{subfig:InfoScreen}  represents the process step of showing information to the test subject depicted in figure \ref{fig:infoScreenSwimLane}. The three \ac{ui} sketches show the basic division of \ac{ui} elements, to which the actual implementation of the activities is oriented. Furthermore, further custom steps from an experiment would also be implemented using Activities. In this way, the reusability and separation of the individual experiment steps is guaranteed.
+
+
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/Activities.pdf}
-    \caption{Adroid Studio Activitys}    
-    \label{fig:activitiesMockUp}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityParticipantChoose.drawio.pdf}
+        \caption{Choose test subject step}
+        \label{subfig:chooseTestSubject}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityQuestionair.drawio.pdf}
+        \caption{ Questionair step}
+        \label{subfig:Questionair}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityInfoScreen.drawio.pdf}
+        \caption{Info screen step}
+        \label{subfig:InfoScreen}
+    \end{subfigure}
+       \caption{User Interface Prototype of Artefact}
+       \label{fig:uiPrototypeArtefact}
 \end{figure}
+
+After the basic UI has been designed, the navigation between the individual steps must be conceptualized and implemented. Generally, the sequence of screen calls is stored in the manifest of the application (\cite{Google.2023}).
+
+
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=0.4\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ActivityParticipantChoose.drawio.pdf}
+%    \caption{Adroid Studio Activitys}    
+%    \label{fig:activitiesMockUp}
+%\end{figure}
+
 
 
 %\subsubsection{Customizing and System Output}
