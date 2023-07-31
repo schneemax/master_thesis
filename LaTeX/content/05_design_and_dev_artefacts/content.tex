@@ -113,9 +113,18 @@ The individual data sources are masked from the rest of the application by the s
 
 %Daten Layer entspricht den Swim Lanes Epxeriment and Patricipant weil hier die Business Logik liegt
 
+Process step \ref{fig:DataInputSwimLane}, which deals with the selection of data sources, is also implemented in the repositories, as they are responsible for the preparation and allocation of data sources.
+
 \subsubsection{Domain Layer}
 
 The domain layer is an optional layer that encapsulates complex business logic or logic that needs to be reused frequently (\cite{Google.2023}). Since it is not known to what extent the individual elements will be used in an experiment and a special focus is placed on the reusability of the individual components, this optional layer is implemented in the artifact. Further advantages resulting from the use of a domain layer are the avoidance of duplicated code, the improved readability of the architecture, an improvement in the testability of the app and the avoidance of large classes by splitting the tasks. The domain layer classes are accessed in the same way by the \ac{ui} as repositories of the data layer are accessed. An example of a domain layer class would be to request the addresses of the best authors of the year to send them an award. In this example there would be two data sources with repositories, one for authors and their addresses and another one containing the best selling books including authors. A domain layer class would hide access to these two repositories and the complex logic of determining the addresses of the best authors of the year from the rest of the application. To keep the classes of the domain layer simple it is adviced that each class should contain only a single functionality and should not contain mutable data (\cite{Google.2023}). These individual functions are also called use cases. Use cases (Domain Layer classes) can call each other and can be hierarchically dependent with each othre within the domain layer as needed. Since one use case is supposed to represent one function at a time, a domain layer class (or use case) is created for each function or action  that appears in one of the process swim lane diagrams in the \textit{Experiment Data} and \textit{Participant Data} lane from section \ref{subsec:ProcessConcept}. Since these UseCases can be layered arbitrarily in the domain layer, UseCases are also created for all processes that do not contain user interaction, i.e., Swin Lane diagram \ref{fig:groupAllocationSwimLane}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.79\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DomainLayer.drawio.pdf}
+    \caption{Data Layer of the Artefact}    
+    \label{fig:dataLayer}
+\end{figure}
 
 %1 Determin Data Source
 %2 Load Participant Data File: GetParticipantDataUseCase
@@ -167,7 +176,8 @@ In general, it can be summarized that the processes that have been illustrated b
 \begin{itemize}
     \item Diagram A depicts the process of an experiment in general. The event "Experiment Step" is representative for all other Swim Lane process diagrams.
     \item The "User" lane of the diagrams represents the interaction of the user. The individual events in this lane are therefore represented by UI activities.
-    \item For each diagram that does not contain a user input and is therefore not represented by an activity, a UseCase is also created.
+    \item For each diagram that does not contain a user input and is therefore not represented by an activity, a UseCase is also created. This is the case for X.
+    \item Each diagram that exclusevly handles the preparation of a data source is represented by a repository with a respective data source.
     \item The lane "Experiment Data" and "Participant Data" are representative for all events which are associated with data of the respective parts. 
     \item The actual data resides in various data sources and is abstracted from the rest of the application by repositories. Although the two swim lanes are representative of the data layer, data source and repository are not illustrated into the swim lanes.
     \item The individual events of the "Experiment Data" and "Participant Data" lanes are each represented by a single use case and thus form the domain layer.
