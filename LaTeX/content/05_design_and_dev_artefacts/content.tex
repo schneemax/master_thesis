@@ -87,7 +87,7 @@ Android is an open source operating system for mobile devices which was first an
 Java is a programming language originally developed by Microsystems. Since 2009 Java is part of the product portfolio of Oracle Corporation. Java is an object-oriented programming language, which makes it an universally applicable and robust programming language (\cite{Ullenboom.2017}). Unlike many other programming languages, one of the special features of Java is its platform independence. Most programming languages use a compiler or interpreter to translate program code into byte code, which varies depending on the hardware and can only be executed on the appropriate processors. Java avoids this limitation by first having a compiler translate the Java program code into byte code, which is then executed via an interpreter in a virtual environment which is called \ac{jvm}. In this way, Java code can theoretically be executed on any system (\cite{Ullenboom.2017}). This makes Java not only a programming language but also a runtime system, which is made clear by the naming of the Java Platform by Oracle. The Java Platform supports beside Java itself also the execution of some other programming languages as for example Kotlin (\cite{kotlinlang.2023}). Due to this fact, Java is especially suitable for the implementation of the artefact based on the requirements N5.1 (Reusable) and N5.2 (Interoperability). Java also supports a variety of programming concepts through standard libraries. These include data structures, string processing, date/time processing, graphical interfaces, input/output, network operations, threads and more (\cite{Ullenboom.2017}), which ensures the N1.1 (Distand Communication) requirement and the availability of interfaces. The Java runtime environment also enables fast code execution and comes with various utilities such as a garbage collector and output name handlers. The syntax of Java is generally considered to be very easy to understand and beginner-friendly (\cite{Ullenboom.2017}), fulfilling the requirement N4.1 (Simplicity). In addition to technical aspects, Java is also Open-Source, extremely widespread, popular and a variety of literature for it is available (\cite{Ullenboom.2017}), which generally indicates an openness of platform (Requirement N5.3 Openness of Platform) and convenient to develope code (N4.1 (Simplicity)). Disadvantages of Java, which are also mentioned for the sake of completeness, mainly relate to very specific platform-dependent use cases. Since Java was developed as a general-purpose programming language and platform-independent, it is very difficult to access hardware or drivers directly. However, these use cases are irrelevant in the course of this work (\cite{Ullenboom.2017}). 
 
 
-\subsection{System Architecture}
+\subsection{System Architecture Development}
 
 Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language. In general, most of the requirements could already be met by both Android and Java alone, so the combination of the two provides a solid foundation for meeting the remaining requirements. However, as already noted in Section \ref{subsec:reqSpec}, the fulfillment of the non-functional requirements is by no means a binary state, but can be partly of a subjective nature, which is why no test cases could be set up for these requirements. Taking the above arguments into account, and especially the extremely wide distribution of the Android operating system, the technical combination of Android and Java for the implementation of the artifact is considered the best option. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any other technology too. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research. For this reason, the artifact is implemented in the form of a mobile Android application.
 
@@ -106,7 +106,7 @@ The individual data sources are masked from the rest of the application by the s
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DataLayer.drawio.pdf}
+    \includegraphics[width=0.79\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DataLayer.drawio.pdf}
     \caption{Data Layer of the Artefact}    
     \label{fig:dataLayer}
 \end{figure}
@@ -117,7 +117,15 @@ The individual data sources are masked from the rest of the application by the s
 
 The domain layer is an optional layer that encapsulates complex business logic or logic that needs to be reused frequently (\cite{Google.2023}). Since it is not known to what extent the individual elements will be used in an experiment and a special focus is placed on the reusability of the individual components, this optional layer is implemented in the artifact. Further advantages resulting from the use of a domain layer are the avoidance of duplicated code, the improved readability of the architecture, an improvement in the testability of the app and the avoidance of large classes by splitting the tasks. The domain layer classes are accessed in the same way by the \ac{ui} as repositories of the data layer are accessed. An example of a domain layer class would be to request the addresses of the best authors of the year to send them an award. In this example there would be two data sources with repositories, one for authors and their addresses and another one containing the best selling books including authors. A domain layer class would hide access to these two repositories and the complex logic of determining the addresses of the best authors of the year from the rest of the application. To keep the classes of the domain layer simple it is adviced that each class should contain only a single functionality and should not contain mutable data (\cite{Google.2023}). These individual functions are also called use cases. Use cases (Domain Layer classes) can call each other and can be hierarchically dependent with each othre within the domain layer as needed. Since one use case is supposed to represent one function at a time, a domain layer class (or use case) is created for each function or action  that appears in one of the process swim lane diagrams in the \textit{Experiment Data} and \textit{Participant Data} lane from section \ref{subsec:ProcessConcept}. 
 
-
+%1 Determin Data Source
+%2 Load Participant Data File
+%3 Create New Participant
+%4 Read Group Allocation Participant
+%5 Read Group Allocation Experiment
+%6 Allocate Groups
+%7 Load next entry of data for participant
+%8 Log meta data
+%9 Load info screen data
 
 
 \subsubsection{User Interface Layer}
@@ -153,15 +161,15 @@ The concept of graphical user interfaces is implemented in Android via so-called
 
 After the basic UI has been designed, the navigation between the individual steps must be conceptualized and implemented. Generally, the sequence of screen calls is stored in the manifest of the application (\cite{Google.2023}).
 
-\subsubsection{Consolidated Architectural Summary}\label{subsubsec:completeArchitecture}
+\subsection{Consolidated System Architectural Summary}\label{subsec:completeArchitecture}
 
 In general, it can be summarized that the processes that have been illustrated by swim lane diagrams have been technically implemented as follows:
 \begin{itemize}
-    \item Diagram A depicts the process of an experiment in general. The process part "Experiment Step" is representative for all other Swim Lane process diagrams.
-    \item The "User" lane of the diagrams represents the interaction of the user. The individual process steps in this lane are therefore represented by UI activities.
-    \item The lane "Experiment Data" and "Participant Data" are representative for all activities which are associated with data of the respective parts. 
-    \item The actual data resides in various data sources and is abstracted from the rest of the application by repositories. Although the two swim lanes are representative of the data layer, data source and repository are not mapped into the swim lanes.
-    \item The individual process steps of the "Experiment Data" and "Participant Data" lanes are each represented by a single use case and thus form the domain layer.
+    \item Diagram A depicts the process of an experiment in general. The event "Experiment Step" is representative for all other Swim Lane process diagrams.
+    \item The "User" lane of the diagrams represents the interaction of the user. The individual events in this lane are therefore represented by UI activities.
+    \item The lane "Experiment Data" and "Participant Data" are representative for all events which are associated with data of the respective parts. 
+    \item The actual data resides in various data sources and is abstracted from the rest of the application by repositories. Although the two swim lanes are representative of the data layer, data source and repository are not illustrated into the swim lanes.
+    \item The individual events of the "Experiment Data" and "Participant Data" lanes are each represented by a single use case and thus form the domain layer.
 \end{itemize}
 
 %Next step: Navigation behandeln
