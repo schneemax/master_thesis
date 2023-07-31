@@ -1,0 +1,82 @@
+<mxfile host="Electron" modified="2023-07-31T13:49:46.697Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="FqOQILuAoeeZ8lfiweua" version="21.6.1" type="device">
+  <diagram name="Page-1" id="OpWTwDbj9fGWJGAPWJQz">
+    <mxGraphModel dx="568" dy="330" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="390" pageHeight="200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-1" value="&amp;nbsp;Data Layer&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;arcSize=5;" parent="1" vertex="1">
+          <mxGeometry width="390" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-1" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ExperimentRepository&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-2" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ParticipantRepository&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" parent="1" vertex="1">
+          <mxGeometry x="200" y="30" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-3" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ExperimentDataSource.csv&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7EA6E0;" parent="1" vertex="1">
+          <mxGeometry x="10" y="95" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-4" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ParticipantRepository&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" parent="1" vertex="1">
+          <mxGeometry x="140" y="95" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-5" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;OtherRepository&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8f8f8f;" parent="1" vertex="1">
+          <mxGeometry x="270" y="95" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-6" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ParticipantDataSource.csv&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66FF66;" parent="1" vertex="1">
+          <mxGeometry x="140" y="160" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-7" value="&lt;span style=&quot;font-size: 8px;&quot;&gt;Other Data Source&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8f8f8f;" parent="1" vertex="1">
+          <mxGeometry x="270" y="160" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-1" target="JxlkHMdp25saiBgIkoPC-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="140" as="sourcePoint" />
+            <mxPoint x="220" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-1" target="JxlkHMdp25saiBgIkoPC-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="90" y="70" as="sourcePoint" />
+            <mxPoint x="90" y="105" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-2" target="JxlkHMdp25saiBgIkoPC-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="103" y="80" as="sourcePoint" />
+            <mxPoint x="103" y="115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-2" target="JxlkHMdp25saiBgIkoPC-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="70" as="sourcePoint" />
+            <mxPoint x="215" y="115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-4" target="JxlkHMdp25saiBgIkoPC-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="275" y="80" as="sourcePoint" />
+            <mxPoint x="215" y="115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-4" target="JxlkHMdp25saiBgIkoPC-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="188" y="145" as="sourcePoint" />
+            <mxPoint x="188" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-15" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-5" target="JxlkHMdp25saiBgIkoPC-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="243" y="145" as="sourcePoint" />
+            <mxPoint x="243" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JxlkHMdp25saiBgIkoPC-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="JxlkHMdp25saiBgIkoPC-5" target="JxlkHMdp25saiBgIkoPC-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="317" y="145" as="sourcePoint" />
+            <mxPoint x="317" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
