@@ -2,7 +2,10 @@ package com.example.master_thesis;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class InfoScreenActivity extends AppCompatActivity {
 
@@ -10,5 +13,15 @@ public class InfoScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_screen);
+
+        Button btn = (Button) findViewById(R.id.btnContinueInfoScreen);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InfoScreenActivity.this, ChooseTestSubjectActivity.class));
+            }
+        });
+
     }
 }
