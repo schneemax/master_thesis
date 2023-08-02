@@ -89,7 +89,7 @@ Java is a programming language originally developed by Microsystems. Since 2009 
 
 \subsection{System Architecture Development}
 
-Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language. In general, most of the requirements could already be met by both Android and Java alone, so the combination of the two provides a solid foundation for meeting the remaining requirements. However, as already noted in Section \ref{subsec:reqSpec}, the fulfillment of the non-functional requirements is by no means a binary state, but can be partly of a subjective nature, which is why no test cases could be set up for these requirements. Taking the above arguments into account, and especially the extremely wide distribution of the Android operating system, the technical combination of Android and Java for the implementation of the artifact is considered the best option. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any other technology too. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research. For this reason, the artifact is implemented in the form of a mobile Android application.
+Overall, it can be summarized that the non-functional requirements, which consider properties of the system, are completely fulfilled by using the Android operating system in combination with the Java programming language. In general, most of the requirements could already be met by both Android and Java alone, so the combination of the two provides a solid foundation for meeting the remaining requirements. However, as already noted in Section \ref{subsec:reqSpec}, the fulfillment of the non-functional requirements is by no means a binary state, but can be partly of a subjective nature, which is why no test cases could be set up for these requirements. Taking the above arguments into account, and especially the extremely wide distribution of the Android operating system, the technical combination of Android and Java for the implementation of the artifact is considered the best option. Furthermore, there is the possibility that at a later point in time another technology combination may be able to better reflect the requirements. At this point in time, however, the requirements can best be met by the combination of Android and Java. In addition, for the reasons mentioned, it can be assumed that this combination of technologies will remain the best way to implement the requirements in the long term. However, the fact that these technologies will no longer be up to date at a later point in time exists, but cannot be ruled out for any other technology too. On the contrary, Android and Java are a sensible and sustainable choice in the long term for the above-mentioned reasons according to the current state of research. For this reason, the artifact is implemented in the form of a mobile Android application. The Android API 24 (Android 7.0, Nougat) is used for this implementation. This Android version was chosen because it has all the interfaces and functionalities needed for the development of the artifact and an app developed on this version runs on about 95.4\% of all Android devices. At the same time, the app can easily be ported to a new version if newer features are needed for the implementation of an experiment.
 
 \begin{figure}[htbp]
     \centering
@@ -199,12 +199,16 @@ The individual activities only hold a temporary data set of information that is 
 
 \subsection{Consolidated System Architectural Summary}\label{subsec:completeArchitecture}
 
+In summarized form, the resulting architecture is shown in Figure \ref{fig:completeArchitecture} with all layers.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.79\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/Complete Architecture.drawio.pdf}
     \caption{Complete Architecture of the Artefact}    
     \label{fig:completeArchitecture}
 \end{figure}
+
+
 
 In general, it can be summarized that the processes that have been illustrated by swim lane diagrams have been technically implemented as follows:
 \begin{itemize}
