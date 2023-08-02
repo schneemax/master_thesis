@@ -117,15 +117,38 @@ Process step \ref{fig:DataInputSwimLane}, which deals with the selection of data
 
 \subsubsection{Domain Layer}
 
-The domain layer is an optional layer that encapsulates complex business logic or logic that needs to be reused frequently (\cite{Google.2023}). Since it is not known to what extent the individual elements will be used in an experiment and a special focus is placed on the reusability of the individual components, this optional layer is implemented in the artifact. Further advantages resulting from the use of a domain layer are the avoidance of duplicated code, the improved readability of the architecture, an improvement in the testability of the app and the avoidance of large classes by splitting the tasks. The domain layer classes are accessed in the same way by the \ac{ui} as repositories of the data layer are accessed. An example of a domain layer class would be to request the addresses of the best authors of the year to send them an award. In this example there would be two data sources with repositories, one for authors and their addresses and another one containing the best selling books including authors. A domain layer class would hide access to these two repositories and the complex logic of determining the addresses of the best authors of the year from the rest of the application. To keep the classes of the domain layer simple it is adviced that each class should contain only a single functionality and should not contain mutable data (\cite{Google.2023}). These individual functions are also called use cases. Use cases (Domain Layer classes) can call each other and can be hierarchically dependent with each othre within the domain layer as needed. Since one use case is supposed to represent one function at a time, a domain layer class (or use case) is created for each function or action  that appears in one of the process swim lane diagrams in the \textit{Experiment Data} and \textit{Participant Data} lane from section \ref{subsec:ProcessConcept}. Since these UseCases can be layered arbitrarily in the domain layer, UseCases are also created for all processes that do not contain user interaction, i.e., Swin Lane diagram \ref{fig:groupAllocationSwimLane}.
+The domain layer is an optional layer that encapsulates complex business logic or logic that needs to be reused frequently (\cite{Google.2023}). Since it is not known to what extent the individual elements will be used in an experiment and a special focus is placed on the reusability of the individual components, this optional layer is implemented in the artifact. Further advantages resulting from the use of a domain layer are the avoidance of duplicated code, the improved readability of the architecture, an improvement in the testability of the app and the avoidance of large classes by splitting the tasks (\cite{Google.2023}). The domain layer classes are accessed in the same way by the \ac{ui} as repositories of the data layer are accessed. A simple non related example of a domain layer class would be to request the addresses of the best authors of the year. In this example there would be two data sources with repositories, one for authors and their addresses and another one containing the best selling books of the year. A domain layer class would hide access to these two repositories and the complex logic of determining the addresses of the best authors of the year from the rest of the application. To keep the classes of the domain layer simple it is adviced that each class should contain only a single functionality and should not contain mutable data (\cite{Google.2023}). These individual functions are also called use cases. Use cases (Domain Layer classes) can call each other and can be hierarchically dependent with each other within the domain layer as needed. Since one use case is supposed to represent one function at a time, a domain layer class (or use case) is created for each function or action that appears in one of the process swim lane diagrams in the \textit{Experiment Data} and \textit{Participant Data} lane from section \ref{subsec:ProcessConcept}. Entire processes (swim lanes) that do not contain user input can also be mapped by these domain layer use case classes. This encapsulates the business logic of the processual flow in these. This case applies to the process in Swim Lane Diagram \ref{fig:groupAllocationSwimLane}, which is why it is modeled as a Use Case in the Domain Layer. The use cases derived from this within the processes are as follows:
+
+\begin{itemize}
+    \item \textbf{GetNextActivity}: (\textit{Load next experiment step}) Get the next step of the experiment from the experiment data.
+    \item \textbf{GetParticipantDataUseCase}: (\textit{Load Participant Data File}) Get all participants IDs or names from the participant data. 
+    \item \textbf{CreateNewParticipantUseCase}: (\textit{Create New Participant}) Create a new participant ID or name in the participant data.
+    \item \textbf{GetGroupAllocationPUseCase}: (\textit{Read Group Allocation Participant}) Get the manual group allocation for a specific participant from the participant data.
+    \item \textbf{GetGroupAllocationEUseCase}: (\textit{Read Group Allocation Experiment}) Get the general group allocation from the experiment data.
+    \item \textbf{AllocateGroupsUseCase}: (\textit{Allocate Groups}) Allocate groups automatically and save the respective group allocation for every participant ID or name in the particpant data. 
+    \item \textbf{GetNextDataEntryUseCase}: (\textit{Load next entry of data for participant}) Get next data entry for a participant ID or name from the participant data. 
+    \item \textbf{InsertDataPUseCase}: (\textit{Insert Missing Data Entry}) Save a data entry for a corresponding participant ID or name in the participant data.
+    \item \textbf{LogMetaDataUseCase}: (\textit{Log meta data}) Save meta data from the current process step in the experiment data.
+    \item \textbf{GetInfoScreenDataUseCase}: (\textit{Load info screen data}) Get information that should be displayed from the experiment data.  
+\end{itemize}
+
+Figure \ref{fig:domainLayer} shows the modeling of the domain layer in relation to the data layer. The green use cases refer to use cases that exclusively access participant data, blue to use cases that exclusively access experiment data, and cyan to entire processes that access both participant and experiment data.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.79\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DomainLayer.drawio.pdf}
     \caption{Data Layer of the Artefact}    
-    \label{fig:dataLayer}
+    \label{fig:domainLayer}
 \end{figure}
 
+For the implementation of the individual UseCases, a Java class is created for each case, which contains the corresponding logic and the UseCase calls as corresponding interfaces through methods.
+
+
+%Since these UseCases can be layered arbitrarily in the domain layer, UseCases are also created for all processes that do not contain user interaction, i.e., Swin Lane diagram .
+
+
+
+%0 Load next experiment step :GetNextActivity
 %1 Determin Data Source
 %2 Load Participant Data File: GetParticipantDataUseCase
 %3 Create New Participant : CreateNewParticipantUseCase
