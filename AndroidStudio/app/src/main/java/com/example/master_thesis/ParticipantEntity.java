@@ -1,44 +1,64 @@
 package com.example.master_thesis;
 
 
-public class ParticipantEntity implements Participant{
-    @Override
+public class ParticipantEntity {
+
+    int id;
+    String name;
+    int age;
+    String address;
+    String gender;
+    String education;
+
+    public ParticipantEntity(int id){
+        setId(id);
+    };
+
     public int getId() {
-        return 0;
+        return id;
     }
 
-    @Override
+    private void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
-        return null;
+        return name;
     }
 
-    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getAge() {
-        return 0;
+        return age;
     }
 
-    @Override
-    public String getGender() {
-        return null;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    @Override
-    public String getJob() {
-        return null;
-    }
-
-    @Override
-    public String getEducation() {
-        return null;
-    }
-
-    @Override
     public String getAddress() {
-        return null;
+        return address;
     }
 
-    @Override
-    public String getGroupAllocation() {
-        return null;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
     }
 }
