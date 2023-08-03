@@ -28,4 +28,9 @@ public class ParticipantRepository {
      * Get the information about participants.
      */
 
+    /*public LiveData<List<ProductEntity>> getProducts() {
+        return mObservableProducts;
+    }*/
+
+
 }
