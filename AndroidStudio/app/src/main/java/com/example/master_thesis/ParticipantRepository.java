@@ -36,5 +36,23 @@ public class ParticipantRepository {
         return data;
     }
 
+    public ParticipantEntity getParticipant(int id){
+        for(ParticipantEntity participant : data) {
+            if(participant.getId() == id) {
+                return participant;
+            }
+        }
+        return null;
+    };
+
+    public void updateParticipant(ParticipantEntity i_part) {
+        for (int i = 0; i < data.size(); i++) {
+            if (i_part.getId() == data.get(i).getId()) {
+                data.set(i, i_part);
+            }
+            ;
+        }
+        ;
+    };
 
 }
