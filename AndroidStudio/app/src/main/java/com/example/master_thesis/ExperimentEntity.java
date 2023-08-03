@@ -6,8 +6,14 @@ public class ExperimentEntity {
 
     ArrayList<String> steps;
 
-    public ExperimentEntity(ArrayList<String> steps) {
+    String groupAllocation;
+
+    String infoScreen;
+
+    public ExperimentEntity(ArrayList<String> steps, String groupAllocation, String infoScreen) {
         setSteps(steps);
+        setGroupAllocation(groupAllocation);
+        setInfoScreen(infoScreen);
     }
 
     public ArrayList<String> getSteps() {
@@ -16,5 +22,21 @@ public class ExperimentEntity {
 
     private void setSteps(ArrayList<String> steps) {
         this.steps = steps;
+    }
+
+    public String getGroupAllocation() {
+        return groupAllocation;
+    }
+
+    private void setGroupAllocation(String groupAllocation) {
+        this.groupAllocation = groupAllocation;
+    }
+
+    public String getInfoScreen() {
+        return infoScreen;
+    }
+
+    private void setInfoScreen(String infoScreen) {
+        this.infoScreen = infoScreen;
     }
 }
