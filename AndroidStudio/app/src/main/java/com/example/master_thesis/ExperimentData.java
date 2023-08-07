@@ -12,9 +12,9 @@ public class ExperimentData {
         String groupAllocation = "Random";
         String infoScreen = "Did you ever hear the tragedy of Darth Plagueis the Wise? I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith so powerful and so wise, he could use the Force to influence the midi-chlorians to create life. He had such a knowledge of the dark side, he could even keep the ones he cared about from dying.";
 
-        steps.add("Schritt1");
-        steps.add("Schritt2");
-        steps.add("Schritt3");
+        steps.add("com.example.master_thesis.InfoScreenActivity");
+        steps.add("com.example.master_thesis.ChooseTestSubjectActivity");
+        steps.add("com.example.master_thesis.QuestionnaireActivity");
 
 
 

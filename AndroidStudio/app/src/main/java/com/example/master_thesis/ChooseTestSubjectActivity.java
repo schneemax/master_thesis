@@ -19,7 +19,14 @@ public class ChooseTestSubjectActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChooseTestSubjectActivity.this, QuestionnaireActivity.class));
+                String nextStep = GetNextExperimentStepUseCase.getInstance().getNextExperimentStep();
+                try {
+                    Class<?> c = Class.forName(nextStep);
+                    Intent intent = new Intent(ChooseTestSubjectActivity.this, c);
+                    startActivity(intent);
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Error " + e.getMessage());
+                }
             }
         });
     }

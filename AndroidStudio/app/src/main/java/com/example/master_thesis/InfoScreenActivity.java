@@ -22,13 +22,20 @@ public class InfoScreenActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(InfoScreenActivity.this, ChooseTestSubjectActivity.class));
+                String nextStep = GetNextExperimentStepUseCase.getInstance().getNextExperimentStep();
+                try {
+                    Class<?> c = Class.forName(nextStep);
+                    Intent intent = new Intent(InfoScreenActivity.this, c);
+                    startActivity(intent);
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Error " + e.getMessage());
+                }
             }
         });
 
+        //Set InfoText
         TextView textView = (TextView) findViewById(R.id.textViewInfoScreen);
-
-        textView.setText("Max");
+        textView.setText(GetInfoScreenDataUseCase.getInstance().getInfoScreenData());
 
     }
 }
