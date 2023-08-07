@@ -49,4 +49,8 @@ public class ExperimentEntity {
     private void setInfoScreen(String infoScreen) {
         this.infoScreen = infoScreen;
     }
+
+    public void setMetaData(float num){
+        //Do Nothing
+    };
 }

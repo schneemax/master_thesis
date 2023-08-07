@@ -55,4 +55,8 @@ public class ParticipantRepository {
         ;
     };
 
+    public void createNewParticipant(int id) {
+        data.add(new ParticipantEntity(id));
+    };
+
 }
