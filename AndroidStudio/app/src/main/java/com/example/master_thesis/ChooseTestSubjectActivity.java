@@ -24,8 +24,21 @@ public class ChooseTestSubjectActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String nextStep = GetNextExperimentStepUseCase.getInstance().getNextExperimentStep();
 
-                String participantID = String.valueOf((EditText) findViewById(R.id.editTextChooseParticipant));
-                SetCurrentParticipantUseCase.getInstance().setCurrentParticipant(Integer.parseInt(participantID));
+                String participantID = ((EditText) findViewById(R.id.editTextChooseParticipant)).getText().toString();
+                //SetCurrentParticipantUseCase.getInstance().setCurrentParticipant(Integer.parseInt(participantID));
+                //int participantID = Integer.parseInt(String.valueOf((EditText) findViewById(R.id.editTextChooseParticipant)));
+                //SetCurrentParticipantUseCase.getInstance().setCurrentParticipant(participantID);
+
+                if (!participantID.isEmpty()) {
+                    try {
+                        int integerValue = Integer.parseInt(participantID);
+                        SetCurrentParticipantUseCase.getInstance().setCurrentParticipant(integerValue);
+                    } catch (NumberFormatException e) {
+                        // Handle the case where the entered text is not a valid integer
+                        System.out.println("Max DArmstadt:" + participantID);
+                    }
+                };
+
 
                 try {
                     Class<?> c = Class.forName(nextStep);
@@ -38,4 +51,5 @@ public class ChooseTestSubjectActivity extends AppCompatActivity {
             }
         });
     }
+
 }

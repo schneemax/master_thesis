@@ -11,7 +11,7 @@
         android:layout_width="300dp"
         android:layout_height="69dp"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/btnContinueChooseTestParticipant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

@@ -14,7 +14,11 @@ public class GetNextDataEntryUseCase {
 
     private GetNextDataEntryUseCase() {
         //Constructor
-        this.participant = participantRepository.getParticipant(experimentRepository.getInstance().getExperiment().getCurrentParticipant());
+
+        experimentRepository = experimentRepository.getInstance();
+        participantRepository = participantRepository.getInstance();
+        this.participant = participantRepository.getParticipant(experimentRepository.getExperiment().getCurrentParticipant());
+        //this.participant = participantRepository.getParticipant(1);
     }
 
     ;
@@ -44,6 +48,10 @@ public class GetNextDataEntryUseCase {
         return null;
     }
 
+    public String getNameTxt() {
+        return participant.getNameTxt();
+    }
+
     public String getGender() {
         if (participant.getGender() != null){
             return participant.getGender();
@@ -51,11 +59,19 @@ public class GetNextDataEntryUseCase {
         return null;
     }
 
+    public String getGenderTxt() {
+        return participant.getGenderTxt();
+    }
+
     public String GetEducation() {
         if (participant.getEducation() != null){
             return participant.getEducation();
         }
         return null;
+    }
+
+    public String getEducationTxt() {
+        return participant.getEducationTxt();
     }
 
 }

@@ -4,11 +4,37 @@ package com.example.master_thesis;
 public class ParticipantEntity {
 
     int id;
+    String NameTxt = "Name";
     String name;
+    String AgeTxT = "Age";
     int age;
+    String AddressTxt = "Address";
     String address;
+    String GenderTxt = "Gender";
     String gender;
+
+    String EducationTxt = "Education";
     String education;
+
+    public String getNameTxt() {
+        return NameTxt;
+    }
+
+    public String getAgeTxT() {
+        return AgeTxT;
+    }
+
+    public String getAddressTxt() {
+        return AddressTxt;
+    }
+
+    public String getGenderTxt() {
+        return GenderTxt;
+    }
+
+    public String getEducationTxt() {
+        return EducationTxt;
+    }
 
     String groupAllocation;
 
