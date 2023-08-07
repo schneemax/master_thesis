@@ -46,11 +46,11 @@ public class GetNextExperimentStepUseCase {
         if( steps.size() > (currentStep) ){
 
             currentStep++;
-            System.out.println(steps.get(currentStep-1));
+            //System.out.println(steps.get(currentStep-1));
             return steps.get(currentStep-1);
         }
         currentStep = 1;
-        System.out.println(steps.get(currentStep));
+        //System.out.println(steps.get(currentStep));
         return steps.get(currentStep-1);
     }
 

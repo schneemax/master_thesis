@@ -8,9 +8,11 @@ public class GetGroupAllocationPUseCase {
 
     private ParticipantRepository participantRepository;
 
+    private GetCurrentParticipantUseCase getCurrentParticipantUseCase;
+
     private GetGroupAllocationPUseCase() {
         //Constructor
-        this.groupAllocation = participantRepository.getInstance().getParticipant();
+        this.groupAllocation = participantRepository.getInstance().getParticipant(getCurrentParticipantUseCase.getInstance().getCurrentParticipant()).getGroupAllocation();
     }
 
     ;

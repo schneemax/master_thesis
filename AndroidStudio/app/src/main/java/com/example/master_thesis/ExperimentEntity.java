@@ -10,6 +10,16 @@ public class ExperimentEntity {
 
     String infoScreen;
 
+    public int getCurrentParticipant() {
+        return currentParticipant;
+    }
+
+    public void setCurrentParticipant(int currentParticipant) {
+        this.currentParticipant = currentParticipant;
+    }
+
+    int currentParticipant;
+
     public ExperimentEntity(ArrayList<String> steps, String groupAllocation, String infoScreen) {
         setSteps(steps);
         setGroupAllocation(groupAllocation);

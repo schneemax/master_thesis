@@ -29,7 +29,7 @@ public class ExperimentRepository {
     }
 
     /**
-     * Get the information about participants.
+     * Get the information about experiment.
      */
 
     public ExperimentEntity getExperiment() {

@@ -10,6 +10,16 @@ public class ParticipantEntity {
     String gender;
     String education;
 
+    String groupAllocation;
+
+    public String getGroupAllocation() {
+        return groupAllocation;
+    }
+
+    public void setGroupAllocation(String groupAllocation) {
+        this.groupAllocation = groupAllocation;
+    }
+
     public ParticipantEntity(int id){
         setId(id);
     };

@@ -16,8 +16,6 @@ public class ExperimentData {
         steps.add("com.example.master_thesis.ChooseTestSubjectActivity");
         steps.add("com.example.master_thesis.QuestionnaireActivity");
 
-
-
         experiment = new ExperimentEntity(steps, groupAllocation, infoScreen);
 
         }
