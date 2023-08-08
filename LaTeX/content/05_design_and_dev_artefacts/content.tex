@@ -176,6 +176,13 @@ The concept of graphical user interfaces is implemented in Android via so-called
     \centering
     \begin{subfigure}[b]{0.3\textwidth}
         \centering
+        \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityInfoScreen.drawio.pdf}
+        \caption{Info screen step}
+        \label{subfig:InfoScreen}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
         \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityParticipantChoose.drawio.pdf}
         \caption{Choose test subject step}
         \label{subfig:chooseTestSubject}
@@ -186,13 +193,6 @@ The concept of graphical user interfaces is implemented in Android via so-called
         \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityQuestionair.drawio.pdf}
         \caption{ Questionair step}
         \label{subfig:Questionair}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{content/05_design_and_dev_artefacts/ActivityInfoScreen.drawio.pdf}
-        \caption{Info screen step}
-        \label{subfig:InfoScreen}
     \end{subfigure}
        \caption{User Interface Prototype of Artefact}
        \label{fig:uiPrototypeArtefact}
@@ -228,20 +228,19 @@ In summarized form, the resulting architecture is shown in Figure \ref{fig:compl
     \label{fig:completeArchitecture}
 \end{figure}
 
+Overall, the technical implementation of the artifact can be summarized as follows. The processes that the artifact needs to support are represented by the processes depicted using swim lane diagrams in Section \ref{subsec:ProcessConcept}. The \enquote{user} lane of the diagrams represents the interaction of the user with the artefact. Each activity that contains \ac{ui} interactions is therefore represented by an android activity. The individual events in the \enquote{user} lane are represented by android \ac{ui} elements. Each process that does not contain any user interactions is represented by coding within a domain layer usecase, with the exception of the process \ref{fig:DataInputSwimLane} which exclusevly handles the preparation of a data source and is therefore represented by a repository within the data layer. The events within the \enquote{experiment} and \enquote{participant} are represented by a single usecase and thus form the domain layer. The individual use cases link either directly to the data repository or to other use cases. The actual data resides in various data sources and is abstracted from the rest of the application by the data layer repositories \enquote{ExperimentRepository} and \enquote{ParticipantRepository}. The complete architecture inlcuding the \ac{ui}, domain and data layer are represented in figure \ref{fig:completeArchitecture}.
 
-In general, it can be summarized that the processes that have been illustrated by swim lane diagrams have been technically implemented as follows:
-\begin{itemize}
-    \item Diagram A depicts the process of an experiment in general. The event "Experiment Step" is representative for all other Swim Lane process diagrams.
-    \item The "User" lane of the diagrams represents the interaction of the user. The individual events in this lane are therefore represented by UI activities.
-    \item For each diagram that does not contain a user input and is therefore not represented by an activity, a UseCase is also created. This is the case for X.
-    \item Each diagram that exclusevly handles the preparation of a data source is represented by a repository with a respective data source.
-    \item The lane "Experiment Data" and "Participant Data" are representative for all events which are associated with data of the respective parts. 
-    \item The actual data resides in various data sources and is abstracted from the rest of the application by repositories. Although the two swim lanes are representative of the data layer, data source and repository are not illustrated into the swim lanes.
-    \item The individual events of the "Experiment Data" and "Participant Data" lanes are each represented by a single use case and thus form the domain layer.
-\end{itemize}
 
-Overall, the technical implementation of the artifact can be summarized as follows. The processes that the artifact needs to support are represented by the processes depicted using swim lane diagrams in Section \ref{subsec:ProcessConcept}. The \enquote{user} lane of the diagrams represents the interaction of the user with the artefact. The individual events in this lane are therefore represented by android \ac{ui} activities. Each artefact that does not contain any user interactions is represented by coding within a domain layer usecase, with the exception of the process \ref{fig:DataInputSwimLane}.  
-
+%In general, it can be summarized that the processes that have been illustrated by swim lane diagrams have been technically implemented as follows:
+%\begin{itemize}
+    %\item Diagram A depicts the process of an experiment in %general. The event "Experiment Step" is representative %for all other Swim Lane process diagrams.
+    %\item The "User" lane of the diagrams represents the %interaction of the user. The individual events in this %lane are therefore represented by UI activities.
+    %\item For each diagram that does not contain a user %input and is therefore not represented by an activity, %a UseCase is also created. This is the case for X.
+    %\item Each diagram that exclusevly handles the %preparation of a data source is represented by a %repository with a respective data source.
+    %%\item The lane "Experiment Data" and "Participant Data" %are representative for all events which are associated %with data of the respective parts. 
+    %\item The actual data resides in various data sources %and is abstracted from the rest of the application by %repositories. Although the two swim lanes are %representative of the data layer, data source and %repository are not illustrated into the swim lanes.
+    %\item The individual events of the "Experiment Data" %and "Participant Data" lanes are each represented by a %single use case and thus form the domain layer.
+%\end{itemize}
 
 %Next step: Navigation behandeln
 

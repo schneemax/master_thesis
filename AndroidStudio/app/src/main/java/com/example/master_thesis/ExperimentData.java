@@ -10,7 +10,7 @@ public class ExperimentData {
 
         ArrayList<String> steps = new ArrayList<String>();
         String groupAllocation = "Random";
-        String infoScreen = "Did you ever hear the tragedy of Darth Plagueis the Wise? I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith so powerful and so wise, he could use the Force to influence the midi-chlorians to create life. He had such a knowledge of the dark side, he could even keep the ones he cared about from dying.";
+        String infoScreen = "Exploring the effects of chromatic light on plant growth, set up three groups of potted plants—Group A exposed to blue light, Group B to red light, and Group C to a combination of green and yellow light. Ensure all other environmental factors remain constant. Measure growth parameters such as height, leaf count, and color intensity over a span of four weeks. Analyze the data using ANOVA to determine if different light spectra significantly influence plant growth. This experiment aims to contribute insights into optimizing indoor horticulture techniques for improved yield and quality.";
 
         steps.add("com.example.master_thesis.InfoScreenActivity");
         steps.add("com.example.master_thesis.ChooseTestSubjectActivity");
