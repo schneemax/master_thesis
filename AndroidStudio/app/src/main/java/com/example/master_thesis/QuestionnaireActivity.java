@@ -52,14 +52,34 @@ public class QuestionnaireActivity extends AppCompatActivity {
 
 
         TextView question1Txt = (TextView) findViewById(R.id.textViewQuestion1Questionnair);
-        question1Txt.setText("Please enter your " + getNextDataEntryUseCase.getNameTxt());
+        EditText question1EditTxt = (EditText) findViewById(R.id.editTextQuestion1Questionnair);
+
+        if (getNextDataEntryUseCase.getNameTxt() == null){
+            question1Txt.setVisibility(View.INVISIBLE);
+            question1EditTxt.setVisibility(View.INVISIBLE);
+        } else {
+            question1Txt.setText("Please enter your " + getNextDataEntryUseCase.getNameTxt());
+        }
 
         TextView question2Txt = (TextView) findViewById(R.id.textViewQuestion2Questionnair);
-        question2Txt.setText("Please enter your " + getNextDataEntryUseCase.getGenderTxt());
+        EditText question2EditTxt = (EditText) findViewById(R.id.editTextQuestion2Questionnair);
+
+        if (getNextDataEntryUseCase.getGenderTxt() == null){
+            question2Txt.setVisibility(View.INVISIBLE);
+            question2EditTxt.setVisibility(View.INVISIBLE);
+        } else {
+            question2Txt.setText("Please enter your " + getNextDataEntryUseCase.getGenderTxt());
+        }
 
         TextView question3Txt = (TextView) findViewById(R.id.textViewQuestion3Questionnair);
-        question3Txt.setText("Please enter your " + getNextDataEntryUseCase.getEducationTxt());
+        EditText question3EditTxt = (EditText) findViewById(R.id.editTextQuestion3Questionnair);
 
+        if (getNextDataEntryUseCase.getEducationTxt() == null){
+            question3Txt.setVisibility(View.INVISIBLE);
+            question3EditTxt.setVisibility(View.INVISIBLE);
+        } else {
+            question3Txt.setText("Please enter your " + getNextDataEntryUseCase.getEducationTxt());
+        }
 
     }
 }
