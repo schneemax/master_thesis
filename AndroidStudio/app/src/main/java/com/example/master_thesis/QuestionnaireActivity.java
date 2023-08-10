@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class QuestionnaireActivity extends AppCompatActivity {
 
     GetNextDataEntryUseCase getNextDataEntryUseCase;
@@ -46,6 +51,23 @@ public class QuestionnaireActivity extends AppCompatActivity {
                 } catch (ClassNotFoundException e) {
                     System.out.println("Error " + e.getMessage());
                 }
+
+                String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+                String startTime = (String) LogMetaDataUseCase.getInstance().getMetaData();
+
+                SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+                Date date1 = null;
+                Date date2 = null;
+                try {
+                    date1 = format.parse(currentTime);
+                    date2 = format.parse(startTime);
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+
+                long difference = date1.getTime() - date2.getTime();
+                LogMetaDataUseCase.getInstance().setMetaData(difference);
+                System.out.println(difference);
             }
         });
 

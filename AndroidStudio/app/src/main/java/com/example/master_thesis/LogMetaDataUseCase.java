@@ -31,8 +31,12 @@ public class LogMetaDataUseCase {
      * Get the information about participants.
      */
 
-    public void setMetaData(float metaData) {
+    public void setMetaData(Object metaData) {
         experimentRepository.getExperiment().setMetaData(metaData);
+    }
+
+    public Object getMetaData() {
+        return experimentRepository.getExperiment().getMetaData();
     }
 
 }

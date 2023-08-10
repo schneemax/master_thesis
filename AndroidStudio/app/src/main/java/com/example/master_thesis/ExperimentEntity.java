@@ -10,6 +10,8 @@ public class ExperimentEntity {
 
     String infoScreen;
 
+    Object metaData;
+
     public int getCurrentParticipant() {
         return currentParticipant;
     }
@@ -50,7 +52,11 @@ public class ExperimentEntity {
         this.infoScreen = infoScreen;
     }
 
-    public void setMetaData(float num){
-        //Do Nothing
+    public void setMetaData(Object metaData){
+        this.metaData = metaData;
+    };
+
+    public Object getMetaData(){
+        return metaData;
     };
 }

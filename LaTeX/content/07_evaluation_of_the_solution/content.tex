@@ -53,7 +53,18 @@ The implementation of this test case can be implemented without further developm
 
 \subsubsection*{T3: The information about how long the experiment took is collected}
 
-\subsubsection*{T4: The sex and the weight of the participant is pre-loaded into the experiment from different files. The sex of the participant is deleted}
+\begin{lstlisting}[language=java,label=t3a,lineskip={0pt}, caption=Collect time needed to conduct experiment (a), basicstyle=\scriptsize, captionpos=b]
+    String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+    LogMetaDataUseCase.getInstance().setMetaData(currentTime);
+\end{lstlisting}
+
+\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
+    long difference = date1.getTime() - date2.getTime();
+    LogMetaDataUseCase.getInstance().setMetaData(difference);
+\end{lstlisting}
+
+
+\subsubsection*{T4: The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted}
 
 \subsubsection*{T5: A chess game is added as custom logic}
 
