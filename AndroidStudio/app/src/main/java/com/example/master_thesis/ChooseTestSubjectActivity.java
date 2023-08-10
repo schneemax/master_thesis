@@ -35,7 +35,6 @@ public class ChooseTestSubjectActivity extends AppCompatActivity {
                         SetCurrentParticipantUseCase.getInstance().setCurrentParticipant(integerValue);
                     } catch (NumberFormatException e) {
                         // Handle the case where the entered text is not a valid integer
-                        System.out.println("Max DArmstadt:" + participantID);
                     }
                 };
 

@@ -1,5 +1,7 @@
 package com.example.master_thesis;
 
+import java.util.Random;
+
 public class AllocateGroupsUseCase {
 
     private static AllocateGroupsUseCase sInstance;
@@ -53,7 +55,17 @@ public class AllocateGroupsUseCase {
 
         if(currentParticipantGroup == null){
 
-            setGroupAllocationPUseCase.setGroupAllocation(experimentRepository.getExperiment().getGroupAllocation(), currentParticipant);
+            if(experimentRepository.getExperiment().getGroupAllocation() == "random"){
+                Random random = new Random();
+                int randomNumber = random.nextInt(2); // Generates either 0 or 1
+
+                if(randomNumber == 0 ){
+                    setGroupAllocationPUseCase.setGroupAllocation("Group A", currentParticipant);
+                } else {
+                    setGroupAllocationPUseCase.setGroupAllocation("Group B", currentParticipant);
+                }
+
+            };
 
         } else {
             //Do nothing

@@ -16,6 +16,16 @@ public class ParticipantEntity {
     String EducationTxt = "Education";
     String education;
 
+    public int getExperimentTime() {
+        return experimentTime;
+    }
+
+    public void setExperimentTime(int experimentTime) {
+        this.experimentTime = experimentTime;
+    }
+
+    int experimentTime;
+
     public String getNameTxt() {
         return NameTxt;
     }
