@@ -10,9 +10,12 @@ import android.widget.Button;
 
 import com.opencsv.CSVWriter;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.Socket;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -43,6 +46,7 @@ public class ChessExperimentActivity extends AppCompatActivity {
             }
         });
 
+        /*
         // MockUp for data Output
         File file = new File(Environment.getExternalStorageDirectory() + "/participant" + GetCurrentParticipantUseCase.getInstance().getCurrentParticipant() + "TimeData.csv");
         try {
@@ -76,8 +80,28 @@ public class ChessExperimentActivity extends AppCompatActivity {
             e.printStackTrace();
             System.out.println("Error");
         }
+*/
+/*
+        try {
+            // Establish connection
+            Socket socket = new Socket("127.0.0.1.", 52665);
 
+            // Request data
+            DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+            outputStream.writeUTF("Hello World!");
 
+            // Read data
+            DataInputStream inputStream = new DataInputStream(socket.getInputStream());
+            String message = inputStream.readUTF();
+
+            // Shut down socket
+            socket.shutdownInput();
+            socket.shutdownOutput();
+            socket.close();
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
+*/
 
 
     }
