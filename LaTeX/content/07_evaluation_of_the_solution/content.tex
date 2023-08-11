@@ -1,25 +1,26 @@
 \newpage\section{Evaluation of the solution}
 
-To validate the developed prototype, the previously established test cases are verified for the individual requirements. The testing of the test cases provides information about the degree of fulfillment of the requirements. In addition, the fulfillment of requirements that could not be validated by test cases is considered. Subsequently, the usability of the UI of the prototype will be assessed.
+To validate the developed prototype, the previously established test cases are verified for the individual requirements. The testing of the test cases provides information about the degree of fulfillment of the requirements. In addition, the fulfillment of requirements that could not be validated by test cases is considered. Subsequently, the usability of the \ac{ui} of the prototype is assessed.
 
 \subsection{Prototype validation}
 This section looks at the individual test cases from Section \ref{subsec:requirement_validation} and describes both their implementation and the degree to which they have been fulfilled. Furthermore, the fulfillment of requirements that cannot be confirmed by test cases is evaluated. 
 
-\subsubsection*{T1: A welcome and goodbye message is displayed} 
+\newpage\subsubsection*{T1: A welcome and goodbye message is displayed} 
 
-The implementation of this test case can be implemented without further development by the implemented framework. For this purpose, the Information Screen Activity is specified as the first and last step in the experiment data. Furthermore, a corresponding welcome and farewell text is stored in the experiment data. Appendix \ref{appendix:testcases} shows screenshots of the complete fulfillment of this test case.
+The implementation of this test case can be done without further development by utilizing the standard functionalities of the developed prototype. For this purpose, the Information Screen Activity is specified as the first and last step in the experiment data. Furthermore, a corresponding welcome and farewell text is stored in the experiment data. Figure \ref{fig:T1} shows that the functional requirements F1.1 and F2.1 to show information at the beginning of the experiment and to provide the participants with debrifing information can be completely fulfilled by the artefact.
 
+\vspace{1.5cm}
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_StartingScreen.png}
         \caption{Welcome Message}
         \label{subfig:welcomeMessage}
     \end{subfigure}
     \hspace{1cm}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_GoodbyeMessage.png}
         \caption{Goodbye Message}
@@ -29,29 +30,36 @@ The implementation of this test case can be implemented without further developm
     \label{fig:T1}
 \end{figure}
 
-\subsubsection*{T2: Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end}
+\newpage\subsubsection*{T2: Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end}
 
+To perform this test, the experiment data must also be adjusted first. For this, the questionnair step must be placed at the beginning and the end of the experiment steps order within the experiment data. In addition, the participant data must contain the respective data to be queried as an attribute which must not be filled, since the query of the questionnair process only queries for missing data. These data entries are \enquote{age} and \enquote{experiment feedback} as defined by the test case. The two screens on which the participants are asked for their age at the beginning of the experiment and for feedback on the experiment at its end are shown in Figure \ref{fig:T2}. The test T2 and thus the requirements F2.1, F2.3, F2.2 and F2.3 can thus be fulfilled.
+
+\vspace{0.5cm}
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_T2a.png}
         \caption{Welcome Message}
-        \label{subfig:welcomeMessage}
+        \label{subfig:t2a}
     \end{subfigure}
     \hspace{1cm}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_T2b.png}
         \caption{Goodbye Message}
-        \label{subfig:goodbyeMessage}
+        \label{subfig:t2b}
     \end{subfigure}
     \caption{User Interface Testcase T1}
-    \label{fig:T1}
+    \label{fig:T2}
 \end{figure}
 
-\subsubsection*{T3: The information about how long the experiment took is collected}
+\newpage\subsubsection*{T3: The information about how long the experiment took is collected}
+
+To fulfill this test case, which checks requirement F2.2, the time necessary to perform the experiment is measured. For this, the lines of code from Listing \ref{t3a} can be used on the start activity. These store the start time of the experiment in the meta data in the experiment data. The experiment is then run and the code lines in Listing \ref{t3b} are called when the experiment is completed. These code lines retrieve the start time of the experiment from the experiment data and calculate the total elapsed time during the experiment using the current system time. This is then also stored in the meta data of the experiment data. Thus, the test case T3 can be completely fulfilled and consequently the requirement F2.2.
+
+\vspace{1cm}
 
 \begin{lstlisting}[language=java,label=t3a,lineskip={0pt}, caption=Collect time needed to conduct experiment (a), basicstyle=\scriptsize, captionpos=b]
     String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
@@ -64,7 +72,9 @@ The implementation of this test case can be implemented without further developm
 \end{lstlisting}
 
 
-\subsubsection*{T4: The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted}
+\newpage\subsubsection*{T4: The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted}
+
+\vspace{1cm}
 
 \begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
     File csvfile = new File(Environment.getExternalStorageDirectory() + "/participantData.csv");
@@ -81,7 +91,9 @@ The implementation of this test case can be implemented without further developm
     }
 \end{lstlisting}
 
-\subsubsection*{T5: A chess game is added as custom logic}
+\newpage\subsubsection*{T5: A chess game is added as custom logic}
+
+\vspace{1.5cm}
 
 \begin{figure}[htbp]
     \centering
@@ -90,10 +102,12 @@ The implementation of this test case can be implemented without further developm
     \label{fig:chess}
 \end{figure}
 
-\subsubsection*{T6: Two groups are created, one of the groups is particularly chosen the other one randomly selected}
+\newpage\subsubsection*{T6: Two groups are created, one of the groups is particularly chosen the other one randomly selected}
 
 %the first one through putting the group into the respective participant data
 %second through code within the use case:
+
+\vspace{1cm}
 
 \begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
     currentParticipant = getCurrentParticipantUseCase.getCurrentParticipant();
@@ -116,9 +130,13 @@ The implementation of this test case can be implemented without further developm
     }
 \end{lstlisting}
 
-\subsubsection*{T7: A chess turn is played by both parties not using the same device}
+\newpage\subsubsection*{T7: A chess turn is played by both parties not using the same device}
 
-\subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
+\vspace{1cm}
+
+\newpage\subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
+
+\vspace{1cm}
 
 
 \begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
@@ -158,13 +176,13 @@ The implementation of this test case can be implemented without further developm
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.3\textwidth, keepaspectratio]{content/07_evaluation_of_the_solution/ExcelPicture.png}
+    \includegraphics[width=0.25\textwidth, keepaspectratio]{content/07_evaluation_of_the_solution/ExcelPicture.png}
     \caption{Data loaded into excel}    
     \label{fig:Excel}
 \end{figure}
 
 
-\subsubsection*{T9: The experiment is redone a second time and another experimental setup is implemented}
+\newpage\subsubsection*{T9: The experiment is redone a second time and another experimental setup is implemented}
 
 %just change the experiment data
 
@@ -177,27 +195,32 @@ The implementation of this test case can be implemented without further developm
     %steps.add("com.example.master_thesis.ChessExperimentActivity");
 %\end{lstlisting}
 
-\subsubsection*{T10: The experiment is conducted on different devices}
+\vspace{1cm}
+
+\newpage\subsubsection*{T10: The experiment is conducted on different devices}
 
 %PIXEL 6 PRO API 30
+\vspace{1cm}
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_T10a.png}
         \caption{Info screen step | Pixel 6 Pro}
         \label{subfig:InfoScreenPixel}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+        %\hfill
+        \hspace{1cm}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_T10b.png}
         \caption{ Questionair step | Pixel 6 Pro}
         \label{subfig:QuestionairPixel}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+        %\hfill
+        \hspace{1cm}
+    \begin{subfigure}[b]{0.25\textwidth}
         \centering
         \includegraphics[width=\textwidth]{content/07_evaluation_of_the_solution/Screenshot_T10c.png}
         \caption{Choose test subject step | Pixel 6 Pro}
@@ -207,7 +230,7 @@ The implementation of this test case can be implemented without further developm
        \label{fig:uiScreens}
 \end{figure}
 
-\subsubsection*{T11: During the experiment the current state of the chess board is exported to the conducter of the experiment}
+\newpage\subsubsection*{T11: During the experiment the current state of the chess board is exported to the conducter of the experiment}
 
 \subsubsection*{Remaining requirements}
 
