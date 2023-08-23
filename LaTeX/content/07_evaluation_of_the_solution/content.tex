@@ -129,9 +129,7 @@ Generally, groups are defined by adding a group ID (e.g. group A or group 1) in 
             } else {
                 setGroupAllocationPUseCase.setGroupAllocation("Group B", currentParticipant);
             }
-    
         };
-    
     }
 \end{lstlisting}
 
@@ -165,7 +163,6 @@ To fulfill test case T8 and thus verify requirements N3.1, N.3.2, meta data are 
         //Writing current participant time into file
         //String[] data = {String.valueOf(GetCurrentParticipantUseCase.getInstance().getCurrentParticipant()), String.valueOf(timeDifference)};
 
-
         Iterator iter = participantEntities.iterator();
         while (iter.hasNext()) {
             String[] data = {String.valueOf(((ParticipantEntity)iter.next()).getId()), String.valueOf(((ParticipantEntity)iter.next()).getExperimentTime())};
@@ -183,7 +180,7 @@ To fulfill test case T8 and thus verify requirements N3.1, N.3.2, meta data are 
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth, keepaspectratio]{content/07_evaluation_of_the_solution/ExcelPicture.png}
+    \includegraphics[width=0.99\textwidth, keepaspectratio]{content/07_evaluation_of_the_solution/ExcelPicture.png}
     \caption{Data loaded into excel}    
     \label{fig:Excel}
 \end{figure}
