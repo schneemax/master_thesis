@@ -137,6 +137,52 @@ Generally, groups are defined by adding a group ID (e.g. group A or group 1) in 
 
 \vspace{1cm}
 
+\begin{lstlisting}[language=java,label=t7a,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
+private class ServerThread extends Thread {
+        @Override
+        public void run() {
+            try {
+                ServerSocket serverSocket = new ServerSocket(client_port);
+                Socket clientSocket = serverSocket.accept();
+
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                String message = in.readLine();
+                in.close();
+                clientSocket.close();
+                serverSocket.close();
+
+                handleMessage(message);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+\end{lstlisting}
+
+
+\begin{lstlisting}[language=java,label=t7b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
+    private class ClientThread extends Thread {
+        @Override
+        public void run() {
+            try {
+                Socket socket = new Socket(server_ip, server_port);
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                out.println(message);
+                out.close();
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+\end{lstlisting}
+
+\begin{lstlisting}[language=java,label=t7c,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
+    new ClientThread().start();
+    new ServerThread().start();
+\end{lstlisting}
+
 \newpage\subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
 
 To fulfill test case T8 and thus verify requirements N3.1, N.3.2, meta data are exported from the application and then read into external software. As mentioned above, Android in combination with Java basically supports a variety of file formats for export. The export of the metadata is implemented in the LogMetaDataUseCase use case via the printOutMetaData method and is shown in Listing \ref{t8}. For simplicity and as a proof of concept in the course of this test case, meta data in the form of processing times for the experiment is exported as a CSV file. These are then read into Excel in the course of this test case and visualized using an Excel representation. Figure \ref{fig:Excel} shows this Excel graphic. In principle, however, the CSV file could be processed in any other way, provided that the software used for further processing supports CSV files. 

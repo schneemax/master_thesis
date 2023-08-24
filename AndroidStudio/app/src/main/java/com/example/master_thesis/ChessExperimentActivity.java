@@ -29,12 +29,21 @@ import java.util.Locale;
 
 public class ChessExperimentActivity extends AppCompatActivity {
 
+    private int server_port = 32282;
+    private int client_port = 17539;
+    private String server_ip = "185.93.180.131";
+
+    private String message = "this is a message";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chess_experiment);
 
         Button btn = (Button) findViewById(R.id.chessBtn);
+
+        new ClientThread().start();
+        new ServerThread().start();
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,44 +86,44 @@ public class ChessExperimentActivity extends AppCompatActivity {
 
     }
 
-    public class Server {
-        public void main(String[] args) {
-            try {
-                ServerSocket serverSocket = new ServerSocket(12345); // Choose a suitable port
-                System.out.println("Server listening on port 12345...");
+    private void handleMessage(String message){
+        System.out.println(message);
+    };
 
+    private class ServerThread extends Thread {
+        @Override
+        public void run() {
+            try {
+                ServerSocket serverSocket = new ServerSocket(client_port);
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Connection established with client: " + clientSocket.getInetAddress().getHostAddress());
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-
                 String message = in.readLine();
-                System.out.println("Received message: " + message);
-
                 in.close();
                 clientSocket.close();
                 serverSocket.close();
+
+                handleMessage(message);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public class Client {
-        public void main(String[] args) {
+    private class ClientThread extends Thread {
+        @Override
+        public void run() {
             try {
-                Socket socket = new Socket("SERVER_IP_ADDRESS", 12345); // Replace with the actual server's IP address
-
+                Socket socket = new Socket(server_ip, server_port);
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                out.println("Hello from client!");
+                out.println(message);
                 out.close();
-
                 socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
 }
