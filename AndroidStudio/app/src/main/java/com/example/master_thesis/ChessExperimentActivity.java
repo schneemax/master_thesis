@@ -10,11 +10,15 @@ import android.widget.Button;
 
 import com.opencsv.CSVWriter;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -72,4 +76,45 @@ public class ChessExperimentActivity extends AppCompatActivity {
 
 
     }
+
+    public class Server {
+        public void main(String[] args) {
+            try {
+                ServerSocket serverSocket = new ServerSocket(12345); // Choose a suitable port
+                System.out.println("Server listening on port 12345...");
+
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("Connection established with client: " + clientSocket.getInetAddress().getHostAddress());
+
+                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+                String message = in.readLine();
+                System.out.println("Received message: " + message);
+
+                in.close();
+                clientSocket.close();
+                serverSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public class Client {
+        public void main(String[] args) {
+            try {
+                Socket socket = new Socket("SERVER_IP_ADDRESS", 12345); // Replace with the actual server's IP address
+
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                out.println("Hello from client!");
+                out.close();
+
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 }
