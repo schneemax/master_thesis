@@ -135,7 +135,26 @@ Generally, groups are defined by adding a group ID (e.g. group A or group 1) in 
 
 \newpage\subsubsection*{T7: A chess turn is played by both parties not using the same device}
 
+Test case T7 deals with the interaction between multiple participants. For this purpose, the chess game in test case T5 is to be played by several participants on different devices. The implementation of this test case lies in the corresponding activity itself. In this case in the ChessGameActivity. For this a client class is needed for sending the current game state and a server class for receiving and offering the current game state. These classes are nested as private classes in the activity itself. Listing A shows the code for the server class, Listing B the code for the client class and Listing C the initiation of both classes at the start of the chess game. The server and client are initiated using threads to ensure correct and fast communication between the two playing parties. In this way, after each move played, the current state of the board is sent via the client of one device to the server of the other device. Since this test case only serves as a proof-of-concept, Java sockets were used to implement the communication. These are characterized by their simplicity, but their functionality is limited, especially for modern applications. The use of third-party interfaces or externally hosted servers such as Firebase is therefore conceivable, depending on the requirements of the experiment (\cite{Google.2023b}). Communication between two experiment participants on different devices could be demonstrated by playing a chess move in each case. Test case T7 and thus requirements F4.2, N1.1 and N1.2 could thus be fulfilled and confirmed.
+
 \vspace{1cm}
+
+\begin{lstlisting}[language=java,label=t7b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
+    private class ClientThread extends Thread {
+        @Override
+        public void run() {
+            try {
+                Socket socket = new Socket(server_ip, server_port);
+                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                out.println(message);
+                out.close();
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+\end{lstlisting}
 
 \begin{lstlisting}[language=java,label=t7a,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
 private class ServerThread extends Thread {
@@ -153,24 +172,6 @@ private class ServerThread extends Thread {
 
                 handleMessage(message);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-\end{lstlisting}
-
-
-\begin{lstlisting}[language=java,label=t7b,lineskip={0pt}, caption=Collect time needed to conduct experiment (b), basicstyle=\scriptsize, captionpos=b]
-    private class ClientThread extends Thread {
-        @Override
-        public void run() {
-            try {
-                Socket socket = new Socket(server_ip, server_port);
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                out.println(message);
-                out.close();
-                socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -286,9 +287,12 @@ To verify requirement F5.2 and confirm test case T10, the developed artifact was
 
 \newpage\subsubsection*{T11: During the experiment the current state of the chess board is exported to the conducter of the experiment}
 
+Test case T11 can be tested similarly to test case T7. For this purpose, a message about the current status of the experiment is sent to a server via a client class in the same way as in test case T7. In contrast to test case T7, no messages are sent back and forth, but only the current status of the experiment is exported to a monitor. Therefore, only one client class is needed in the application itself. The server to which the current status is sent can therefore take different forms, only the IP address of the server must be known and it must be able to process the client message. Analogous to test case T7, the implementation of this communication is also possible via other ways and means, should more complex functions be required that go beyond the capabilities of the Java sockets. Test case T11 and thus requirement N6.1 can thus be verified.
 
 
 \subsubsection*{Remaining requirements}
+
+In summary, all requirements could be verified with the help of the established test cases. One exception are the non-functional requirements simplicity, openness of platform and advanced user interface, which cannot be verified by test cases due to their subjectivity. Nevertheless, as already discussed in section \ref{subsec:requirement_validation}, these requirements represent important specifications for the artifact. For this reason, the fulfillment of these non-functional requirements will be addressed as feasibly as possible without the use of test cases. For this purpose, the experience gained from the implementation of the artifact and the documentation on the individual technologies is used. Besides the fact that Android and Java are generally known for their simplicity, the best practice architecture that was implemented in the course of this application is a big argument for the simplicity of the application. The individual functions and code modules have been divided into reusable UseCases and all user interface activities have been clumped into activities. In addition, the implementation of experiment functions has been made extremely easy. For example, the definition of the experiment steps is implemented by the experiment data and does not have to be implemented separately by program code. The implementation of own experiments is also unpacked and makes it possible for the person performing the experiment to set up his experiment without having to worry about the basic framework. Despite the subjectivity of the "simplicity" requirement, it is considered to be fulfilled due to the known "simple" technologies used, the reusable and simple best practice architecture and the encapsulation of standard functions.
 
 
 
