@@ -1,0 +1,18 @@
+\newpage\subsection*{Design and Development of the Artefact}\label{appendix:devArt}
+
+\begin{lstlisting}[language=java,label=activity_call_on_btn_press,lineskip={0pt}, caption=Activity call on button press, basicstyle=\scriptsize, captionpos=b]
+    btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            String nextStep = GetNextExperimentStepUseCase.getInstance().getNextExperimentStep();
+            try {
+                Class<?> c = Class.forName(nextStep);
+                Intent intent = new Intent(ChooseTestSubjectActivity.this, c);
+
+                startActivity(intent);
+            } catch (ClassNotFoundException e) {
+                System.out.println("Error " + e.getMessage());
+            }
+        }
+    });
+\end{lstlisting}

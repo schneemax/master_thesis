@@ -200,23 +200,6 @@ The concept of graphical user interfaces is implemented in Android via so-called
 
 The individual activities only hold a temporary data set of information that is displayed or required in the \ac{ui}. As already explained, all other business logic is outsourced to the domain layer. This can be called and consumed by all activities at any time. After the basic \ac{ui} has been designed, the navigation between the individual steps must be conceptualized and implemented. Generally, the sequence of screen calls is defined by the logic within each activity. This enables each activity to call every other activity at any given moment. The process which the designed screens in figure \ref{fig:uiPrototypeArtefact} are for are all non time senseitive, which is why they all contain a \enquote{continue} button in order to navigate to the next screen. In principle, however, it would also be possible to navigate to the next screen based on a time limit or other logic. The exact order of the screens is not stored in the code of the respective activities, as is usual for Android apps, but in the data of the experiment. As conceptualized in Process \ref{fig:experimentSwimLane}, this should increase the reusability of the application and reduce the time required to set up an experiment. This is implemented by storing the activity class names and the desired order in the experiment data. A click on the button calls the GetNextExperimentStepUseCase use case, which contains the next activity to be opened as a string. This will then initiate and open a corresponding activity class. The code for this activity call is shown in listing \ref{activity_call_on_btn_press}. The navigation to experiment steps that do not contain any user interaction and are therefore not bound in any activity, but in the domain layer, takes place directly before the call of the next activity. An example of this would be that an activity calls one or more domain layer steps and then the next activity when the continue button is pressed.\\\\
 
-\begin{lstlisting}[language=java,label=activity_call_on_btn_press,lineskip={0pt}, caption=Activity call on button press, basicstyle=\scriptsize, captionpos=b]
-    btn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            String nextStep = GetNextExperimentStepUseCase.getInstance().getNextExperimentStep();
-            try {
-                Class<?> c = Class.forName(nextStep);
-                Intent intent = new Intent(ChooseTestSubjectActivity.this, c);
-
-                startActivity(intent);
-            } catch (ClassNotFoundException e) {
-                System.out.println("Error " + e.getMessage());
-            }
-        }
-    });
-\end{lstlisting}
-
 \subsection{Consolidated System Architectural Summary}\label{subsec:completeArchitecture}
 
 In summarized form, the resulting architecture is shown in Figure \ref{fig:completeArchitecture} with all layers.
