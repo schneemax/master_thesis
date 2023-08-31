@@ -154,17 +154,17 @@ After the requirements have been discovered and roughly outlined in the previous
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Experiment Setup            &             \\ \hline
-    F2.1 Additional Logic           & Custom logic/program code can be executed within the artifact.            \\
-    F2.2 Participant Input          & The artefact enables user input.            \\
+    F4.1 Additional Logic           & Custom logic/program code can be executed within the artifact.            \\
+    F4.2 Participant Input          & The artefact enables user input.            \\
     & \\
-    F2.3 Proactive System           & The artifact can pro-actively propmt a user action           \\
+    F4.3 Proactive System           & The artifact can pro-actively propmt a user action           \\
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Groups                      &             \\ \hline
-    F4.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
-    F4.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ 
-    F4.3 Targeted Assignment        & Groups of test subjects must be able to be created based on certain attributes like confounding variables \\
-    F4.4 Random Assignment          & Groups of test subjects must be able to be created based on random assignment \\ \hline
+    F5.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
+    F5.2 Communication of Groups    & The different groups must be able to interact with each other.            \\ 
+    F5.3 Targeted Assignment        & Groups of test subjects must be able to be created based on certain attributes like confounding variables \\
+    F5.4 Random Assignment          & Groups of test subjects must be able to be created based on random assignment \\ \hline
     \end{tabular}
     \caption[Functional Requirements Structured]{Functional Requirements Structured}\label{tab:FuncRequirementsCat}
     \end{table}
@@ -182,31 +182,31 @@ Requirement                             & Description \\ \hline
     N1.2 Time-Flexibility           & The artifact can be used independently of a given period of time.            \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Data Postprocessing &             \\ \hline
-    N3.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation.            \\
-    N3.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization.             \\ \hline
+    N2.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation.            \\
+    N2.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization.             \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Simplicity                  &            \\ \hline
-    N4.1 Simplicity                 & The artefact is simple to use.           \\
+    N3.1 Simplicity                 & The artefact is simple to use.           \\
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Reusable and Interoperable  &             \\ \hline
-    N5.1 Reusable                   & Experiments with the artefact are easy to re-do.           \\
+    N4.1 Reusable                   & Experiments with the artefact are easy to re-do.           \\
     & \\
-    N5.2 Interoperability           & The artefact is interoperable.            \\
+    N4.2 Interoperability           & The artefact is interoperable.            \\
     & \\
-    N5.3 Openness of Platform       & The artefact is open to changes and enhancements. \\
+    N4.3 Openness of Platform       & The artefact is open to changes and enhancements. \\
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Monitoring                  &             \\ \hline
-    N6.1 Monitoring of Study        & The study conducted with the artefact can be monitored.            \\ 
+    N5.1 Monitoring of Study        & The study conducted with the artefact can be monitored.            \\ 
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Pre-Loading                 &             \\ \hline
-    N7.1 Multi-Source             & Data from multiple-sources must be pre-loaded.            \\ 
+    N6.1 Multi-Source             & Data from multiple-sources must be pre-loaded.            \\ 
     & \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Advanced User Interface   &             \\ \hline
-    N8.1 Advanced User Interface  & The Artefact enables the usage of modern user interface components.            \\ \hline
+    N7.1 Advanced User Interface  & The Artefact enables the usage of modern user interface components.            \\ \hline
     \end{tabular}
     \caption[Non-Functional Requirements Structured]{Non-Functional Requirements Structured}\label{tab:NonFuncRequirementsCat}
     \end{table}
@@ -225,25 +225,25 @@ In this section, the previously established requirements are validated. The crit
     ID  & Test Description                                                                                                                                     & Requirement                  \\ \hline
     T1  & A welcome and goodbye message is displayed                                                                                               & F1.1, F1.2                 \\
     & \\
-    T2  & Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end              & F2.1, F2.3, F2.2, F2.3 \\
+    T2  & Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end              & F2.1, F2.3, F4.3, F4.2 \\
     & \\
     T3  & The information about how long the experiment took is collected                                                                          & F2.2                         \\
     & \\
-    T4  & The sex and the weight of the participant is pre-loaded into the experiment from different files. The sex of the participant is deleted. & F3.2                         \\
+    T4  & The sex and the weight of the participant is pre-loaded into the experiment from different files. The sex of the participant is deleted. & F3.1, F3.2, N6.1                         \\
     & \\
-    T5  & A chess game is added as custom logic                                                                                                    & F2.1, F2.2, F2.3         \\
+    T5  & A chess game is added as custom logic                                                                                                    &  F4.1, F4.2, F4.3         \\
     & \\
-    T6  & Two groups are created, one of the groups is particularly chosen the other one randomly selected                                           & F4.1, F4.3, F4.4         \\
+    T6  & Two groups are created, one of the groups is particularly chosen the other one randomly selected                                           & F5.1, F5.3, F5.4         \\
     & \\
-    T7  & A chess turn is played by both parties not using the same device                                                                         & F4.2, N1.1, N1.2         \\
+    T7  & A chess turn is played by both parties not using the same device                                                                         & F4.2, F5.2, N1.1, N1.2         \\
     & \\
-    T8  & The results of the experiment are retrieved and displayed in third party software                                                        & N3.1, N.3.2                \\
+    T8  & The results of the experiment are retrieved and displayed in third party software                                                        & F2.2, N2.1, N2.2, N5.1                \\
     & \\
-    T9  & The experiment is redone a second time and another experimental setup is implemented                                                     & N5.1                         \\
+    T9  & The experiment is redone a second time and another experimental setup is implemented                                                     & N4.1                         \\
     & \\
-    T10 & The experiment is conducted on different devices                                                                                         & N5.2                         \\
+    T10 & The experiment is conducted on different devices                                                                                         & N4.2                         \\
     & \\
-    T11 & During the experiment the current state of the chess board is exported to the conducter of the experiment                                & N6.1                         \\ 
+    T11 & During the experiment the current state of the chess board is exported to the conducter of the experiment                                & N5.1                         \\ 
     & \\ \hline
     \end{tabular}
     \end{table}
