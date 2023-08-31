@@ -1,23 +1,23 @@
-<mxfile host="Electron" modified="2023-07-29T10:13:09.239Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="gszXUHg_pfBAAFGDlR8E" version="21.6.1" type="device">
+<mxfile host="Electron" modified="2023-08-31T13:44:40.487Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="OcYRFRg9xWbPr-gwb4Q9" version="21.6.5" type="device">
   <diagram name="Page-1" id="OpWTwDbj9fGWJGAPWJQz">
-    <mxGraphModel dx="947" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="160" pageHeight="210" math="0" shadow="0">
+    <mxGraphModel dx="677" dy="392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="120" pageHeight="100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ATXnocJcbOEIk6kjFFpH-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ATXnocJcbOEIk6kjFFpH-1" target="ATXnocJcbOEIk6kjFFpH-7">
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ATXnocJcbOEIk6kjFFpH-1" target="ATXnocJcbOEIk6kjFFpH-7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ATXnocJcbOEIk6kjFFpH-1" value="User Interface Layer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry width="160" height="50" as="geometry" />
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-1" value="User Interface Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="ATXnocJcbOEIk6kjFFpH-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ATXnocJcbOEIk6kjFFpH-7" target="ATXnocJcbOEIk6kjFFpH-8">
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ATXnocJcbOEIk6kjFFpH-7" target="ATXnocJcbOEIk6kjFFpH-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ATXnocJcbOEIk6kjFFpH-7" value="Domain Layer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry y="80" width="160" height="50" as="geometry" />
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-7" value="Domain Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry y="40" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="ATXnocJcbOEIk6kjFFpH-8" value="Data Layer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry y="160" width="160" height="50" as="geometry" />
+        <mxCell id="ATXnocJcbOEIk6kjFFpH-8" value="Data Layer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry y="80" width="120" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

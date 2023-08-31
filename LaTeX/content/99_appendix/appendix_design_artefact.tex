@@ -1,5 +1,7 @@
 \newpage\subsection*{Design and Development of the Artefact}\label{appendix:devArt}
 
+%\subsubsection*{Coding}
+
 \begin{lstlisting}[language=java,label=activity_call_on_btn_press,lineskip={0pt}, caption=Activity call on button press, basicstyle=\scriptsize, captionpos=b]
     btn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -16,3 +18,20 @@
         }
     });
 \end{lstlisting}
+
+%\subsubsection*{Use Cases}
+\begin{itemize}
+    \item \textbf{GetNextActivity}: (\textit{Load next experiment step}) Get the next step of the experiment from the experiment data.
+    \item \textbf{GetParticipantDataUseCase}: (\textit{Load Participant Data}) Get all participants IDs or names from the participant data. 
+    \item \textbf{CreateNewParticipantUseCase}: (\textit{Create New Participant}) Create a new participant ID or name in the participant data.
+    \item \textbf{GetGroupAllocationPUseCase}: (\textit{Read Group Allocation Participant}) Get the manual group allocation for a specific participant from the participant data.
+    \item \textbf{GetGroupAllocationEUseCase}: (\textit{Read Group Allocation Experiment}) Get the general group allocation from the experiment data.
+    \item \textbf{AllocateGroupsUseCase}: (\textit{Allocate Groups}) Allocate groups automatically and save the respective group allocation for every participant ID or name in the particpant data. 
+    \item \textbf{SetGroupAllocationPUseCase}: (\textit{Save group allocation}) Save the new group allocation in the participant file for the respective participant.
+    \item \textbf{GetNextDataEntryUseCase}: (\textit{Load next entry of data for participant}) Get next data entry for a participant ID or name from the participant data. 
+    \item \textbf{InsertDataPUseCase}: (\textit{Insert Missing Data Entry}) Save a data entry for a corresponding participant ID or name in the participant data.
+    \item \textbf{LogMetaDataUseCase}: (\textit{Log meta data}) Save meta data from the current process step in the experiment data.
+    \item \textbf{GetInfoScreenDataUseCase}: (\textit{Load info screen data}) Get information that should be displayed from the experiment data.  
+    \item \textbf{SetCurrentParticipant}: (\textit{Set current participant}) Set the participant that currently performs the experiment.  
+    \item \textbf{GetCurrentParticipant}: (\textit{Get current participant}) Get the participant that currently participates in the experiment.  
+\end{itemize}
