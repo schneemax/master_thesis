@@ -19,7 +19,7 @@ The implementation of this test case can be done without further development by 
         \caption{Goodbye Message}
         \label{subfig:goodbyeMessage}
     \end{subfigure}
-    \caption{T1: User Interface Testcase}
+    \caption{T1: User Interface}
     \label{fig:T1}
 \end{figure}
 
@@ -45,7 +45,7 @@ To perform this test, the experiment data must be adjusted first. For this, the 
         \caption{Goodbye Message}
         \label{subfig:t2b}
     \end{subfigure}
-    \caption{T2: User Interface Testcase}
+    \caption{T2: User Interface}
     \label{fig:T2}
 \end{figure}
 
@@ -55,13 +55,14 @@ To perform this test, the experiment data must be adjusted first. For this, the 
 
 To fulfill this test case, which checks requirement F2.2, the time necessary to perform the experiment is measured. For this, the lines of code from Listing \ref{t3a} can be used on the start activity. These store the start time of the experiment in the meta data in the experiment data. The experiment is then run and the code lines in Listing \ref{t3b} are called when the experiment is completed. These code lines retrieve the start time of the experiment from the experiment data and calculate the total elapsed time during the experiment using the current system time. This is then also stored in the meta data of the experiment data. Thus, the test case T3 can be completely fulfilled and consequently the requirement F2.2.
 
+\vspace{0.5cm}
 
-\begin{lstlisting}[language=java,label=t3a,lineskip={0pt}, caption=T3: Collecting the Time Needed to Conduct Experiment (a), basicstyle=\scriptsize, captionpos=b]
+\begin{lstlisting}[language=java,label=t3a,lineskip={0pt}, caption=T3: Collecting the Time Needed to Conduct an Experiment (a), basicstyle=\scriptsize, captionpos=b]
     String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
     LogMetaDataUseCase.getInstance().setMetaData(currentTime);
 \end{lstlisting}
 
-\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T3: Collecting the Time Needed to Conduct Experiment (b), basicstyle=\scriptsize, captionpos=b]
+\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T3: Collecting the Time Needed to Conduct an Experiment (b), basicstyle=\scriptsize, captionpos=b]
     long difference = date1.getTime() - date2.getTime();
     LogMetaDataUseCase.getInstance().setMetaData(difference);
 \end{lstlisting}
@@ -72,8 +73,9 @@ To fulfill this test case, which checks requirement F2.2, the time necessary to 
 
 For test case T4, which verifies requirement F3.1, F3.2 and N6.1 the files to be read in are read via corresponding Java interfaces in the ParticipantData class. Java supports the import of a variety of different file formats (\cite{Ullenboom.2017}). At the same time, the read-in data can also be formatted or adapted. In test case T4, the gender and weight of the participants is read in and the information about the gender is then deleted.
 
+\vspace{0.5cm}
 
-\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T4: Loading Data into the Artefact, basicstyle=\scriptsize, captionpos=b]
+\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T4: Loading of Data into the Artefact, basicstyle=\scriptsize, captionpos=b]
     File csvfile = new File(Environment.getExternalStorageDirectory() + "/participantData.csv");
     CSVReader reader = new CSVReader(new FileReader(csvfile.getAbsolutePath()));
     String[] nextLine;
@@ -111,6 +113,7 @@ In test case T5, a chessboard game is to be implemented following the study of \
 %second through code within the use case:
 Generally, groups are defined by adding a group ID (e.g. group A or group 1) in the user data. If the corresponding group assignment field is not filled, the assignment is performed automatically in the AllocateGroupsUseCase use case. The code snippet in Listing \ref{t6} shows the standard code that assigns the participants who have no group assignment to a random group. The corresponding group assignment is then stored in the previously empty attribute. The test case T6 and thus the requirements F5.1, F5.3 and F5.4 are verified. Furthermore, a customized or extended group assignment would be implemented in the AllocateGroupsUseCase use case.
 
+\vspace{0.5cm}
 
 \begin{lstlisting}[language=java,label=t6,lineskip={0pt}, caption=T6: Allocation of Groups, basicstyle=\scriptsize, captionpos=b]
     currentParticipant = getCurrentParticipantUseCase.getCurrentParticipant();
@@ -137,6 +140,7 @@ Generally, groups are defined by adding a group ID (e.g. group A or group 1) in 
 
 Test case T7 deals with the interaction between multiple participants. For this purpose, the chess game in test case T5 is to be played by several participants on different devices. The implementation of this test case lies in the corresponding activity itself. In this case in the ChessGameActivity. For this a client class is needed for sending the current game state and a server class for receiving and offering the current game state. These classes are nested as private classes in the activity itself. Listing \ref{t7a} shows the code for the server class, Listing \ref{t7b} the code for the client class and Listing \ref{t7c} the initiation of both classes at the start of the chess game. The server and client are initiated using threads to ensure correct and fast communication between the two playing parties. In this way, after each move played, the current state of the board is sent via the client of one device to the server of the other device. Since this test case only serves as a proof-of-concept, Java sockets were used to implement the communication. These are characterized by their simplicity, but their functionality is limited, especially for modern applications. The use of third-party interfaces or externally hosted servers such as Firebase is therefore conceivable, depending on the requirements of the experiment (\cite{Google.2023b}). Communication between two experiment participants on different devices could be demonstrated by playing a chess move in each case. Test case T7 and thus requirements F4.2, F5.2, N1.1 and N1.2 could thus be fulfilled and confirmed.
 
+\vspace{0.5cm}
 
 \begin{lstlisting}[language=java,label=t7b,lineskip={0pt}, caption=T7: Server Code, basicstyle=\scriptsize, captionpos=b]
     private class ClientThread extends Thread {
@@ -178,7 +182,7 @@ private class ServerThread extends Thread {
     }
 \end{lstlisting}
 
-\begin{lstlisting}[language=java,label=t7c,lineskip={0pt}, caption=T7: Starting of Server and Client Threads, basicstyle=\scriptsize, captionpos=b]
+\begin{lstlisting}[language=java,label=t7c,lineskip={0pt}, caption=T7: Starting Server and Client Threads, basicstyle=\scriptsize, captionpos=b]
     new ClientThread().start();
     new ServerThread().start();
 \end{lstlisting}
@@ -188,6 +192,8 @@ private class ServerThread extends Thread {
 \subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
 
 To fulfill test case T8 and thus verify requirements F2.2, N2.1, N2.2 and N5.1 meta data are exported from the application and then read into external software. As mentioned above, Android in combination with Java basically supports a variety of file formats for export. The export of the metadata is implemented in the LogMetaDataUseCase use case via the printOutMetaData method and is shown in Listing \ref{t8}. For simplicity and as a proof of concept in the course of this test case, meta data in the form of processing times for the experiment is exported as a \ac{csv} file. These are then read into Excel in the course of this test case and visualized using an Excel representation. Figure \ref{fig:Excel} shows this Excel graphic. In principle, however, the \ac{csv}  file could be processed in any other way, provided that the software used for further processing supports CSV files. 
+
+\vspace{0.5cm}
 
 \begin{lstlisting}[language=java,label=t8,lineskip={0pt}, caption=T8: Result Collection and Export, basicstyle=\scriptsize, captionpos=b]
     File file = new File(Environment.getExternalStorageDirectory() + "/participant" + GetCurrentParticipantUseCase.getInstance().getCurrentParticipant() + "TimeData.csv");
