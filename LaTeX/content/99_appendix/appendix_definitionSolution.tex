@@ -1,10 +1,36 @@
 %\newpage\subsection*{Design and Development of the Artefact}\label{appendix:defSol}
+%\afterpage{
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
-\begin{sidewaystable}[htbp]
+%\newgeometry{bottom=1mm, top=1mm, left=1mm, right=1mm}
+\vspace{2cm}
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabular}{lL{8cm}}
+    \hline
+    Online database           & Subject Focus                                                          \\ \hline
+    %ABI/INFORM Collection     & Business and management                                                \\
+    Business Source Premier   & Accounting, business, economics, management                            \\
+    EconBiz                   & Business and economics                                                 \\
+    %ProQuest One Business     & Business                                                               \\
+    AIS Electronic Library    & Informatics                                                            \\
+    JSTOR & Covers a wide range of subjects \\
+    ACM Digital Library & Computer science and related topics \\
+    IEEE Xplore / Electronic Library & Computer science \\ \hline
+    %MIS Quarterly Website     & Business informatics                                                   \\
+    %Web of Science            & Multiple databases that provide access to different academic topics    \\
+    %Google Scholar            & Web search engine for scholarly literature across an array of disciplines \\ \hline
+    \end{tabular}
+    \caption{Databases Used in the Literature Search for Requirements}
+    \label{literature_search_db}
+    \end{table}
+
+\begin{sidewaystable}[htbp!]
     \centering
     \scriptsize
     \begin{tabular}{L{1cm}|C{1cm}L{Ccm}C{1cm}|C{1cm}C{1cm}C{1cm}|C{1cm}C{1cm}C{1cm}|}
@@ -46,5 +72,9 @@
     \multicolumn{1}{|l|}{Journal of MIS}                                  & \multicolumn{1}{c|}{0}                                      & \multicolumn{1}{c|}{0}                                             & 0                                & \multicolumn{1}{c|}{0}                                      & \multicolumn{1}{c|}{0}                                              & 0                                 & \multicolumn{1}{c|}{0}                                     & \multicolumn{1}{c|}{0}                                            & 0                               \\ \hline
     \multicolumn{1}{|l|}{\textbf{Total}}                                  & \multicolumn{1}{c|}{\textbf{874}}                           & \multicolumn{1}{c|}{\textbf{571}}                                  & \textbf{720}                     & \multicolumn{1}{c|}{\textbf{2449}}                          & \multicolumn{1}{c|}{\textbf{5224}}                                  & \textbf{9544}                     & \multicolumn{1}{c|}{\textbf{77}}                           & \multicolumn{1}{c|}{\textbf{290}}                                 & \textbf{206}                    \\ \hline
     \end{tabular}
-    \caption*[Number of articles identified]{Number of articles identified in their respective database}\label{tab:articlesFoundRequirement}
+    \caption[Number of Articles Identified and Their Respective Database]{Number of Articles Identified and Their Respective Database}\label{tab:articlesFoundRequirement}
     \end{sidewaystable}
+    %\enlargethispage{10\baselineskip}
+    %\restoregeometry % Restore the original page geometry
+ 
+%}

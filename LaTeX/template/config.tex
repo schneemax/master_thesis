@@ -13,11 +13,11 @@
     \pagenumbering{roman} % set capital roman page numbers: I, II, ...
     \clearpage \setcounter{page}{2} % count cover page
 
-    \begin{spacing}{0.98} 
+    %\begin{spacing}{0.98} 
     \tableofcontents
-    \end{spacing}
+    %\end{spacing}
 
-    \begin{spacing}{1.0} 
+    %\begin{spacing}{1.0} 
     \newpage
     %\sectionunnumbered{List of Abbreviations}
     \phantomsection
@@ -32,11 +32,13 @@
 
     \newpage %needed as a link to the current page
     %\phantomsection
-    %\addcontentsline{toc}{section}{List of Algorithms}
-    %\sectionunnumbered{List of Abbreviations}
-    %\lstlistoflistings
-    %\newpage
-    \end{spacing}
+    \addcontentsline{toc}{section}{List of Algorithms}
+    \sectionunnumbered{List of Abbreviations}
+    \lstlistoflistings
+    \newpage
+    \input{content/acronyms.tex}
+    %\end{spacing}
+    \input{content/abstract.tex}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,9 +49,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\setBibliography}{
+%\pagenumbering{Roman} % set roman page numbers: i, ii, ...
 
-\sectionunnumbered{Bibliography}
-\pagenumbering{Roman} % set roman page numbers: i, ii, ...
+
+\phantomsection
+\addcontentsline{toc}{section}{Bibliography}
+%\sectionunnumbered{Bibliography}
+
 
 {\linespread{1}\selectfont\printbibliography[heading=none]}
 
