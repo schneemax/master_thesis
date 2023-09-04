@@ -2,7 +2,9 @@
 
 \subsubsection*{T1: A welcome and goodbye message is displayed} 
 
-The implementation of this test case can be done without further development by utilizing the standard functionalities of the developed prototype. For this purpose, the Information Screen Activity is specified as the first and last step in the experiment data. Furthermore, a corresponding welcome and farewell text is stored in the experiment data. Figure \ref{fig:T1} shows that the functional requirements F1.1 and F1.2 to show information at the beginning of the experiment and to provide the participants with debrifing information can be completely fulfilled by the artefact.
+%The implementation of this test case can be done without further development by utilizing the standard functionalities of the developed prototype. For this purpose, the Information Screen Activity is specified as the first and last step in the experiment data. Furthermore, a corresponding welcome and farewell text is stored in the experiment data. Figure \ref{fig:T1} shows that the functional requirements F1.1 and F1.2 to show information at the beginning of the experiment and to provide the participants with debrifing information can be completely fulfilled by the artefact.
+
+The implementation of this test case can be done without further development by utilizing the standard functionalities of the developed prototype. For this purpose, the Information Screen Activity is specified as the first and last step in the experiment data. Furthermore, a corresponding welcome and farewell text is stored in the experiment data. Figure \ref{fig:T1} shows that the functional requirements F1.1 and F1.2 to show information at the beginning of the experiment and to provide the participants with debriefing information can be completely fulfilled by the artifact.
 
 \begin{figure}[htbp]
     \centering
@@ -25,9 +27,13 @@ The implementation of this test case can be done without further development by 
 
 \newpage
 
-\subsubsection*{T2: Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end}
+%\subsubsection*{T2: Participants are prompted to input their age at the beginning and prompted to input how the liked the experiment at the end}
 
-To perform this test, the experiment data must be adjusted first. For this, the questionnair step must be placed at the beginning and the end of the experiment step order within the experiment data. In addition, the participant data must contain the respective data as an empty field to be queried as an attribute, since the query of the questionnair process only queries for missing data. These data entries are \enquote{age} and \enquote{experiment feedback} as defined by the test case. The two screens on which the participants are asked for their age at the beginning of the experiment and for feedback on the experiment at its end are shown in Figure \ref{fig:T2}. The test T2 and thus the requirements F2.1, F2.3, F4.3 and F4.2 can thus be fulfilled.
+%To perform this test, the experiment data must be adjusted first. For this, the questionnair step must be placed at the beginning and the end of the experiment step order within the experiment data. In addition, the participant data must contain the respective data as an empty field to be queried as an attribute, since the query of the questionnair process only queries for missing data. These data entries are \enquote{age} and \enquote{experiment feedback} as defined by the test case. The two screens on which the participants are asked for their age at the beginning of the experiment and for feedback on the experiment at its end are shown in Figure \ref{fig:T2}. The test T2 and thus the requirements F2.1, F2.3, F4.3 and F4.2 can thus be fulfilled.
+
+\subsubsection*{T2: Participants are prompted to input their age at the beginning and prompted to input how they liked the experiment at the end.}
+
+To perform this test, the experiment data must be adjusted first. For this, the questionnaire step must be placed at the beginning and the end of the experiment step order within the experiment data. In addition, the participant data must contain the respective data as an empty field to be queried as an attribute, since the questionnaire process only queries for missing data. These data entries are \enquote{age} and \enquote{experiment feedback} as defined by the test case. The two screens on which the participants are asked for their age at the beginning of the experiment and for feedback on the experiment at its end are shown in Figure \ref{fig:T2}. The test T2 and thus the requirements F2.1, F2.3, F4.3, and F4.2 can thus be fulfilled.
 
 
 \begin{figure}[htbp]
@@ -51,9 +57,13 @@ To perform this test, the experiment data must be adjusted first. For this, the 
 
 \newpage
 
-\subsubsection*{T3: The information about how long the experiment took is collected}
+%\subsubsection*{T3: The information about how long the experiment took is collected}
 
-To fulfill this test case, which checks requirement F2.2, the time necessary to perform the experiment is measured. For this, the lines of code from Listing \ref{t3a} can be used on the start activity. These store the start time of the experiment in the meta data in the experiment data. The experiment is then run and the code lines in Listing \ref{t3b} are called when the experiment is completed. These code lines retrieve the start time of the experiment from the experiment data and calculate the total elapsed time during the experiment using the current system time. This is then also stored in the meta data of the experiment data. Thus, the test case T3 can be completely fulfilled and consequently the requirement F2.2.
+%To fulfill this test case, which checks requirement F2.2, the time necessary to perform the experiment is measured. For this, the lines of code from Listing \ref{t3a} can be used on the start activity. These store the start time of the experiment in the meta data in the experiment data. The experiment is then run and the code lines in Listing \ref{t3b} are called when the experiment is completed. These code lines retrieve the start time of the experiment from the experiment data and calculate the total elapsed time during the experiment using the current system time. This is then also stored in the meta data of the experiment data. Thus, the test case T3 can be completely fulfilled and consequently the requirement F2.2.
+
+\subsubsection*{T3: The information about how long the experiment took is collected.}
+
+To fulfill this test case, which checks requirement F2.2, the time necessary to perform the experiment is measured. For this purpose, the lines of code from Listing \ref{t3a} can be used on the start activity. These store the start time of the experiment in the metadata in the experiment data. The experiment is then run, and the code lines in Listing \ref{t3b} are called when the experiment is completed. These code lines retrieve the start time of the experiment from the experiment data and calculate the total elapsed time during the experiment using the current system time. This is then also stored in the metadata of the experiment data. Thus, the test case T3 can be completely fulfilled, and consequently, the requirement F2.2 can be satisfied.
 
 \vspace{0.5cm}
 
@@ -69,13 +79,18 @@ To fulfill this test case, which checks requirement F2.2, the time necessary to 
 
 \newpage
 
-\subsubsection*{T4: The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted}
+%\subsubsection*{T4: The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted}
 
-For test case T4, which verifies requirement F3.1, F3.2 and N6.1 the files to be read in are read via corresponding Java interfaces in the ParticipantData class. Java supports the import of a variety of different file formats (\cite{Ullenboom.2017}). At the same time, the read-in data can also be formatted or adapted. In test case T4, the gender and weight of the participants is read in and the information about the gender is then deleted.
+%For test case T4, which verifies requirement F3.1, F3.2 and N6.1 the files to be read in are read via corresponding Java interfaces in the ParticipantData class. Java supports the import of a variety of different file formats (\cite{Ullenboom.2017}). At the same time, the read-in data can also be formatted or adapted. In test case T4, the gender and weight of the participants is read in and the information about the gender is then deleted.
+
+\subsubsection*{T4: The gender and weight of the participant are pre-loaded into the experiment from different files. The gender of the participant is deleted.}
+
+For test case T4, which verifies requirements F3.1, F3.2, and N6.1, the files to be read are accessed through corresponding Java interfaces in the ParticipantData class. Java supports the import of various file formats (\cite{Ullenboom.2017}). Additionally, the imported data can also be formatted or adapted. In test case T4, the gender and weight of the participants are imported, and the gender information is subsequently deleted.
+
 
 \vspace{0.5cm}
 
-\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T4: Loading of Data into the Artefact, basicstyle=\scriptsize, captionpos=b]
+\begin{lstlisting}[language=java,label=t3b,lineskip={0pt}, caption=T4: Loading of Data into the Artifact, basicstyle=\scriptsize, captionpos=b]
     File csvfile = new File(Environment.getExternalStorageDirectory() + "/participantData.csv");
     CSVReader reader = new CSVReader(new FileReader(csvfile.getAbsolutePath()));
     String[] nextLine;
@@ -92,9 +107,13 @@ For test case T4, which verifies requirement F3.1, F3.2 and N6.1 the files to be
 
 \newpage
 
-\subsubsection*{T5: A chess game is added as custom logic}
+%\subsubsection*{T5: A chess game is added as custom logic}
 
-In test case T5, a chessboard game is to be implemented following the study of \cite{Krakowski.2022}. This test case is intended to verify F4.1, F4.2 and F4.3 which deal with the implementation of custom logic. The chessboard serves as a proof of the functionality to implement custom logic in the application. Since the checkerboard is an experimental step that requires interaction with the user, this test case is implemented in the course of a new activity. This activity has to be added to the order of the activities in the experiment data to ensure that it is called. A screenshot of this activity is shown in figure \ref{fig:chess}. The detailed coding of this custom activity will not be discussed further, since it only serves to verify the requirements. Through this custom activity and the fact that Java is a Turing Complete programming language testcase T5 is fulfilled.
+%In test case T5, a chessboard game is to be implemented following the study of \cite{Krakowski.2022}. This test case is intended to verify F4.1, F4.2 and F4.3 which deal with the implementation of custom logic. The chessboard serves as a proof of the functionality to implement custom logic in the application. Since the checkerboard is an experimental step that requires interaction with the user, this test case is implemented in the course of a new activity. This activity has to be added to the order of the activities in the experiment data to ensure that it is called. A screenshot of this activity is shown in figure \ref{fig:chess}. The detailed coding of this custom activity will not be discussed further, since it only serves to verify the requirements. Through this custom activity and the fact that Java is a Turing Complete programming language testcase T5 is fulfilled.
+
+\subsubsection*{T5: Adding a Chess Game as Custom Logic}
+
+In test case T5, a chessboard game is to be implemented following the study by \cite{Krakowski.2022}. This test case is intended to verify F4.1, F4.2, and F4.3, which deal with the implementation of custom logic. The chessboard serves as proof of the functionality to implement custom logic in the application. Since the checkerboard is an experimental step that requires interaction with the user, this test case is implemented as part of a new activity. This activity must be added to the sequence of activities in the experimental data to ensure that it is called. A screenshot of this activity is shown in Figure \ref{fig:chess}. The detailed coding of this custom activity will not be discussed further since it only serves to verify the requirements. Through this custom activity and the fact that Java is a Turing Complete programming language, test case T5 is fulfilled.
 
 
 
@@ -107,11 +126,16 @@ In test case T5, a chessboard game is to be implemented following the study of \
 
 \newpage
 
-\subsubsection*{T6: Two groups are created, one of the groups is particularly chosen the other one randomly selected}
+%\subsubsection*{T6: Two groups are created, one of the groups is particularly chosen the other one randomly selected}
 
 %the first one through putting the group into the respective participant data
 %second through code within the use case:
-Generally, groups are defined by adding a group ID (e.g. group A or group 1) in the user data. If the corresponding group assignment field is not filled, the assignment is performed automatically in the AllocateGroupsUseCase use case. The code snippet in Listing \ref{t6} shows the standard code that assigns the participants who have no group assignment to a random group. The corresponding group assignment is then stored in the previously empty attribute. The test case T6 and thus the requirements F5.1, F5.3 and F5.4 are verified. Furthermore, a customized or extended group assignment would be implemented in the AllocateGroupsUseCase use case.
+%Generally, groups are defined by adding a group ID (e.g. group A or group 1) in the user data. If the corresponding group assignment field is not filled, the assignment is performed automatically in the AllocateGroupsUseCase use case. The code snippet in Listing \ref{t6} shows the standard code that assigns the participants who have no group assignment to a random group. The corresponding group assignment is then stored in the previously empty attribute. The test case T6 and thus the requirements F5.1, F5.3 and F5.4 are verified. Furthermore, a customized or extended group assignment would be implemented in the AllocateGroupsUseCase use case.
+
+\subsubsection*{T6: Two groups are created, one of the groups is specifically chosen, and the other one is randomly selected}
+
+In general, groups are defined by adding a group ID (e.g., group A or group 1) in the user data. If the corresponding group assignment field is not filled, the assignment is performed automatically in the AllocateGroupsUseCase use case. The code snippet in Listing \ref{t6} shows the standard code that assigns participants who have no group assignment to a random group. The corresponding group assignment is then stored in the previously empty attribute. Test case T6, thus, verifies requirements F5.1, F5.3, and F5.4. Furthermore, customized or extended group assignments can be implemented in the AllocateGroupsUseCase use case.
+
 
 \vspace{0.5cm}
 
@@ -136,9 +160,14 @@ Generally, groups are defined by adding a group ID (e.g. group A or group 1) in 
 
 \newpage
 
-\subsubsection*{T7: A chess turn is played by both parties not using the same device}
+%\subsubsection*{T7: A chess turn is played by both parties not using the same device}
 
-Test case T7 deals with the interaction between multiple participants. For this purpose, the chess game in test case T5 is to be played by several participants on different devices. The implementation of this test case lies in the corresponding activity itself. In this case in the ChessGameActivity. For this a client class is needed for sending the current game state and a server class for receiving and offering the current game state. These classes are nested as private classes in the activity itself. Listing \ref{t7a} shows the code for the server class, Listing \ref{t7b} the code for the client class and Listing \ref{t7c} the initiation of both classes at the start of the chess game. The server and client are initiated using threads to ensure correct and fast communication between the two playing parties. In this way, after each move played, the current state of the board is sent via the client of one device to the server of the other device. Since this test case only serves as a proof-of-concept, Java sockets were used to implement the communication. These are characterized by their simplicity, but their functionality is limited, especially for modern applications. The use of third-party interfaces or externally hosted servers such as Firebase is therefore conceivable, depending on the requirements of the experiment (\cite{Google.2023b}). Communication between two experiment participants on different devices could be demonstrated by playing a chess move in each case. Test case T7 and thus requirements F4.2, F5.2, N1.1 and N1.2 could thus be fulfilled and confirmed.
+%Test case T7 deals with the interaction between multiple participants. For this purpose, the chess game in test case T5 is to be played by several participants on different devices. The implementation of this test case lies in the corresponding activity itself. In this case in the ChessGameActivity. For this a client class is needed for sending the current game state and a server class for receiving and offering the current game state. These classes are nested as private classes in the activity itself. Listing \ref{t7a} shows the code for the server class, Listing \ref{t7b} the code for the client class and Listing \ref{t7c} the initiation of both classes at the start of the chess game. The server and client are initiated using threads to ensure correct and fast communication between the two playing parties. In this way, after each move played, the current state of the board is sent via the client of one device to the server of the other device. Since this test case only serves as a proof-of-concept, Java sockets were used to implement the communication. These are characterized by their simplicity, but their functionality is limited, especially for modern applications. The use of third-party interfaces or externally hosted servers such as Firebase is therefore conceivable, depending on the requirements of the experiment (\cite{Google.2023b}). Communication between two experiment participants on different devices could be demonstrated by playing a chess move in each case. Test case T7 and thus requirements F4.2, F5.2, N1.1 and N1.2 could thus be fulfilled and confirmed.
+
+\subsubsection*{T7: A chess turn is played by both parties, not using the same device}
+
+Test case T7 deals with the interaction between multiple participants. For this purpose, the chess game in test case T5 is to be played by several participants on different devices. The implementation of this test case lies within the corresponding activity itself, in this case, the ChessGameActivity. To achieve this, a client class is needed for sending the current game state and a server class for receiving and offering the current game state. These classes are nested as private classes within the activity itself. Listing \ref{t7a} shows the code for the server class, Listing \ref{t7b} the code for the client class, and Listing \ref{t7c} the initiation of both classes at the start of the chess game. The server and client are initiated using threads to ensure correct and fast communication between the two playing parties. In this way, after each move played, the current state of the board is sent via the client of one device to the server of the other device. Since this test case only serves as a proof-of-concept, Java sockets were used to implement the communication. These are characterized by their simplicity, but their functionality is limited, especially for modern applications. The use of third-party interfaces or externally hosted servers such as Firebase is, therefore, conceivable, depending on the requirements of the experiment (\cite{Google.2023b}). Communication between two experiment participants on different devices could be demonstrated by playing a chess move in each case. Test case T7, and thus requirements F4.2, F5.2, N1.1, and N1.2, could thus be fulfilled and confirmed.
+
 
 \vspace{0.5cm}
 
@@ -189,9 +218,14 @@ private class ServerThread extends Thread {
 
 \newpage
 
-\subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
+%\subsubsection*{T8 :The results of the experiment are retrieved and displayed in third party software}
 
-To fulfill test case T8 and thus verify requirements F2.2, N2.1, N2.2 and N5.1 meta data are exported from the application and then read into external software. As mentioned above, Android in combination with Java basically supports a variety of file formats for export. The export of the metadata is implemented in the LogMetaDataUseCase use case via the printOutMetaData method and is shown in Listing \ref{t8}. For simplicity and as a proof of concept in the course of this test case, meta data in the form of processing times for the experiment is exported as a \ac{csv} file. These are then read into Excel in the course of this test case and visualized using an Excel representation. Figure \ref{fig:Excel} shows this Excel graphic. In principle, however, the \ac{csv}  file could be processed in any other way, provided that the software used for further processing supports CSV files. 
+%To fulfill test case T8 and thus verify requirements F2.2, N2.1, N2.2 and N5.1 meta data are exported from the application and then read into external software. As mentioned above, Android in combination with Java basically supports a variety of file formats for export. The export of the metadata is implemented in the LogMetaDataUseCase use case via the printOutMetaData method and is shown in Listing \ref{t8}. For simplicity and as a proof of concept in the course of this test case, meta data in the form of processing times for the experiment is exported as a \ac{csv} file. These are then read into Excel in the course of this test case and visualized using an Excel representation. Figure \ref{fig:Excel} shows this Excel graphic. In principle, however, the \ac{csv}  file could be processed in any other way, provided that the software used for further processing supports CSV files. 
+
+\subsubsection*{T8: The results of the experiment are retrieved and displayed in third-party software}
+
+To fulfill test case T8 and thus verify requirements F2.2, N2.1, N2.2 and N5.1 metadata are exported from the application and then imported into external software. As mentioned above, Android in combination with Java supports a variety of file formats for export. The export of the metadata is implemented in the LogMetaDataUseCase use case via the printOutMetaData method and is shown in Listing \ref{t8}. For simplicity and as a proof of concept in the course of this test case, metadata in the form of processing times for the experiment is exported as a \ac{csv} file. These are then imported into Excel during the course of this test case and visualized using an Excel representation. Figure \ref{fig:Excel} shows this Excel graphic. In principle, however, the \ac{csv} file could be processed in any other way, provided that the software used for further processing supports \ac{csv} files.
+
 
 \vspace{0.5cm}
 
@@ -236,9 +270,9 @@ To fulfill test case T8 and thus verify requirements F2.2, N2.1, N2.2 and N5.1 m
     \label{fig:Excel}
 \end{figure}
 
-\newpage\subsubsection*{T9: The experiment is redone a second time and another experimental setup is implemented}
+%\newpage\subsubsection*{T9: The experiment is redone a second time and another experimental setup is implemented}
 
-The re-execution of an experiment verifying the requirement N4.1 can be implemented by re-reading the same experiment data. For this purpose, a generic experiment procedure was set up as an example, the experiment data was copied and used to perform a second experiment with the help of the artifact. At the same time, care was taken to ensure that the data of the participants in the two sample experiments were different. The second example experiment was congruent with the first experiment in terms of structure and execution. Only due to the different participant data, other attributes were queried in the questionair activity.
+%The re-execution of an experiment verifying the requirement N4.1 can be implemented by re-reading the same experiment data. For this purpose, a generic experiment procedure was set up as an example, the experiment data was copied and used to perform a second experiment with the help of the artifact. At the same time, care was taken to ensure that the data of the participants in the two sample experiments were different. The second example experiment was congruent with the first experiment in terms of structure and execution. Only due to the different participant data, other attributes were queried in the questionair activity.
 
 %just change the experiment data
 
@@ -251,11 +285,25 @@ The re-execution of an experiment verifying the requirement N4.1 can be implemen
     %steps.add("com.example.master_thesis.ChessExperimentActivity");
 %\end{lstlisting}
 
+%\newpage
+
+%\subsubsection*{T10: The experiment is conducted on different devices}
+
+%To verify requirement F4.2 and confirm test case T10, the developed artifact was exported to several other Android devices. Originally tested during development, the artifact was on a Pixel 4 XL. Therefore, to verify this test case, the artifact was installed and tested on a Pixel 6 Pro. The individual acitvities on this device are shown in Figure \ref{fig:uiScreensPixel6}. Although the two devices have different hardware, software and screen sizes, the artifact can be used on both devices and does not show any errors or bugs. This means that test case T10 can be fulfilled.
+
+\newpage
+
+\subsubsection*{T9: The experiment is redone a second time, and another experimental setup is implemented}
+
+The re-execution of an experiment verifying requirement N4.1 can be implemented by re-reading the same experiment data. For this purpose, a generic experiment procedure was set up as an example, and the experiment data were copied and used to perform a second experiment with the help of the artifact. At the same time, care was taken to ensure that the data of the participants in the two sample experiments were different. The second example experiment was congruent with the first experiment in terms of structure and execution. Only due to the different participant data, other attributes were queried in the questionnaire activity.
+
 \newpage
 
 \subsubsection*{T10: The experiment is conducted on different devices}
 
-To verify requirement F4.2 and confirm test case T10, the developed artifact was exported to several other Android devices. Originally tested during development, the artifact was on a Pixel 4 XL. Therefore, to verify this test case, the artifact was installed and tested on a Pixel 6 Pro. The individual acitvities on this device are shown in Figure \ref{fig:uiScreensPixel6}. Although the two devices have different hardware, software and screen sizes, the artifact can be used on both devices and does not show any errors or bugs. This means that test case T10 can be fulfilled.
+To verify requirement F4.2 and confirm test case T10, the developed artifact was exported to several other Android devices. Originally tested during development, the artifact was on a Pixel 4 XL. Therefore, to verify this test case, the artifact was installed and tested on a Pixel 6 Pro. The individual activities on this device are shown in Figure \ref{fig:uiScreensPixel6}. Although the two devices have different hardware, software, and screen sizes, the artifact can be used on both devices and does not show any errors or bugs. This means that test case T10 can be fulfilled.
+
+
 
 \begin{figure}[htbp]
     \centering
@@ -281,7 +329,7 @@ To verify requirement F4.2 and confirm test case T10, the developed artifact was
         \caption{Choose Test Subject}
         \label{subfig:chooseTestSubjectPixel}
     \end{subfigure}
-       \caption{T10: Artefact Run on a Pixel 6 Pro}
+       \caption{T10: Artifact Run on a Pixel 6 Pro}
        \label{fig:uiScreensPixel6}
 \end{figure}
 
@@ -289,7 +337,12 @@ To verify requirement F4.2 and confirm test case T10, the developed artifact was
 
 \newpage
 
-\subsubsection*{T11: During the experiment the current state of the chess board is exported to the conducter of the experiment}
+%\subsubsection*{T11: During the experiment the current state of the chess board is exported to the conducter of the experiment}
 
-Test case T11 can be tested similarly to test case T7. For this purpose, a message about the current status of the experiment is sent to a server via a client class in the same way as in test case T7. In contrast to test case T7, no messages are sent back and forth, but only the current status of the experiment is exported to a monitor. Therefore, only one client class is needed in the application itself. The server to which the current status is sent can therefore take different forms, only the IP address of the server must be known and it must be able to process the client message. Analogous to test case T7, the implementation of this communication is also possible via other ways and means, should more complex functions be required that go beyond the capabilities of the Java sockets. Test case T11 and thus requirement N5.1 can thus be verified.
+%Test case T11 can be tested similarly to test case T7. For this purpose, a message about the current status of the experiment is sent to a server via a client class in the same way as in test case T7. In contrast to test case T7, no messages are sent back and forth, but only the current status of the experiment is exported to a monitor. Therefore, only one client class is needed in the application itself. The server to which the current status is sent can therefore take different forms, only the IP address of the server must be known and it must be able to process the client message. Analogous to test case T7, the implementation of this communication is also possible via other ways and means, should more complex functions be required that go beyond the capabilities of the Java sockets. Test case T11 and thus requirement N5.1 can thus be verified.
+
+
+\subsubsection*{T11: During the experiment, the current state of the chessboard is exported to the conductor of the experiment}
+
+Test case T11 can be tested similarly to test case T7. For this purpose, a message about the current status of the experiment is sent to a server via a client class in the same way as in test case T7. In contrast to test case T7, no messages are sent back and forth, but only the current status of the experiment is exported to a monitor. Therefore, only one client class is needed in the application itself. The server to which the current status is sent can take different forms; only the \ac{ip} address of the server must be known, and it must be able to process the client message. Analogous to test case T7, the implementation of this communication is also possible via other ways and means should more complex functions be required that go beyond the capabilities of Java sockets. Test case T11 and thus requirement N5.1 can thus be verified.
 
