@@ -100,7 +100,7 @@ The requirements derived from this are included in table \ref{tab:requirementsRa
 
 In addition to the literature review, this section includes other sources that can contribute to the derivation of requirements. These sources and requirements mainly refer to external influencing factors or specifications. Only requirements that have not yet been established by the previous methods are included.
 
-In their book on Empirical Educational Research, Gniewosz et al. (2011) describe, among other things, the structure and empirical theory in relation to experiments. An important part of conducting experiments, according to the authors, is to educate the subjects about the experiment and its benefits. Rather than explaining the design of the experiment, this involves explaining the actual benefits and goals of the experiment to the participants after it has been conducted (\cite{Gniewosz.2011}). Furthermore, confounding variables have to be eliminated for the effective execution of experiments. Although some of these measures must be implemented on a case-by-case basis by the individual experimental setup itself, the artifact is intended to assist in this process when possible. Especially measures regarding the allocation of groups represent an important part of this (\cite{Gniewosz.2011}) and could be supported by an artifact. For this reason, the requirements \enquote{Random or targeted assignment of test subjects} are included in the list of requirements. The creation of control groups via different participant groups is already included as a requirement from several sources. In addition, findings from the analysis of the alternative applications for conducting experiments from section \ref{sec:identification_of_the_problem} are used to establish requirements. These include the use of complex and up-to-date user interfaces, deployment on non-Windows platforms, the open-source approach, and the possibility to add custom program code for the experiments based on the analysis of z-Tree and oTree. Further requirements based on the analysis of LIONESS Lab include the openness of the platform, the creation of different groups regarding the test subjects, and the possibility to use unrestricted coding.
+In their book on Empirical Educational Research, Gniewosz et al. (2011) describe, among other things, the structure and empirical theory in relation to experiments. An important part of conducting experiments, according to the authors, is to educate the subjects about the experiment and its benefits. Rather than explaining the design of the experiment, this involves explaining the actual benefits and goals of the experiment to the participants after it has been conducted (\cite{Gniewosz.2011}). Furthermore, confounding variables have to be eliminated for the effective execution of experiments. Although some of these measures must be implemented on a case-by-case basis by the individual experimental setup itself, the artifact is intended to assist in this process when possible. Especially measures regarding the allocation of groups represent an important part of this (\cite{Gniewosz.2011}) and could be supported by an artifact. For this reason, the requirements to assign test subjects to groups randomly or targeted are included in the list of requirements. The creation of control groups via different participant groups is already included as a requirement from several sources. In addition, findings from the analysis of the alternative applications for conducting experiments from section \ref{sec:identification_of_the_problem} are used to establish requirements. These include the use of complex and up-to-date user interfaces, deployment on non-Windows platforms, the open-source approach, and the possibility to add custom program code for the experiments based on the analysis of z-Tree and oTree. Further requirements based on the analysis of LIONESS Lab include the openness of the platform, the creation of different groups regarding the test subjects, and the possibility to use custom coding.
 
 \subsection{Requirements Specification}\label{subsec:reqSpec}
 
@@ -144,6 +144,7 @@ After the requirements have been discovered and roughly outlined in the previous
     Groups                      &             \\ \hline
     F5.1 Different Groups           & The artifact must allow the division of participants into different groups            \\
     F5.2 Communication of Groups    & The different groups must be able to interact with each other            \\ 
+    & \\
     F5.3 Targeted Assignment        & Groups of test subjects must be able to be created based on certain attributes like confounding variables. \\
     F5.4 Random Assignment          & Groups of test subjects must be able to be created based on random assignment \\ \hline
     \end{tabular}
@@ -163,8 +164,8 @@ Requirement                             & Description \\ \hline
     N1.2 Time-Flexibility           & The artifact can be used independently of a given period of time            \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Data Postprocessing &             \\ \hline
-    N2.1 Evaluation of Data         & The data can be retrieved in a suitable way for further processing and evaluation            \\
-    N2.2 Vizualize Final Data       & The data can be retrieved in a suitable way for further visualization             \\ \hline
+    N2.1 Evaluation of Data         & Data can be retrieved in a suitable way for further processing and evaluation            \\
+    N2.2 Vizualize Final Data       & Data can be retrieved in a suitable way for further visualization             \\ \hline
     \rowcolor[HTML]{C0C0C0} 
     Simplicity                  &            \\ \hline
     N3.1 Simplicity                 & The artifact is simple to use           \\
@@ -213,7 +214,7 @@ In this section, the previously established requirements are validated. The crit
     & \\
     T3  & The information about how long the experiment took is collected                                                                          & F2.2                         \\
     & \\
-    T4  & The sex and the weight of the participant is pre-loaded into the experiment from different files. The sex of the participant is deleted. & F3.1, F3.2, N6.1                         \\
+    T4  & The gender and the weight of the participant is pre-loaded into the experiment from different files. The gender of the participant is deleted. & F3.1, F3.2, N6.1                         \\
     & \\
     T5  & A chess game is added as custom logic                                                                                                    &  F4.1, F4.2, F4.3         \\
     & \\
