@@ -26,28 +26,27 @@ To effectively implement the requirements for the application, the processes des
 %According to the requirements a certain amount of standard \enquote{experiment steps} are developed for the artefact. These \enquote{standard steps} represent functionalities that are common between every imaginable experiment. In addition to this, the possibility should exist to create custom \enquote{experimental steps} in order to extend and customize the experiment. In the following five \enquote{standard experiment steps} based on the functional requirements are illustrated by the use of swim lane diagrams.  
 %The dashed box \enquote{Experimental Step} of figur \ref{fig:experimentSwimLane} therefore represents one of the \enquote{standard steps} in figure \ref{fig:DataInputSwimLane}, \ref{fig:ChooseTestSubjectSwimLane}, \ref{fig:groupAllocationSwimLane}, \ref{fig:questionairSwimLane} and \ref{fig:infoScreenSwimLane}. For this reason, the graphics mentioned also begin and end in the \enquote{Experimental Repository} lane.
 
-Figure \ref{fig:experimentSwimLane} shows the basic structure of any experiment. The whole experiment is divided into different experiment steps, which are executed one after the other until the experiment is completed. The application is started first, and then the first step of the experiment is executed. This could be, for example, an information message for the participants. After that, the next step is executed if another step is available. If no further step is available, the experiment ends. This simple abstraction of an experiment concentrates on the essentials and thus allows for the most flexible and adaptable construction kit for any experiment. According to the requirements, a certain number of standard \enquote{experiment steps} are developed for the artifact. These \enquote{standard steps} represent functionalities that are common to every imaginable experiment. In addition to this, the possibility should exist to create custom \enquote{experimental steps} in order to extend and customize the experiment. The following five \enquote{standard experiment steps} based on the functional requirements are illustrated using swim lane diagrams. The dashed box \enquote{experiment step} in Figure \ref{fig:experimentSwimLane} therefore represents one of the \enquote{standard steps} from Figures \ref{fig:DataInputSwimLane}, \ref{fig:ChooseTestSubjectSwimLane}, \ref{fig:groupAllocationSwimLane}, \ref{fig:questionairSwimLane}, and \ref{fig:infoScreenSwimLane}. For this reason, the mentioned graphics also begin and end in the \enquote{Experimental Repository} lane.
+Figure \ref{fig:experimentSwimLane} shows the basic structure of any experiment. The whole experiment is divided into different experiment steps, which are executed one after the other until the experiment is completed. The application is started first, and then the first step of the experiment is executed. This could be, for example, an information message for the participants. After that, the next step is executed if another step is available. If no further step is available, the experiment ends. This simple abstraction of an experiment concentrates on the essentials and thus allows for the most flexible and adaptable construction kit for any experiment. According to the requirements, a certain number of standard \enquote{experiment steps} are developed for the artifact. These \enquote{standard steps} represent functionalities that are common to every imaginable experiment. In addition to this, the possibility should exist to create custom \enquote{experimental steps} in order to extend and customize the experiment. The following five \enquote{standard experiment steps} based on the functional requirements are illustrated using swim lane diagrams. The dashed box \enquote{experiment step} in Figure \ref{fig:experimentSwimLane} therefore represents one of the \enquote{standard steps} from Figures \ref{fig:DataInputSwimLane}, \ref{fig:ChooseTestSubjectSwimLane}, \ref{fig:groupAllocationSwimLane}, \ref{fig:questionairSwimLane}, and \ref{fig:infoScreenSwimLane}. For this reason, the mentioned graphics also begin and end in the \enquote{Experimental Repository} lane. Figure \ref{fig:DataInputSwimLane} represents the process step of reading data from one or more sources. The assumption is that this data must first be processed or standardized before it can be meaningfully assigned to the participants and used within the experiment. Figure \ref{fig:ChooseTestSubjectSwimLane} enables the mapping between the test subject and their \ac{id}, which will be used for the rest of the experiment. Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning individual participants to groups. Participants can be divided either according to a predefined group, arbitrarily, or according to certain criteria. Figure \ref{fig:questionairSwimLane} is used to complete missing information or data about the participants. For this purpose, test subjects are asked questions based on missing data entries corresponding to their \ac{id}. This process is conceptualized similarly to the general experiment setup, so that any number of questions or no questions at all are displayed for completion, depending on the number of missing data points about a test subject. An example would be a participant whose age is missing in a dataset. An input field is automatically displayed for the participant to fill in the missing information about themselves. If all data for a test subject is complete, nothing is displayed. Figure \ref{fig:infoScreenSwimLane} displays information to the test subjects and can be used both as a means of notification during an experiment or just as a representation of information.
 
-
-\begin{figure}[htbp]
+\begin{figure}[]
     \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/DataInputSwimLane.drawio.pdf}
     \caption{Data Input Step - Swim Lane}    
     \label{fig:DataInputSwimLane}
 \end{figure}
 
-Figure \ref{fig:DataInputSwimLane} represents the process step of reading data from one or more sources. The assumption is that this data must first be processed or standardized before it can be meaningfully assigned to the participants and used within the experiment.
 
-\begin{figure}[htbp]
+
+\begin{figure}[]
     \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/ChooseTestSubjectSwimLane.drawio.pdf}
     \caption{Choose Test Subject Step - Swim Lane}    
     \label{fig:ChooseTestSubjectSwimLane}
 \end{figure}
 
-Figure \ref{fig:ChooseTestSubjectSwimLane} enables the mapping between the test subject and their \ac{id}, which will be used for the rest of the experiment.
 
-\begin{figure}[htbp]
+
+\begin{figure}[]
     \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/GroupAllocationSwimLane.drawio.pdf}
     \caption{Group Allocation Step - Swim Lane}    
@@ -56,12 +55,10 @@ Figure \ref{fig:ChooseTestSubjectSwimLane} enables the mapping between the test 
 
 %Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning individual participants into groups. Participants can either be divided according to a predefined group, arbitrarily or according to certain criteria.
 
-\newpage
-
-Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning individual participants to groups. Participants can be divided either according to a predefined group, arbitrarily, or according to certain criteria.
 
 
-\begin{figure}[htbp]
+
+\begin{figure}[]
     \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/QuestionairSwimLane.drawio.pdf}
     \caption{Questionnaire Step - Swim Lane}    
@@ -70,17 +67,16 @@ Figure \ref{fig:groupAllocationSwimLane} represents the process of assigning ind
 
 %Figure \ref{fig:questionairSwimLane} is used to complete missing information or data about the participants. For this purpose, test subjects are asked questions based on missing data entries corresponding to their \ac{id}. This process is conceptualized similarly to the general experiment setup, so that any number of questions or no question at all are displayed for completion, depending on the number of missing data points about a test subject. An example would be a participant thats age is missing in a dataset. An input field is automatically displayed for the participant to fill in the missing information about himself. If all data for a test subject is complete, nothing is displayed.
 
-Figure \ref{fig:questionairSwimLane} is used to complete missing information or data about the participants. For this purpose, test subjects are asked questions based on missing data entries corresponding to their \ac{id}. This process is conceptualized similarly to the general experiment setup, so that any number of questions or no questions at all are displayed for completion, depending on the number of missing data points about a test subject. An example would be a participant whose age is missing in a dataset. An input field is automatically displayed for the participant to fill in the missing information about themselves. If all data for a test subject is complete, nothing is displayed.
 
 
-\begin{figure}[htbp]
+\begin{figure}[]
     \centering
     \includegraphics[width=0.99\textwidth, keepaspectratio]{content/05_design_and_dev_artefacts/InfoScreenSwimLane.drawio.pdf}
     \caption{Info Screen Step - Swim Lane}    
     \label{fig:infoScreenSwimLane}
 \end{figure}
 
-Figure \ref{fig:infoScreenSwimLane} displays information to the test subjects and can be used both as a means of notification during an experiment or just as a representation of information.
+
 
 %\subsection{Technology Selection}
 
@@ -147,7 +143,6 @@ The individual data sources are masked from the rest of the application by the s
 \subsubsection{Domain Layer}
 
 The domain layer is an optional layer that encapsulates complex business logic or logic that needs to be reused frequently (\cite{Google.2023}). Since it is not known to what extent the individual elements will be used in an experiment, and a special focus is placed on the reusability of the individual components, this optional layer is implemented in the artifact. Further advantages resulting from the use of a domain layer are the avoidance of duplicated code, the improved readability of the architecture, an improvement in the testability of the application, and the avoidance of large classes by splitting the tasks (\cite{Google.2023}). The domain layer classes are accessed in the same way as repositories of the data layer are accessed by the \ac{ui}. A simple unrelated example of a domain layer class would be to request the addresses of the best authors of the year. In this example, there would be two data sources with repositories, one for authors and their addresses and another one containing the best-selling books of the year. A domain layer class would hide access to these two repositories and the complex logic of determining the addresses of the best authors of the year from the rest of the application. To keep the classes of the domain layer simple, it is advised that each class should contain only a single functionality and should not contain mutable data (\cite{Google.2023}). These individual functions are also called use cases. Use cases (domain layer classes) can call each other and can be hierarchically dependent on each other within the domain layer as needed. Since one use case is supposed to represent one function at a time, a domain layer class (or use case) is created for each function or action that appears in one of the process swim lane diagrams in the \textit{Experiment Data} and \textit{Participant Data} lanes from Section \ref{subsec:ProcessConcept}. Entire processes (swim lanes) that do not contain user input are also illustrated by these domain layer use case classes. This case applies to the process in swim lane diagram \ref{fig:groupAllocationSwimLane}, which is why it is modeled as a use case in the domain layer. A detailed view of the derived use cases is included in Appendix \ref{appendix:C}. For the implementation of the individual use cases, a Java class is created for each case, which contains the corresponding logic, and the use case calls corresponding interfaces through methods.
-
 
 %\subsubsection{User Interface Layer}
 
